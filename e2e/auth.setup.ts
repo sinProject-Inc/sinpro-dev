@@ -49,7 +49,7 @@ setup('sign in', async ({ page }) => {
 	await page.waitForURL(/\/pin-code/)
 	await page.waitForLoadState('networkidle')
 
-	await expect(page).toHaveTitle('PIN code - Talk')
+	await expect(page).toHaveTitle('PIN code - sinpro.dev')
 
 	const pin_code = await get_pin_code_from_database(gmail_user)
 
@@ -57,7 +57,7 @@ setup('sign in', async ({ page }) => {
 	await page.getByRole('button', { name: 'Submit' }).click()
 	await page.waitForURL(/\/$/)
 
-	await expect(page).toHaveTitle('Talk')
+	await expect(page).toHaveTitle('sinpro.dev')
 
 	await page.context().storageState({ path: auth_file_path })
 })

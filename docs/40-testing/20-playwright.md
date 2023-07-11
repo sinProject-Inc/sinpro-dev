@@ -82,7 +82,7 @@ To perform tests quickly, use a development server. Also, change the baseURL.
 
 ```ts:playwright.config.ts
 const base = ''
-// const base = '/talk'
+// const base = '/sinpro-dev'
 const config: PlaywrightTestConfig = {
 	webServer: [
 		{

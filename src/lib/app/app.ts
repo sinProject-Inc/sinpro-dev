@@ -1,6 +1,6 @@
 export class App {
 	public static localhost_origin = 'http://localhost:5173'
-	public static app_name = 'Talk'
+	public static app_name = 'sinpro.dev'
 	public static company_name = 'sinProject'
 	public static company_and_app_name = `${App.company_name} ${App.app_name}`
 	public static copyright = `© ${App.company_name}.`
@@ -11,6 +11,7 @@ export class App {
 	}
 
 	public static get_docs_title(title: string): string {
-		return `${title} - ${App.company_and_app_name}`
+		return this.get_page_title(title)
+		// return `${title} - ${App.company_and_app_name}`
 	}
 }

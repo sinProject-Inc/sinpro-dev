@@ -50,13 +50,13 @@ GET {{host}}/api/add-translation/99999999/en-US/こんにちは
 GET {{host}}/api/text/en-US/100
 
 ###
-GET https://talk.sinpro.dev/icon-144.avif
+GET https://sinpro.dev/icon-144.avif
 
 ###
-GET https://talk.sinpro.dev/fonts/press-start-2p.woff2
+GET https://sinpro.dev/fonts/press-start-2p.woff2
 
 ###
 GET http://localhost:5173/fonts/press-start-2p.woff2
 
 ###
-GET https://talk.sinpro.dev/icon-512.png
+GET https://sinpro.dev/icon-512.png

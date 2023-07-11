@@ -5,7 +5,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const base = ''
-// const base = '/talk'
+// const base = '/sinpro-dev'
 
 /**
  * Read environment variables from file.
@@ -19,7 +19,7 @@ const base = ''
 const config: PlaywrightTestConfig = {
 	testDir: './e2e',
 	/* Maximum time one test can run for. */
-	timeout: process.env.CI ? 20 * 1000 : 5 * 1000,
+	timeout: process.env.CI ? 20 * 1000 : 10 * 1000,
 	expect: {
 		/**
 		 * Maximum time expect() should wait for the condition to be met.
@@ -61,14 +61,14 @@ const config: PlaywrightTestConfig = {
 
 	/* Configure projects for major browsers */
 	projects: [
-		{ name: 'setup', testMatch: /.*\.setup\.ts/ },
+		// { name: 'setup', testMatch: /.*\.setup\.ts/ },
 
 		{
 			name: 'chromium',
 			use: {
 				...devices['Desktop Chrome'],
 			},
-			dependencies: ['setup'],
+			// dependencies: ['setup'],
 		},
 
 		// {

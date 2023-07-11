@@ -19,7 +19,7 @@
 {/if}
 
 <a
-	href="https://github.com/sinProject-Inc/talk"
+	href="https://github.com/sinProject-Inc/sinpro-dev"
 	target="_blank"
 	class="flex items-center gap-1"
 	title="GitHub"

@@ -14,7 +14,7 @@
 
 	export let data
 
-	const github_base_path = 'https://github.com/sinProject-Inc/talk/edit/main'
+	const github_base_path = 'https://github.com/sinProject-Inc/sinpro-dev/edit/main'
 
 	$: git_path = `${github_base_path}${data.file_path.slice(1)}`
 	$: pages = data.sections?.flatMap((section) => section.pages) ?? []

@@ -2,7 +2,7 @@ import { ApiPath } from '$lib/api/api_path'
 import { expect, test } from 'vitest'
 
 const base = ''
-// const base = '/talk'
+// const base = '/sinpro-dev'
 
 test('/api', () => {
 	const api_path = ApiPath.api_directory

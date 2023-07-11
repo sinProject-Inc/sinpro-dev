@@ -1,7 +1,7 @@
 module.exports = {
 	apps: [
 		{
-			name: 'talk',
+			name: 'sinpro-dev',
 			script: './server/index.ts',
 			interpreter: 'node',
 			interpreterArgs: '--loader tsx',
