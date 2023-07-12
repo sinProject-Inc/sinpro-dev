@@ -2,7 +2,7 @@ module.exports = {
 	apps: [
 		{
 			name: 'sinpro-dev',
-			script: './server/index.ts',
+			script: 'build',
 			interpreter: 'node',
 			interpreterArgs: '--loader tsx',
 			instances: '-1',
@@ -10,7 +10,7 @@ module.exports = {
 			watch: false,
 			ignore_watch: ['logs'],
 			env: {
-				PORT: 3002,
+				PORT: 3001,
 			},
 		},
 	],

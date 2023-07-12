@@ -28,19 +28,6 @@ jobs:
 
       - uses: ./.github/actions/setup-and-cache
 
-      - name: Create .env
-        run: |
-          touch .env
-          echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
-          echo SOUND_DIR=${{ secrets.SOUND_DIR }} >> .env
-          echo AVATAR_DIR=${{ secrets.AVATAR_DIR }} >> .env
-          echo GOOGLE_PROJECT_ID=${{ secrets.GOOGLE_PROJECT_ID }} >> .env
-          echo GOOGLE_LOCATION=${{ secrets.GOOGLE_LOCATION }} >> .env
-          echo MICROSOFT_SPEECH_KEY=${{ secrets.MICROSOFT_SPEECH_KEY }} >> .env
-          echo DEEPL_AUTH_KEY=${{ secrets.DEEPL_AUTH_KEY }} >> .env
-          echo GMAIL_USER=${{ secrets.GMAIL_USER }} >> .env
-          echo GMAIL_PASS=${{ secrets.GMAIL_PASS }} >> .env
-
       - name: Build
         shell: bash
         run: npm run build
@@ -60,55 +47,11 @@ jobs:
 
     timeout-minutes: 10
 
-    env:
-      DATABASE_URL: mysql://root:rootroot@127.0.0.1:3306/talk
-
-    services:
-      mysql:
-        image: mysql
-        ports:
-          - 3306:3306
-        env:
-          MYSQL_DATABASE: talk
-          MYSQL_ROOT_USER: root
-          MYSQL_ROOT_PASSWORD: rootroot
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
-      redis:
-        image: redis
-        ports:
-          - 6379:6379
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
     steps:
       - uses: actions/checkout@v3
 
-      - id: 'auth'
-        name: 'Authenticate to Google Cloud'
-        uses: 'google-github-actions/auth@v1'
-        with:
-          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
-
       - uses: ./.github/actions/setup-and-cache
-      - uses: ./.github/actions/prisma
         # run: npx playwright install --with-deps
-
-      - name: Create .env
-        run: |
-          touch .env
-          echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
-          echo SOUND_DIR=${{ secrets.SOUND_DIR }} >> .env
-          echo AVATAR_DIR=${{ secrets.AVATAR_DIR }} >> .env
-          echo GOOGLE_PROJECT_ID=${{ secrets.GOOGLE_PROJECT_ID }} >> .env
-          echo GOOGLE_LOCATION=${{ secrets.GOOGLE_LOCATION }} >> .env
-          echo MICROSOFT_SPEECH_KEY=${{ secrets.MICROSOFT_SPEECH_KEY }} >> .env
-          echo DEEPL_AUTH_KEY=${{ secrets.DEEPL_AUTH_KEY }} >> .env
-          echo GMAIL_USER=${{ secrets.GMAIL_USER }} >> .env
-          echo GMAIL_PASS=${{ secrets.GMAIL_PASS }} >> .env
 
       - name: Build
         shell: bash

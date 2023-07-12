@@ -1,24 +1,8 @@
 import { sveltekit } from '@sveltejs/kit/vite'
 import { defineConfig } from 'vitest/config'
-import inject_socket_io from './server/socket-handler'
-
-// # Dev
-// npm run dev
-
-// # Production
-// npm run build
-// node server.js
-
-const web_socket = {
-	name: 'sveltekit-socket-io',
-	// eslint-disable-next-line @typescript-eslint/naming-convention, @typescript-eslint/no-explicit-any
-	configureServer(server: any): void {
-		inject_socket_io(server.httpServer)
-	},
-}
 
 export default defineConfig({
-	plugins: [sveltekit(), web_socket],
+	plugins: [sveltekit()],
 	define: {
 		// eslint-disable-next-line @typescript-eslint/naming-convention
 		'import.meta.vitest': 'undefined',

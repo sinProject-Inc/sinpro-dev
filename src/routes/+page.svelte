@@ -12,9 +12,9 @@
 <div class="doc-base">
 	<div class="flex h-[calc(100vh-var(--header-height))] flex-col items-center justify-center p-8">
 		<div class="font-title flex max-w-xl flex-col items-center gap-12">
-			<div class="text-5xl">{App.app_name}</div>
-			<div class="text-lg">PUSH MENU BUTTON</div>
-			<div class="text-lg">We are aiming to revolutionize the world with innovative services.</div>
+			<div class="text-3xl">{App.app_name}</div>
+			<div class="text-md">PUSH MENU BUTTON</div>
+			<div class="text-md">We are aiming to revolutionize the world with innovative services.</div>
 			<div><VersionFooter /></div>
 		</div>
 	</div>

@@ -11,45 +11,6 @@
 GET {{host}}
 
 ###
-GET {{host}}/api/get-translation/Hi/en-US/ja-JP
-
-###
-POST {{host}}/api/log
-Content-Type: application/json
-
-{
-	"level": { "value": "info" },
-	"message": "Hello World"
-}
-
-###
-POST {{host}}/api/log
-Content-Type: application/json
-
-{
-	"level": { "value": "info2" },
-	"message": "Hello World"
-}
-
-###
-GET {{host}}/api/text/ab-CD
-
-###
-GET {{host}}/api/add-text/en-US/Hello
-
-###
-GET {{host}}/api/get-translation/Hello/en-US/ja-JP
-
-###
-GET {{host}}/api/text-to-speech/Hello/en-US
-
-###
-GET {{host}}/api/add-translation/99999999/en-US/こんにちは
-
-###
-GET {{host}}/api/text/en-US/100
-
-###
 GET https://sinpro.dev/icon-144.avif
 
 ###
