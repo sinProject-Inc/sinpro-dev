@@ -42,6 +42,7 @@ test('open search modale with keyboard shortcut', async ({ page }) => {
 })
 
 test('close search modale with keyboard shortcut', async ({ page }) => {
+	await page.waitForLoadState('networkidle')
 	await page.waitForTimeout(500)
 
 	await page.keyboard.press('Control+KeyK')
@@ -58,6 +59,7 @@ test('close search modale with keyboard shortcut', async ({ page }) => {
 test('open search modale with navbar button', async ({ page }) => {
 	page.setViewportSize({ width: 480, height: 600 })
 
+	await page.waitForLoadState('networkidle')
 	await page.waitForTimeout(500)
 
 	const search_button = page.getByTestId('navbar-search-button')

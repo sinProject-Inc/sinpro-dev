@@ -25,7 +25,7 @@ const config: PlaywrightTestConfig = {
 		 * Maximum time expect() should wait for the condition to be met.
 		 * For example in `await expect(locator).toHaveText();`
 		 */
-		timeout: 2000,
+		timeout: process.env.CI ? 5000 : 2000,
 	},
 	/* Run tests in files in parallel */
 	fullyParallel: true,

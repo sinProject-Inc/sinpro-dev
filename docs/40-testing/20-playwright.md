@@ -36,7 +36,7 @@ const config: PlaywrightTestConfig = {
 	testDir: './e2e',
 	timeout: process.env.CI ? 20 * 1000 : 5 * 1000,
 	expect: {
-		timeout: 2000,
+		timeout: process.env.CI ? 5000 : 2000,
 	},
 	reporter: [['html', { open: 'never' }]],
 	use: {
