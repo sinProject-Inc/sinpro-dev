@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://sinproject.net/wp-content/uploads/2019/12/sinProject-01-640x677.png" width="400">
+  <img src="https://sinproject.net/wp-content/uploads/2019/12/sinProject-01-640x677.png" width="250">
   <h1>sinpro-dev</h1>
   <br />
 </div>
@@ -8,9 +8,18 @@
 
 This is a web application built with SvelteKit.
 
+Visit [sinpro.dev](https://sinpro.dev/)
+
 ## Creating a Project
 
-👉 [**Creating a Project**](https://github.com/sinProject-Inc/talk/docs/80-talk/20-creating-a-project.md)
+### Setting up the project
+
+```bash
+git clone https://github.com/sinProject-Inc/sinpro-dev.git
+cd /sinpro-dev
+npm install
+npm run dev -- --open
+```
 
 ## Feedback
 
