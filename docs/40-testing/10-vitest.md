@@ -54,7 +54,7 @@ Use the [VSCode Extension](./vscode-extensions#testing) for testing.
 
 ## Sample Code
 
-```ts:src/lib/genera/valid_id.test.ts
+```ts:[talk]src/lib/general/valid_id.test.ts
 import { expect, test } from 'vitest'
 import { ValidId } from './valid_id'
 
@@ -65,7 +65,7 @@ test('1', () => {
 
 When checking thrown errors:
 
-```ts:src/lib/genera/valid_id.test.ts
+```ts:[talk]src/lib/general/valid_id.test.ts
 import { expect, test } from 'vitest'
 import { ValidId } from './valid_id'
 
@@ -76,7 +76,7 @@ test('NaN', () => {
 
 ## In-source testing
 
-```ts:src/lib/locale/i18n.ts
+```ts:[talk]src/lib/locale/i18n.ts
 if (import.meta.vitest) {
 	const { test, expect } = import.meta.vitest
 
