@@ -11,52 +11,13 @@
 GET {{host}}
 
 ###
-GET {{host}}/api/get-translation/Hi/en-US/ja-JP
+GET https://sinpro.dev/icon-144.avif
 
 ###
-POST {{host}}/api/log
-Content-Type: application/json
-
-{
-	"level": { "value": "info" },
-	"message": "Hello World"
-}
-
-###
-POST {{host}}/api/log
-Content-Type: application/json
-
-{
-	"level": { "value": "info2" },
-	"message": "Hello World"
-}
-
-###
-GET {{host}}/api/text/ab-CD
-
-###
-GET {{host}}/api/add-text/en-US/Hello
-
-###
-GET {{host}}/api/get-translation/Hello/en-US/ja-JP
-
-###
-GET {{host}}/api/text-to-speech/Hello/en-US
-
-###
-GET {{host}}/api/add-translation/99999999/en-US/こんにちは
-
-###
-GET {{host}}/api/text/en-US/100
-
-###
-GET https://talk.sinpro.dev/icon-144.avif
-
-###
-GET https://talk.sinpro.dev/fonts/press-start-2p.woff2
+GET https://sinpro.dev/fonts/press-start-2p.woff2
 
 ###
 GET http://localhost:5173/fonts/press-start-2p.woff2
 
 ###
-GET https://talk.sinpro.dev/icon-512.png
+GET https://sinpro.dev/icon-512.png

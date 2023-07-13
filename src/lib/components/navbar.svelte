@@ -34,9 +34,6 @@
 			> -->
 
 				<div class="hidden md:contents">
-					<NavItemTab name="learn" />
-					<NavItemTab name="translate" />
-					<NavItemTab name="chat" />
 					<NavItemTab name="docs" />
 				</div>
 

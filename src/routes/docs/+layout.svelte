@@ -5,9 +5,7 @@
 	import Snackbar from '$lib/components/snackbar.svelte'
 	import { animations_enabled, is_min_width_768 } from '$lib/stores'
 	import { KeyboardShortcutHandler } from '$lib/view/keyboard_shortcut_handler'
-	import { WebLogger } from '$lib/view/log/web_logger'
 	import { onMount } from 'svelte'
-	import { _ } from 'svelte-i18n'
 	import { fly } from 'svelte/transition'
 	import Vivus from 'vivus'
 	import Audio from './audio.svelte'
@@ -26,8 +24,6 @@
 	let search_query = ''
 	let copied_snackbar_visible = false
 	let copied_snackbar_timeout: number | undefined
-
-	const web_logger = new WebLogger('docs')
 
 	function open_search_modale(): void {
 		const selection = window.getSelection()
@@ -93,7 +89,6 @@
 				const code = current_element.querySelector('code')?.textContent ?? ''
 
 				navigator.clipboard.writeText(code)
-				web_logger.info('on_copy: ' + code)
 
 				if (copied_snackbar_timeout) clearTimeout(copied_snackbar_timeout)
 
@@ -315,7 +310,7 @@
 		</div>
 	</div>
 
-	<Snackbar text={$_('copied')} visible={copied_snackbar_visible} />
+	<Snackbar text={'Copied.'} visible={copied_snackbar_visible} />
 </div>
 <img class="github-link !hidden" alt="" />
 

@@ -1,6 +1,6 @@
 {
-	"name": "Talk",
-	"short_name": "Talk",
+	"name": "sinpro.dev",
+	"short_name": "sinpro.dev",
 	"icons": [
 		{
 			"src": "./icon-144.avif",
@@ -24,5 +24,5 @@
 	"display": "standalone",
 	"theme_color": "#0F172A",
 	"background_color": "#0F172A",
-	"description": "sinProject Talk"
+	"description": "sinpro.dev"
 }

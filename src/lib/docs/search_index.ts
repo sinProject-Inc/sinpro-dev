@@ -70,13 +70,15 @@ export class SearchIndex {
 		})
 	}
 
-	public save(): void {
+	public async save(): Promise<void> {
 		const documents = this._load_markdown_files()
 
 		const documents_without_markdown = this._remove_markdown(documents)
 
 		const serialized_search_index = JSON.stringify(documents_without_markdown)
-		const formatted_search_index = prettier.format(serialized_search_index, { parser: 'json' })
+		const formatted_search_index = await prettier.format(serialized_search_index, {
+			parser: 'json',
+		})
 
 		fs.writeFileSync(`./src/lib/assets/search_index.json`, formatted_search_index)
 	}
@@ -92,4 +94,5 @@ export class SearchIndex {
 	}
 }
 
-new SearchIndex(Markdown.docs_base_dir).save()
+const search_index = new SearchIndex(Markdown.docs_base_dir)
+await search_index.save()

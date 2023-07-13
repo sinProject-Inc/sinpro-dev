@@ -28,7 +28,7 @@ Please refer to [the GitHub of cavif-rs](https://github.com/kornelski/cavif-rs).
 Move to the path where the image file is located and execute as follows.
 
 ```bash
-cd ~/development/talk/static
+cd ~/development/sinpro-dev/static
 cavif icon-512.png
 ```
 

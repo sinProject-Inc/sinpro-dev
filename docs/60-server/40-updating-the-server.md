@@ -7,7 +7,7 @@ We update the server using the following procedure.
 
 ## GitHub Issues
 
-First, create an Issue on GitHub. We also have [an issue template prepared for releases](https://github.com/sinProject-Inc/talk/blob/main/.github/ISSUE_TEMPLATE/release.md).
+First, create an Issue on GitHub. We also have [an issue template prepared for releases](https://github.com/sinProject-Inc/sinpro-dev/blob/main/.github/ISSUE_TEMPLATE/release.md).
 
 ## Updating version
 
@@ -37,8 +37,8 @@ Please note that running the npm version command will create a new commit includ
 
 ## GitHub
 
-1. Attach the `enhancement` label to [closed PRs](https://github.com/sinProject-Inc/talk/pulls?q=is%3Apr+sort%3Aupdated-desc+is%3Aclosed) that appear to be feature enhancements.
-1. Open [the release creation page](https://github.com/sinProject-Inc/talk/releases) on GitHub and click the `Draft a new release` button.
+1. Attach the `enhancement` label to [closed PRs](https://github.com/sinProject-Inc/sinpro-dev/pulls?q=is%3Apr+sort%3Aupdated-desc+is%3Aclosed) that appear to be feature enhancements.
+1. Open [the release creation page](https://github.com/sinProject-Inc/sinpro-dev/releases) on GitHub and click the `Draft a new release` button.
 1. Select the newly created tag with `Choose a tag`.
 1. Press the `Generate release notes` button.
 1. Delete the Release section of the automatically generated release notes.
@@ -54,16 +54,16 @@ Connect to the server using the `ssh dev@sinpro-dev` command.
 Execute the following command.
 
 ```bash
-cd ~/dev/talk
+cd ~/dev/sinpro-dev
 git checkout main && git pull
 npm i --legacy-peer-deps
 npm run build
-pm2 restart talk
+pm2 restart sinpro-dev
 ```
 
 ## Checking
 
-1. Connect to https://talk.sinpro.dev/
+1. Connect to https://sinpro.dev/
 1. Confirm that the version has been updated.
 1. Confirm that there are no issues with the display.
 1. Confirm that there are no issues with the operation.

@@ -5,15 +5,10 @@
 	import '$lib/app.css'
 	import { Background } from '$lib/background/background'
 	import { mobile_menu_open, theme } from '$lib/stores'
-	import { Direction } from '$lib/view/direction'
-	import { Theme } from '@prisma/client'
-	import { polyfillCountryFlagEmojis } from 'country-flag-emoji-polyfill'
 	import NProgress from 'nprogress'
 	import 'nprogress/nprogress.css'
-	import { locale } from 'svelte-i18n'
 	import type { LayoutServerData } from './$types'
 	import { onMount } from 'svelte'
-	import { UpdateThemeApi } from '$lib/theme/update_theme_api'
 	import { fly } from 'svelte/transition'
 	import MobileMenuBar from '$lib/components/mobile_menu_bar.svelte'
 
@@ -30,11 +25,6 @@
 	const background_light_overlay = 'rgba(241, 245, 248, 0.9), rgba(241, 245, 248, 0.9)'
 
 	load_backgrounds()
-	polyfillCountryFlagEmojis()
-
-	function get_direction(locale_code: string): string {
-		return new Direction(locale_code).value
-	}
 
 	NProgress.configure({ showSpinner: false })
 
@@ -90,10 +80,6 @@
 		const html = document.documentElement
 		html.className = theme
 		html.dataset.theme = theme
-
-		if (!data.user) return
-
-		await new UpdateThemeApi(theme as Theme).fetch()
 	}
 
 	$: {
@@ -136,15 +122,12 @@
 </script>
 
 <div class={$theme ? 'visible' : 'invisible'}>
-	<div
-		class="min-h-screen bg-cover bg-fixed bg-no-repeat font-sans"
-		dir={get_direction($locale ?? '')}
-	>
+	<div class="min-h-screen bg-cover bg-fixed bg-no-repeat font-sans">
 		<div>
 			{#if current_background}
 				<div class="fixed -z-50 h-screen w-full">
 					<div
-						style="background: linear-gradient({$theme === Theme.dark
+						style="background: linear-gradient({$theme === 'dark'
 							? background_dark_overlay
 							: background_light_overlay}), url({next_background.background_url}) center/cover"
 						class="absolute h-full w-full"
@@ -154,7 +137,7 @@
 						class="{transitioning_background
 							? 'opacity-0 transition-all'
 							: 'opactiy-100'} absolute h-full w-full"
-						style="background: linear-gradient({$theme === Theme.dark
+						style="background: linear-gradient({$theme === 'dark'
 							? background_dark_overlay
 							: background_light_overlay}), url({current_background.background_url}) center/cover; transition-duration: {transitioning_background
 							? background_transition_duration

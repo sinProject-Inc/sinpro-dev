@@ -42,15 +42,6 @@
 					<li class="my-8">
 						<ul class="space-y-2">
 							<li>
-								<NavItem name="learn" />
-							</li>
-							<li>
-								<NavItem name="translate" />
-							</li>
-							<li>
-								<NavItem name="chat" />
-							</li>
-							<li>
 								<NavItem name="docs" />
 							</li>
 						</ul>

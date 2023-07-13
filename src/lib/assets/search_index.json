@@ -325,7 +325,7 @@
     "path": "books",
     "title": "Books",
     "description": "We recommend the following books.",
-    "content": "\nWe recommend the following books.\n\n\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\n",
+    "content": "\nWe recommend the following books.\n\n\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\t\n\t\t\n\t\n\n",
     "heading": ""
   },
   {
@@ -675,14 +675,14 @@
     "path": "updating-the-server#updating",
     "title": "Updating the server",
     "description": "We update the server using the following procedure.",
-    "content": "\n\nExecute the following command.\n\ncd ~/dev/talk\ngit checkout main && git pull\nnpm i --legacy-peer-deps\nnpm run build\npm2 restart talk\n",
+    "content": "\n\nExecute the following command.\n\ncd ~/dev/sinpro-dev\ngit checkout main && git pull\nnpm i --legacy-peer-deps\nnpm run build\npm2 restart sinpro-dev\n",
     "heading": "Updating"
   },
   {
     "path": "updating-the-server#checking",
     "title": "Updating the server",
     "description": "We update the server using the following procedure.",
-    "content": "\n\nConnect to https://talk.sinpro.dev/\nConfirm that the version has been updated.\nConfirm that there are no issues with the display.\nConfirm that there are no issues with the operation.\n",
+    "content": "\n\nConnect to https://sinpro.dev/\nConfirm that the version has been updated.\nConfirm that there are no issues with the display.\nConfirm that there are no issues with the operation.\n",
     "heading": "Checking"
   },
   {
@@ -1592,7 +1592,7 @@
     "path": "playwright#configuration",
     "title": "Playwright",
     "description": "How we automate our tests using Playwright. Playwright is an E2E (end-to-end) testing framework.",
-    "content": "\nBasic changes\n\nChange the test directory, timeout duration, and other settings as needed.\n\nConfigure the reporter not to open automatically, and output a video when an error occurs.\n\nconst config: PlaywrightTestConfig = {\n\ttestDir: './e2e',\n\ttimeout: process.env.CI ? 20 * 1000 : 5 * 1000,\n\texpect: {\n\t\ttimeout: 2000,\n\t},\n\tretries: 0,\n\tworkers: undefined,\n\treporter: [['html', { open: 'never' }]],\n\tuse: {\n\t\tvideo: 'retain-on-failure',\n\t\tcontextOptions: {\n\t\t\tpermissions: ['clipboard-read', 'clipboard-write', 'accessibility-events'],\n\t\t},\n\t},\n}\n\nPlaywright - TestConfig >\n\nTarget Browsers\n\nEnsure that tests are not run on browsers where testing is not necessary.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t},\n\n\t\t// {\n\t\t//   name: 'firefox',\n\t\t//   use: {\n\t\t//     ...devices['Desktop Firefox'],\n\t\t//   },\n\t\t// },\n\n\t\t// ...\n\t}\n}\n\nWeb Server\n\nTo perform tests quickly, use a development server. Also, change the baseURL.\n\nconst base = ''\n// const base = '/talk'\nconst config: PlaywrightTestConfig = {\n\twebServer: [\n\t\t{\n\t\t\tcommand: 'npm run dev',\n\t\t\turl: http://127.0.0.1:5173${base}/,\n\t\t\treuseExistingServer: !process.env.CI,\n\t\t},\n\t\t// {\n\t\t// \tcommand: 'npm run build && npm run preview',\n\t\t// \tport: 4173,\n\t\t// \treuseExistingServer: !process.env.CI,\n\t\t// },\n\t],\n\tuse: {\n\t\tbaseURL: http://127.0.0.1:5173${base}/,\n\t}\n}\n\nMore information >\n\nSetup\n\nSpecify processes to be executed beforehand, such as logging in. Add dependencies to the browser settings.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{ name: 'setup', testMatch: /.*\\.setup\\.ts/ },\n\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t\tdependencies: ['setup'],\n\t\t},\n\t}\n}\n",
+    "content": "\nBasic changes\n\nChange the test directory, timeout duration, and other settings as needed.\n\nConfigure the reporter not to open automatically, and output a video when an error occurs.\n\nconst config: PlaywrightTestConfig = {\n\ttestDir: './e2e',\n\ttimeout: process.env.CI ? 20 * 1000 : 5 * 1000,\n\texpect: {\n\t\ttimeout: 2000,\n\t},\n\treporter: [['html', { open: 'never' }]],\n\tuse: {\n\t\tvideo: 'retain-on-failure',\n\t\tcontextOptions: {\n\t\t\tpermissions: ['clipboard-read', 'clipboard-write', 'accessibility-events'],\n\t\t},\n\t},\n}\n\nPlaywright - TestConfig >\n\nTarget Browsers\n\nEnsure that tests are not run on browsers where testing is not necessary.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t},\n\n\t\t// {\n\t\t//   name: 'firefox',\n\t\t//   use: {\n\t\t//     ...devices['Desktop Firefox'],\n\t\t//   },\n\t\t// },\n\n\t\t// ...\n\t}\n}\n\nWeb Server\n\nTo perform tests quickly, use a development server. Also, change the baseURL.\n\nconst base = ''\n// const base = '/sinpro-dev'\nconst config: PlaywrightTestConfig = {\n\twebServer: [\n\t\t{\n\t\t\tcommand: 'npm run dev',\n\t\t\turl: http://127.0.0.1:5173${base}/,\n\t\t\treuseExistingServer: !process.env.CI,\n\t\t},\n\t\t// {\n\t\t// \tcommand: 'npm run build && npm run preview',\n\t\t// \tport: 4173,\n\t\t// \treuseExistingServer: !process.env.CI,\n\t\t// },\n\t],\n\tuse: {\n\t\tbaseURL: http://127.0.0.1:5173${base}/,\n\t}\n}\n\nMore information >\n\nSetup\n\nSpecify processes to be executed beforehand, such as logging in. Add dependencies to the browser settings.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{ name: 'setup', testMatch: /.*\\.setup\\.ts/ },\n\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t\tdependencies: ['setup'],\n\t\t},\n\t}\n}\n",
     "heading": "Configuration"
   },
   {
@@ -1846,6 +1846,202 @@
     "description": "",
     "heading": "",
     "content": "Vitest"
+  },
+  {
+    "path": "stylelint",
+    "title": "Stylelint",
+    "description": "How we use Stylelint to automate formatting for CSS.",
+    "content": "\nHow we use Stylelint to automate formatting for CSS.\n",
+    "heading": ""
+  },
+  {
+    "path": "stylelint#installation",
+    "title": "Stylelint",
+    "description": "How we use Stylelint to automate formatting for CSS.",
+    "content": "\n\nnpm i stylelint --save-dev\nnpm i stylelint-config-standard --save-dev\n",
+    "heading": "Installation"
+  },
+  {
+    "path": "stylelint#configuration",
+    "title": "Stylelint",
+    "description": "How we use Stylelint to automate formatting for CSS.",
+    "content": "\n\n{\n\t\"extends\": [\"stylelint-config-standard\"],\n\t\"rules\": {\n\t\t\"at-rule-no-unknown\": [\n\t\t\ttrue,\n\t\t\t{\n\t\t\t\t\"ignoreAtRules\": [\"extends\", \"tailwind\"]\n\t\t\t}\n\t\t]\n\t}\n}\n",
+    "heading": "Configuration"
+  },
+  {
+    "path": "stylelint",
+    "title": "Stylelint",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "stylelint#installation",
+    "title": "Stylelint",
+    "description": "",
+    "heading": "Installation",
+    "content": "Installation"
+  },
+  {
+    "path": "stylelint#configuration",
+    "title": "Stylelint",
+    "description": "",
+    "heading": "Configuration",
+    "content": "Configuration"
+  },
+  {
+    "path": "stylelint",
+    "title": "Stylelint",
+    "description": "",
+    "heading": "",
+    "content": "Stylelint"
+  },
+  {
+    "path": "eslint",
+    "title": "ESLint",
+    "description": "How we define code style using ESLint.",
+    "content": "\nHow we define code style using ESLint.\n",
+    "heading": ""
+  },
+  {
+    "path": "eslint#rules",
+    "title": "ESLint",
+    "description": "How we define code style using ESLint.",
+    "content": "\n\nMake accessibility and return type mandatory.\nProhibit console output.\n\nmodule.exports = {\n\trules: {\n\t\tsemi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],\n\t\t'no-unexpected-multiline': 'error',\n\t\t'@typescript-eslint/explicit-member-accessibility': ['error'],\n\t\t'@typescript-eslint/explicit-function-return-type': ['error'],\n\t\t'no-console': ['error'],\n\t},\n}\n\ntypescript-eslint - explicit-member-accessibility >\n\ntypescript-eslint - explicit-function-return-type >\n\nESLint - no-console >\n",
+    "heading": "Rules"
+  },
+  {
+    "path": "eslint#naming-conventions",
+    "title": "ESLint",
+    "description": "How we define code style using ESLint.",
+    "content": "\n\nEnforce naming conventions for everything across a codebase.\n\nSet variable names, argument names, and function names to snake_case.\nPrefix private variables with an underscore.\n\nmodule.exports = {\n\trules: {\n\t\t'@typescript-eslint/naming-convention': [\n\t\t\t'error',\n\t\t\t{\n\t\t\t\tselector: 'typeParameter',\n\t\t\t\tformat: ['UPPER_CASE'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['class', 'interface', 'typeAlias'],\n\t\t\t\tformat: ['PascalCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tmodifiers: ['private'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tmodifiers: ['protected'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\t// format: ['snake_case', 'camelCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: [\n\t\t\t\t\t'property',\n\t\t\t\t\t'accessor',\n\t\t\t\t\t'parameter',\n\t\t\t\t\t'parameterProperty',\n\t\t\t\t\t'variable',\n\t\t\t\t\t'enumMember',\n\t\t\t\t],\n\t\t\t\tmodifiers: ['private'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: [\n\t\t\t\t\t'property',\n\t\t\t\t\t'accessor',\n\t\t\t\t\t'parameter',\n\t\t\t\t\t'parameterProperty',\n\t\t\t\t\t'variable',\n\t\t\t\t\t'enumMember',\n\t\t\t\t],\n\t\t\t\tmodifiers: ['protected'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['accessor', 'parameter', 'parameterProperty', 'enumMember'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['property'],\n\t\t\t\tformat: ['snake_case', 'camelCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['variable'],\n\t\t\t\tformat: ['snake_case', 'UPPER_CASE'],\n\t\t\t},\n\t\t],\n\t},\n}\n",
+    "heading": "Naming conventions"
+  },
+  {
+    "path": "eslint#missing-return-type-on-function-in-the-html-part-of-svelte",
+    "title": "ESLint",
+    "description": "How we define code style using ESLint.",
+    "content": "\n\nIn the HTML part of Svelte, if \"Missing return type on function\" is displayed, add an eslint-disable line at the bottom of the script block.\n\n\n\t...\n\n\t/* eslint-disable @typescript-eslint/explicit-function-return-type */\n\n\n on_click_button(text)} />\n",
+    "heading": "Missing return type on function in the HTML part of Svelte"
+  },
+  {
+    "path": "eslint",
+    "title": "ESLint",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "eslint#rules",
+    "title": "ESLint",
+    "description": "",
+    "heading": "Rules",
+    "content": "Rules"
+  },
+  {
+    "path": "eslint#naming-conventions",
+    "title": "ESLint",
+    "description": "",
+    "heading": "Naming conventions",
+    "content": "Naming conventions"
+  },
+  {
+    "path": "eslint#missing-return-type-on-function-in-the-html-part-of-svelte",
+    "title": "ESLint",
+    "description": "",
+    "heading": "Missing return type on function in the HTML part of Svelte",
+    "content": "Missing return type on function in the HTML part of Svelte"
+  },
+  {
+    "path": "eslint",
+    "title": "ESLint",
+    "description": "",
+    "heading": "",
+    "content": "ESLint"
+  },
+  {
+    "path": "prettier",
+    "title": "Prettier",
+    "description": "How we use Prettier to automate formatting.",
+    "content": "\nHow we use Prettier to automate formatting.\n",
+    "heading": ""
+  },
+  {
+    "path": "prettier#configuration",
+    "title": "Prettier",
+    "description": "How we use Prettier to automate formatting.",
+    "content": "\n\nWhen creating a SvelteKit project, modify the following items in the generated .prettierrc file:\n\n{\n\t\"trailingComma\": \"es5\",\n\t\"semi\": false\n}\n",
+    "heading": "Configuration"
+  },
+  {
+    "path": "prettier#formatting",
+    "title": "Prettier",
+    "description": "How we use Prettier to automate formatting.",
+    "content": "\n\nEnable format on save and paste events.\nUse Prettier to format TypeScript, JavaScript, HTML, Svelte, and JSON files.\n\n{\n\t\"editor.formatOnSave\": true,\n\t\"editor.formatOnPaste\": true,\n\t\"[typescript]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[javascript]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[html]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[svelte]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[json]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t}\n}\n",
+    "heading": "Formatting"
+  },
+  {
+    "path": "prettier",
+    "title": "Prettier",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "prettier#configuration",
+    "title": "Prettier",
+    "description": "",
+    "heading": "Configuration",
+    "content": "Configuration"
+  },
+  {
+    "path": "prettier#formatting",
+    "title": "Prettier",
+    "description": "",
+    "heading": "Formatting",
+    "content": "Formatting"
+  },
+  {
+    "path": "prettier",
+    "title": "Prettier",
+    "description": "",
+    "heading": "",
+    "content": "Prettier"
+  },
+  {
+    "path": "tsconfig",
+    "title": "TypeScript Config",
+    "description": "How we modify our TypeScript code style with tsconfig.json.",
+    "content": "\nHow we modify our TypeScript code style with tsconfig.json.\n",
+    "heading": ""
+  },
+  {
+    "path": "tsconfig#tsconfig",
+    "title": "TypeScript Config",
+    "description": "How we modify our TypeScript code style with tsconfig.json.",
+    "content": "\n\nSet strict to true, and further increase strictness by modifying the following options:\n\nallowUnreachableCode\nexactOptionalPropertyTypes\nnoImplicitOverride\nnoImplicitReturns\nnoFallthroughCasesInSwitch\n\n{\n\t\"extends\": \"./.svelte-kit/tsconfig.json\",\n\t\"compilerOptions\": {\n\t\t\"strict\": true,\n\n\t\t\"allowUnreachableCode\": false,\n\t\t\"exactOptionalPropertyTypes\": true,\n\t\t\"noImplicitOverride\": true,\n\t\t\"noImplicitReturns\": true,\n\t\t\"noFallthroughCasesInSwitch\": true\n\t\t// \"noUncheckedIndexedAccess\": true,\n\t}\n}\n",
+    "heading": "TSConfig"
+  },
+  {
+    "path": "tsconfig",
+    "title": "TypeScript Config",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "tsconfig#tsconfig",
+    "title": "TypeScript Config",
+    "description": "",
+    "heading": "TSConfig",
+    "content": "TSConfig"
+  },
+  {
+    "path": "tsconfig",
+    "title": "TypeScript Config",
+    "description": "",
+    "heading": "",
+    "content": "TypeScript Config"
   },
   {
     "path": "comments",
@@ -2359,17 +2555,17 @@
     "heading": ""
   },
   {
-    "path": "format#use-only-single-quotes",
+    "path": "format#use-single-quotes",
     "title": "Format",
     "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
-    "content": "\n\nconsole.log(\"Hello\")\nconsole.log('World')\n\nconsole.log('Hello')\nconsole.log('World')\n",
-    "heading": "Use only single quotes"
+    "content": "\n\nIndeed, each approach has its pros and cons. However, achieving consistency within a project is necessary.\n\nOrdinary string literals are delimited with single quotes ('), rather than double quotes (\").\nTip: if a string contains a single quote character, consider using a template string to avoid having to escape the quote.\n\nFor more information: Google JavaScript Style Guide\n\nconsole.log(\"Hello\")\nconsole.log('World')\n\nconsole.log('Hello')\nconsole.log('World')\n",
+    "heading": "Use single quotes"
   },
   {
     "path": "format#don-t-append-semicolons-at-the-end-of-lines",
     "title": "Format",
     "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
-    "content": "\n\nconsole.log('Hello');\n\nconsole.log('Hello')\n",
+    "content": "\n\nFor more information: Don’t use Semicolons in TypeScript!\n\nconsole.log('Hello');\n\nconsole.log('Hello')\n",
     "heading": "Don't append semicolons at the end of lines"
   },
   {
@@ -2429,11 +2625,11 @@
     "content": ""
   },
   {
-    "path": "format#use-only-single-quotes",
+    "path": "format#use-single-quotes",
     "title": "Format",
     "description": "",
-    "heading": "Use only single quotes",
-    "content": "Use only single quotes"
+    "heading": "Use single quotes",
+    "content": "Use single quotes"
   },
   {
     "path": "format#don-t-append-semicolons-at-the-end-of-lines",
@@ -2520,202 +2716,6 @@
     "content": "Clean Code"
   },
   {
-    "path": "stylelint",
-    "title": "Stylelint",
-    "description": "How we use Stylelint to automate formatting for CSS.",
-    "content": "\nHow we use Stylelint to automate formatting for CSS.\n",
-    "heading": ""
-  },
-  {
-    "path": "stylelint#installation",
-    "title": "Stylelint",
-    "description": "How we use Stylelint to automate formatting for CSS.",
-    "content": "\n\nnpm i stylelint --save-dev\nnpm i stylelint-config-standard --save-dev\n",
-    "heading": "Installation"
-  },
-  {
-    "path": "stylelint#configuration",
-    "title": "Stylelint",
-    "description": "How we use Stylelint to automate formatting for CSS.",
-    "content": "\n\n{\n\t\"extends\": [\"stylelint-config-standard\"],\n\t\"rules\": {\n\t\t\"at-rule-no-unknown\": [\n\t\t\ttrue,\n\t\t\t{\n\t\t\t\t\"ignoreAtRules\": [\"extends\", \"tailwind\"]\n\t\t\t}\n\t\t]\n\t}\n}\n",
-    "heading": "Configuration"
-  },
-  {
-    "path": "stylelint",
-    "title": "Stylelint",
-    "description": "",
-    "heading": "",
-    "content": ""
-  },
-  {
-    "path": "stylelint#installation",
-    "title": "Stylelint",
-    "description": "",
-    "heading": "Installation",
-    "content": "Installation"
-  },
-  {
-    "path": "stylelint#configuration",
-    "title": "Stylelint",
-    "description": "",
-    "heading": "Configuration",
-    "content": "Configuration"
-  },
-  {
-    "path": "stylelint",
-    "title": "Stylelint",
-    "description": "",
-    "heading": "",
-    "content": "Stylelint"
-  },
-  {
-    "path": "eslint",
-    "title": "ESLint",
-    "description": "How we define code style using ESLint.",
-    "content": "\nHow we define code style using ESLint.\n",
-    "heading": ""
-  },
-  {
-    "path": "eslint#rules",
-    "title": "ESLint",
-    "description": "How we define code style using ESLint.",
-    "content": "\n\nMake accessibility and return type mandatory.\nProhibit console output.\n\nmodule.exports = {\n\trules: {\n\t\t'@typescript-eslint/explicit-member-accessibility': ['error'],\n\t\t'@typescript-eslint/explicit-function-return-type': ['error'],\n\t\t'no-console': ['error'],\n\t},\n}\n\ntypescript-eslint - explicit-member-accessibility >\n\ntypescript-eslint - explicit-function-return-type >\n\nESLint - no-console >\n",
-    "heading": "Rules"
-  },
-  {
-    "path": "eslint#naming-conventions",
-    "title": "ESLint",
-    "description": "How we define code style using ESLint.",
-    "content": "\n\nEnforce naming conventions for everything across a codebase.\n\nSet variable names, argument names, and function names to snake_case.\nPrefix private variables with an underscore.\n\nmodule.exports = {\n\trules: {\n\t\t'@typescript-eslint/naming-convention': [\n\t\t\t'error',\n\t\t\t{\n\t\t\t\tselector: 'typeParameter',\n\t\t\t\tformat: ['UPPER_CASE'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['class', 'interface', 'typeAlias'],\n\t\t\t\tformat: ['PascalCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tmodifiers: ['private'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tmodifiers: ['protected'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\t// format: ['snake_case', 'camelCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: [\n\t\t\t\t\t'property',\n\t\t\t\t\t'accessor',\n\t\t\t\t\t'parameter',\n\t\t\t\t\t'parameterProperty',\n\t\t\t\t\t'variable',\n\t\t\t\t\t'enumMember',\n\t\t\t\t],\n\t\t\t\tmodifiers: ['private'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: [\n\t\t\t\t\t'property',\n\t\t\t\t\t'accessor',\n\t\t\t\t\t'parameter',\n\t\t\t\t\t'parameterProperty',\n\t\t\t\t\t'variable',\n\t\t\t\t\t'enumMember',\n\t\t\t\t],\n\t\t\t\tmodifiers: ['protected'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['accessor', 'parameter', 'parameterProperty', 'enumMember'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['property'],\n\t\t\t\tformat: ['snake_case', 'camelCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['variable'],\n\t\t\t\tformat: ['snake_case', 'UPPER_CASE'],\n\t\t\t},\n\t\t],\n\t},\n}\n",
-    "heading": "Naming conventions"
-  },
-  {
-    "path": "eslint#missing-return-type-on-function-in-the-html-part-of-svelte",
-    "title": "ESLint",
-    "description": "How we define code style using ESLint.",
-    "content": "\n\nIn the HTML part of Svelte, if \"Missing return type on function\" is displayed, add an eslint-disable line at the bottom of the script block.\n\n\n\t...\n\n\t/* eslint-disable @typescript-eslint/explicit-function-return-type */\n\n\n on_click_button(text)} />\n",
-    "heading": "Missing return type on function in the HTML part of Svelte"
-  },
-  {
-    "path": "eslint",
-    "title": "ESLint",
-    "description": "",
-    "heading": "",
-    "content": ""
-  },
-  {
-    "path": "eslint#rules",
-    "title": "ESLint",
-    "description": "",
-    "heading": "Rules",
-    "content": "Rules"
-  },
-  {
-    "path": "eslint#naming-conventions",
-    "title": "ESLint",
-    "description": "",
-    "heading": "Naming conventions",
-    "content": "Naming conventions"
-  },
-  {
-    "path": "eslint#missing-return-type-on-function-in-the-html-part-of-svelte",
-    "title": "ESLint",
-    "description": "",
-    "heading": "Missing return type on function in the HTML part of Svelte",
-    "content": "Missing return type on function in the HTML part of Svelte"
-  },
-  {
-    "path": "eslint",
-    "title": "ESLint",
-    "description": "",
-    "heading": "",
-    "content": "ESLint"
-  },
-  {
-    "path": "prettier",
-    "title": "Prettier",
-    "description": "How we use Prettier to automate formatting.",
-    "content": "\nHow we use Prettier to automate formatting.\n",
-    "heading": ""
-  },
-  {
-    "path": "prettier#configuration",
-    "title": "Prettier",
-    "description": "How we use Prettier to automate formatting.",
-    "content": "\n\nWhen creating a SvelteKit project, modify the following items in the generated .prettierrc file:\n\n{\n\t\"trailingComma\": \"es5\",\n\t\"semi\": false\n}\n",
-    "heading": "Configuration"
-  },
-  {
-    "path": "prettier#formatting",
-    "title": "Prettier",
-    "description": "How we use Prettier to automate formatting.",
-    "content": "\n\nEnable format on save and paste events.\nUse Prettier to format TypeScript, JavaScript, HTML, Svelte, and JSON files.\n\n{\n\t\"editor.formatOnSave\": true,\n\t\"editor.formatOnPaste\": true,\n\t\"[typescript]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[javascript]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[html]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[svelte]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[json]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t}\n}\n",
-    "heading": "Formatting"
-  },
-  {
-    "path": "prettier",
-    "title": "Prettier",
-    "description": "",
-    "heading": "",
-    "content": ""
-  },
-  {
-    "path": "prettier#configuration",
-    "title": "Prettier",
-    "description": "",
-    "heading": "Configuration",
-    "content": "Configuration"
-  },
-  {
-    "path": "prettier#formatting",
-    "title": "Prettier",
-    "description": "",
-    "heading": "Formatting",
-    "content": "Formatting"
-  },
-  {
-    "path": "prettier",
-    "title": "Prettier",
-    "description": "",
-    "heading": "",
-    "content": "Prettier"
-  },
-  {
-    "path": "tsconfig",
-    "title": "TypeScript Config",
-    "description": "How we modify our TypeScript code style with tsconfig.json.",
-    "content": "\nHow we modify our TypeScript code style with tsconfig.json.\n",
-    "heading": ""
-  },
-  {
-    "path": "tsconfig#tsconfig",
-    "title": "TypeScript Config",
-    "description": "How we modify our TypeScript code style with tsconfig.json.",
-    "content": "\n\nSet strict to true, and further increase strictness by modifying the following options:\n\nallowUnreachableCode\nexactOptionalPropertyTypes\nnoImplicitOverride\nnoImplicitReturns\nnoFallthroughCasesInSwitch\n\n{\n\t\"extends\": \"./.svelte-kit/tsconfig.json\",\n\t\"compilerOptions\": {\n\t\t\"strict\": true,\n\n\t\t\"allowUnreachableCode\": false,\n\t\t\"exactOptionalPropertyTypes\": true,\n\t\t\"noImplicitOverride\": true,\n\t\t\"noImplicitReturns\": true,\n\t\t\"noFallthroughCasesInSwitch\": true\n\t\t// \"noUncheckedIndexedAccess\": true,\n\t}\n}\n",
-    "heading": "TSConfig"
-  },
-  {
-    "path": "tsconfig",
-    "title": "TypeScript Config",
-    "description": "",
-    "heading": "",
-    "content": ""
-  },
-  {
-    "path": "tsconfig#tsconfig",
-    "title": "TypeScript Config",
-    "description": "",
-    "heading": "TSConfig",
-    "content": "TSConfig"
-  },
-  {
-    "path": "tsconfig",
-    "title": "TypeScript Config",
-    "description": "",
-    "heading": "",
-    "content": "TypeScript Config"
-  },
-  {
     "path": "ttf-to-woff2",
     "title": "TTF to WOFF2",
     "description": "When we handle font files, we use google/woff2 to convert them to WOFF2 files.",
@@ -2733,7 +2733,7 @@
     "path": "ttf-to-woff2#google-woff2",
     "title": "TTF to WOFF2",
     "description": "When we handle font files, we use google/woff2 to convert them to WOFF2 files.",
-    "content": "\nBuild & Run\n\nPlease refer to the GitHub of google/woff2.\n\nMake it even easier to use\n\nAdd a path to the .zshrc file to make it easier to use.\n\nexport PATH=\"$PATH:/Users/iwasakishinya/development/woff2\"\n\nHow to use\n\nMove to the path where the font file is located and execute as follows.\n\ncd ~/development/talk/static/fonts\nwoff2_compress my_font.ttf\n",
+    "content": "\nBuild & Run\n\nPlease refer to the GitHub of google/woff2.\n\nMake it even easier to use\n\nAdd a path to the .zshrc file to make it easier to use.\n\nexport PATH=\"$PATH:/Users/iwasakishinya/development/woff2\"\n\nHow to use\n\nMove to the path where the font file is located and execute as follows.\n\ncd ~/development/sinpro-dev/static/fonts\nwoff2_compress my_font.ttf\n",
     "heading": "google/woff2"
   },
   {
@@ -2782,7 +2782,7 @@
     "path": "jpg-png-to-avif#cavif-rs",
     "title": "JPG/PNG to AVIF",
     "description": "When we handle image files, we use cavif-rs / Squoosh to convert them to AVIF files.",
-    "content": "\n\ncavif-rs can be easily executed in the terminal.\n\nInstall & Run\n\nPlease refer to the GitHub of cavif-rs.\n\nHow to use\n\nMove to the path where the image file is located and execute as follows.\n\ncd ~/development/talk/static\ncavif icon-512.png\n",
+    "content": "\n\ncavif-rs can be easily executed in the terminal.\n\nInstall & Run\n\nPlease refer to the GitHub of cavif-rs.\n\nHow to use\n\nMove to the path where the image file is located and execute as follows.\n\ncd ~/development/sinpro-dev/static\ncavif icon-512.png\n",
     "heading": "cavif-rs"
   },
   {
@@ -3797,14 +3797,14 @@
     "path": "about#our-business-activities-include",
     "title": "About",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nIT consulting\nPlanning and proposing IT solutions\nDesigning and developing web applications\nDesigning and developing mobile applications\nDesigning and developing websites\nDesigning and developing Windows applications\nDesigning and developing games\nEducation and training of system engineers (teaching at vocational schools, training engineers from other companies)\n\n\n\tHTML\n\tCSS\n\tJavaScript\n\tTypeScript\n\tDart\n\tSwift\n\tKotlin\n\tJava\n\tPHP\n\tC#\n\tGo\n\tVB.NET\n\tVB 6.0\n\tC++\n\tC\n\tSvelte\n\tSvelteKit\n\tFlutter\n\tSpring Boot\n\tVue.js\n\tNuxt.js\n\tUnity\n\tThymeleaf\n\tjQuery\n\tJPA\n\tTailwind CSS\n\tBootstrap\n\t.NET Framework\n\tASP.NET\n\tASP\n\tWordPress\n\tEC-Cube\n\tAdSense\n\tElementor\n\tDuplicator\n\tGDPR\n\tMySQL\n\tSQL Server\n\tOracle\n\tSQLite\n\tPrisma\n\tRealm\n\tRedis\n\tWebSocket\n\tNode.js\n\tPM2\n\tCaddy\n\tGoogle Cloud Translation\n\tGoogle Cloud Text-to-Speech\n\tFirebase Analytics\n\tFirebase Crashlytics\n\tNIFCLOUD mobile backend\n\tAdMob\n\tLinux\n\tWindows\n\tiOS\n\tAndroid\n\tVPS\n\tVercel\n\tAmazon EC2\n\tAmazon S3\n\tVitest\n\tPlaywright\n\tPrettier\n\tESLint\n\tOCR\n\tDICOM\n\tPACS\n\tActiveReports\n\tSPREAD\n\tInputMan\n\tApp Store\n\tGoogle Play\n\tTestFlight\n\tDeployGate\n\tTwitter API\n\tVSCode\n\tXcode\n\tAndroid Studio\n\n",
+    "content": "\n\nIT consulting\nPlanning and proposing IT solutions\nDesigning and developing web applications\nDesigning and developing mobile applications\nDesigning and developing websites\nDesigning and developing Windows applications\nDesigning and developing games\nEducation and training of system engineers (teaching at vocational schools, training engineers from other companies)\n\n\n\tHTML\n\tCSS\n\tMarkdown\n\tJavaScript\n\tTypeScript\n\tDart\n\tSwift\n\tKotlin\n\tJava\n\tPHP\n\tC#\n\tGo\n\tVB.NET\n\tVB 6.0\n\tC++\n\tC\n\tSvelte\n\tSvelteKit\n\tFlutter\n\tSpring Boot\n\tVue.js\n\tNuxt.js\n\tUnity\n\tThymeleaf\n\tjQuery\n\tJPA\n\tTailwind CSS\n\tBootstrap\n\t.NET Framework\n\tASP.NET\n\tASP\n\tWordPress\n\tEC-Cube\n\tAdSense\n\tElementor\n\tDuplicator\n\tGDPR\n\tMySQL\n\tSQL Server\n\tOracle\n\tSQLite\n\tPrisma\n\tRealm\n\tRedis\n\tWebSocket\n\tNode.js\n\tPM2\n\tCaddy\n\tGoogle Cloud Translation\n\tGoogle Cloud Text-to-Speech\n\tFirebase Analytics\n\tFirebase Crashlytics\n\tNIFCLOUD mobile backend\n\tAdMob\n\tLinux\n\tWindows\n\tiOS\n\tAndroid\n\tVPS\n\tVercel\n\tAmazon EC2\n\tAmazon S3\n\tVitest\n\tPlaywright\n\tPrettier\n\tESLint\n\tOCR\n\tDICOM\n\tPACS\n\tActiveReports\n\tSPREAD\n\tInputMan\n\tApp Store\n\tGoogle Play\n\tTestFlight\n\tDeployGate\n\tTwitter API\n\tVSCode\n\tXcode\n\tAndroid Studio\n\n",
     "heading": "Our business activities include"
   },
   {
     "path": "about#sinya-iwasaki",
     "title": "About",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nBorn in Osaka, Japan, I discovered programming via FAMILY BASIC in elementary school and further explored it on an MSX2 in middle school.\n\nDropping out of university, I dived into the IT industry, developing web services, medical software, and cloud-based systems across three companies.\n\nAfter creating the popular \"Tweecha\" app during my freelance years, I'm now the CTO and CEO of sinProject, aiming to revolutionize the world with innovative services.\n\nTwitter\n",
+    "content": "\n\nBorn in Osaka, Japan, he discovered programming via FAMILY BASIC in elementary school and further explored it on an MSX2 in middle school.\n\nAfter quitting university, he dived into the IT industry, developing web services, medical software, and cloud-based systems across three companies.\n\nAfter creating the popular \"Tweecha\" app during his freelance years, I'm now the CTO and CEO of sinProject, aiming to revolutionize the world with innovative services.\n\nTwitter\n",
     "heading": "sinYa Iwasaki"
   },
   {
@@ -3881,7 +3881,7 @@
     "path": "portfolio#talk",
     "title": "Portfolio",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nTalk is an app for conversing in real time with people who speak different languages. You can learn languages in addition to also having conversations through both voice and text.\n\nTalk - Docs\n\n\n\tHTML\n\tCSS\n\tJavaScript\n\tTypeScript\n\tSvelte\n\tSvelteKit\n\tTailwind CSS\n\tGoogle Cloud Translation\n\tGoogle Cloud Text-to-Speech\n\tMySQL\n\tPrisma\n\tRedis\n\tWebSocket\n\tNode.js\n\tPM2\n\tCaddy\n\tLinux\n\tVPS\n\tVitest\n\tPlaywright\n\tPrettier\n\tESLint\n\n",
+    "content": "\n\nTalk is an app for conversing in real time with people who speak different languages. You can learn languages in addition to also having conversations through both voice and text.\n\nTalk - Docs\n\n\n\tHTML\n\tCSS\n\tMarkdown\n\tJavaScript\n\tTypeScript\n\tSvelte\n\tSvelteKit\n\tTailwind CSS\n\tGoogle Cloud Translation\n\tGoogle Cloud Text-to-Speech\n\tMySQL\n\tPrisma\n\tRedis\n\tWebSocket\n\tNode.js\n\tPM2\n\tCaddy\n\tLinux\n\tVPS\n\tVitest\n\tPlaywright\n\tPrettier\n\tESLint\n\n",
     "heading": "Talk"
   },
   {
@@ -3892,17 +3892,17 @@
     "heading": "Mill Test Report Search Engine"
   },
   {
-    "path": "portfolio#sales-management-system",
+    "path": "portfolio#web-based-sales-management-system",
     "title": "Portfolio",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nReplaced a Sales Management System created with Access with a web application.\n\n\n\tHTML\n\tCSS\n\tJavaScript\n\tTypeScript\n\tJava\n\tSpring Boot\n\tThymeleaf\n\tjQuery\n\tJPA\n\tBootstrap\n\tMySQL\n\tNode.js\n\tAmazon EC2\n\tAmazon S3\n\tPlaywright\n\tPrettier\n\tESLint\n\n",
-    "heading": "Sales Management System"
+    "content": "\n\nA project in which we replaced a sales management system created with Access with a modern web application.\n\n\n\tHTML\n\tCSS\n\tJavaScript\n\tTypeScript\n\tJava\n\tSpring Boot\n\tThymeleaf\n\tjQuery\n\tJPA\n\tBootstrap\n\tMySQL\n\tNode.js\n\tAmazon EC2\n\tAmazon S3\n\tPlaywright\n\tPrettier\n\tESLint\n\n",
+    "heading": "Web-based Sales Management System"
   },
   {
     "path": "portfolio#quality-manager-for-mobile-applications",
     "title": "Portfolio",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nReviewed iOS apps created with Swift and Android apps created with Kotlin from design, UI, and code perspectives, ensuring quality.\n\n\n\tSwift\n\tKotlin\n\tAPI\n\tiOS\n\tAndroid\n\tApp Store\n\tGoogle Play\n\tTestFlight\n\tDeployGate\n\n",
+    "content": "\n\nWe reviewed iOS apps created with Swift and Android apps created with Kotlin from design, UI, and code perspectives, ensuring quality.\n\n\n\tSwift\n\tKotlin\n\tAPI\n\tiOS\n\tAndroid\n\tApp Store\n\tGoogle Play\n\tTestFlight\n\tDeployGate\n\n",
     "heading": "Quality manager for mobile applications"
   },
   {
@@ -3916,7 +3916,7 @@
     "path": "portfolio#sinproject-menu-https-sinproject-net-menu",
     "title": "Portfolio",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nA web application that easily creates a menu for restaurants. It can also be utilized for businesses other than restaurants, such as personal portfolios.\n\n\n\tVue.js\n\tNuxt.js\n\tVercel\n\tFlutter\n\tDart\n\n",
+    "content": "\n\nA web application that easily creates menus for restaurants. It can also be utilized for businesses other than restaurants, such as personal portfolios.\n\n\n\tVue.js\n\tNuxt.js\n\tVercel\n\tFlutter\n\tDart\n\n",
     "heading": "sinProject Menu"
   },
   {
@@ -3930,7 +3930,7 @@
     "path": "portfolio#simple-web-games",
     "title": "Portfolio",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nWe tried creating web games with Flutter, and this is the result.\n\nNote Master\nFruity Quiz\nDino Master\nTodofuken Master\nAddition\nKokki Clicker\nColor Clicker\n\n\n\tFlutter\n\tDart\n\tNIFCLOUD mobile backend\n\n",
+    "content": "\n\nWe made several web games with Flutter.\n\nNote Master\nFruity Quiz\nDino Master\nTodofuken Master\nAddition\nKokki Clicker\nColor Clicker\n\n\n\tFlutter\n\tDart\n\tNIFCLOUD mobile backend\n\n",
     "heading": "Simple Web Games"
   },
   {
@@ -3944,7 +3944,7 @@
     "path": "portfolio#medical-imaging-management-system",
     "title": "Portfolio",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nOur system allows centralized management of examination images from all modalities over the network from the operating room, providing comprehensive support for improving the productivity of radiological technologists' imaging operations.\n\nWith the version upgrade, we have improved operability and performance.\n\n\n\tC#\n\t.NET Framework\n\tSQL Server\n\tWindows\n\tDICOM\n\tPACS\n\n",
+    "content": "\n\nThis system allows centralized management of images from medical examinations from all facilities over the network from the operating room, providing comprehensive support for improving the productivity of radiological technologists' imaging operations.\n\nWith the version upgrade, we have improved operability and performance.\n\n\n\tC#\n\t.NET Framework\n\tSQL Server\n\tWindows\n\tDICOM\n\tPACS\n\n",
     "heading": "Medical Imaging Management System"
   },
   {
@@ -3955,11 +3955,11 @@
     "heading": "Class library for .NET Framework"
   },
   {
-    "path": "portfolio#sales-management-system",
+    "path": "portfolio#sales-management-system-on-windows",
     "title": "Portfolio",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
     "content": "\n\n\n\tVB.NET\n\t.NET Framework\n\tOracle\n\tActiveReports\n\tSPREAD\n\tInputMan\n\n",
-    "heading": "Sales Management System"
+    "heading": "Sales Management System on Windows"
   },
   {
     "path": "portfolio#used-car-search-web-app",
@@ -3990,11 +3990,11 @@
     "content": "Mill Test Report Search Engine"
   },
   {
-    "path": "portfolio#sales-management-system",
+    "path": "portfolio#web-based-sales-management-system",
     "title": "Portfolio",
     "description": "",
-    "heading": "Sales Management System",
-    "content": "Sales Management System"
+    "heading": "Web-based Sales Management System",
+    "content": "Web-based Sales Management System"
   },
   {
     "path": "portfolio#quality-manager-for-mobile-applications",
@@ -4053,11 +4053,11 @@
     "content": "Class library for .NET Framework"
   },
   {
-    "path": "portfolio#sales-management-system",
+    "path": "portfolio#sales-management-system-on-windows",
     "title": "Portfolio",
     "description": "",
-    "heading": "Sales Management System",
-    "content": "Sales Management System"
+    "heading": "Sales Management System on Windows",
+    "content": "Sales Management System on Windows"
   },
   {
     "path": "portfolio#used-car-search-web-app",

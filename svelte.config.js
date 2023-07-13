@@ -23,7 +23,7 @@ const config = {
 			name: pkg.version,
 		},
 		// paths: {
-		// 	base: '/talk',
+		// 	base: '/sinpro-dev',
 		// },
 	},
 }

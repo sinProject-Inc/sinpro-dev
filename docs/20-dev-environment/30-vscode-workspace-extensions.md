@@ -5,7 +5,7 @@ description: Here are the VSCode extensions that we commonly use at sinProject.
 
 Here are the VSCode extensions that we commonly use at sinProject.
 
-[View our extension setting file on GitHub >](https://github.com/sinProject-Inc/talk/blob/main/.vscode/extensions.json)
+[View our extension setting file on GitHub >](https://github.com/sinProject-Inc/sinpro-dev/blob/main/.vscode/extensions.json)
 
 ## Git
 

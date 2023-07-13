@@ -7,7 +7,7 @@
 	<a
 		target="_blank"
 		rel="noreferrer"
-		href="https://github.com/sinProject-Inc/talk/"
+		href="https://github.com/sinProject-Inc/sinpro-dev/"
 		class="hover:text-primary-10 dark:hover:text-primary-dark-4">{App.copyright} v{version}</a
 	>
 </div>

@@ -51,7 +51,7 @@ export const logger = createLogger({
 		format.splat(),
 		format.json()
 	),
-	defaultMeta: { service: 'talk' },
+	defaultMeta: { service: 'sinpro-dev' },
 	transports: [
 		daily_rotate_error_file_transport,
 		daily_rotate_file_transport,

@@ -22,7 +22,7 @@ type PageSection = {
 	slug: string
 }
 
-const github_url = 'https://github.com/sinProject-Inc/talk/blob/main/'
+const github_url = 'https://github.com/sinProject-Inc/sinpro-dev/blob/main/'
 
 export class Markdown {
 	public static docs_base_dir = './docs'

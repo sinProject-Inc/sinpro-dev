@@ -3,11 +3,11 @@ import { test, expect, Page } from '@playwright/test'
 const docs_base = './docs'
 
 async function to_have_title(page: Page, title: string): Promise<void> {
-	await expect(page).toHaveTitle(`${title} - sinProject Talk`)
+	await expect(page).toHaveTitle(`${title} - sinpro.dev`)
 }
 
 test.beforeEach(async ({ page }) => {
-	await page.goto(docs_base, { waitUntil: 'networkidle' })
+	await page.goto(docs_base, { waitUntil: 'load' })
 	await to_have_title(page, 'Portfolio')
 })
 
@@ -18,7 +18,7 @@ test.beforeEach(async ({ page }) => {
 // })
 
 test('access a page', async ({ page }) => {
-	await page.goto(`${docs_base}/about`, { waitUntil: 'networkidle' })
+	await page.goto(`${docs_base}/about`, { waitUntil: 'load' })
 	await to_have_title(page, 'About')
 })
 
@@ -32,7 +32,6 @@ test('access a page', async ({ page }) => {
 // })
 
 test('open search modale with keyboard shortcut', async ({ page }) => {
-	await page.waitForLoadState('networkidle')
 	await page.waitForTimeout(500)
 
 	await page.keyboard.press('Control+KeyK')
@@ -72,7 +71,7 @@ test('open search modale with navbar button', async ({ page }) => {
 })
 
 test('copy code', async ({ page }) => {
-	await page.goto(`${docs_base}/vscode-workspace-settings`, { waitUntil: 'networkidle' })
+	await page.goto(`${docs_base}/vscode-workspace-settings`, { waitUntil: 'load' })
 	await page.getByTestId('copy-code').first().click()
 
 	expect(await page.evaluate(() => navigator.clipboard.readText())).toContain(
