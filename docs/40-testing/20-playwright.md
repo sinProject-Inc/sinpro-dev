@@ -193,7 +193,7 @@ await page.getByTestId('next-page').click()
 
 ## Sample Code
 
-```ts:e2e/chat.spec.ts
+```ts:[talk]e2e/chat.spec.ts
 import { Page, expect, test } from '@playwright/test'
 
 test.beforeEach(async ({ page }) => {
@@ -207,7 +207,7 @@ test('before sign in', async ({ page }) => {
 
 In cases where common setup is needed, such as for login processes:
 
-```ts:e2e/chat.spec.ts
+```ts:[talk]e2e/chat.spec.ts
 import { Page, expect, test } from '@playwright/test'
 import { auth_file_path } from './lib/setup.js'
 

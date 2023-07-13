@@ -22,7 +22,8 @@ type PageSection = {
 	slug: string
 }
 
-const github_url = 'https://github.com/sinProject-Inc/sinpro-dev/blob/main/'
+const github_url_sinpro_dev = 'https://github.com/sinProject-Inc/sinpro-dev/blob/main/'
+const github_url_talk = 'https://github.com/sinProject-Inc/talk/blob/main/'
 
 export class Markdown {
 	public static docs_base_dir = './docs'
@@ -91,6 +92,13 @@ export class Markdown {
 		return { sections, html_content }
 	}
 
+	public static generate_link(filename: string): string {
+		if (!filename) return ''
+		if (filename.includes('[talk]')) return filename.replaceAll('[talk]', github_url_talk)
+
+		return `${github_url_sinpro_dev}${filename}`
+	}
+
 	public static code_block_name_plugin(md: MarkdownIt): void {
 		md.set({
 			highlight: function (str: string, lang: string) {
@@ -123,6 +131,7 @@ export class Markdown {
 			}
 
 			const display_title = title || filename || hljs.getLanguage(lang)?.name
+			const link = Markdown.generate_link(filename)
 
 			const github_icon_element = `
 				<svg
@@ -147,7 +156,7 @@ export class Markdown {
 
 			const title_element = filename
 				? `
-					<a class="code-title flex gap-1.5 items-center font-semibold dark:text-primary-dark-3 text-primary-3 dark:hover:text-primary-dark-4 hover:text-primary-10" href="${github_url}${filename}" target="blank">
+					<a class="code-title flex gap-1.5 items-center font-semibold dark:text-primary-dark-3 text-primary-3 dark:hover:text-primary-dark-4 hover:text-primary-10" href="${link}" target="blank">
 						<div style="width:20px">
 							${github_icon_element}
 						</div>
