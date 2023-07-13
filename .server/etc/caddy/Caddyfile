@@ -1,0 +1,13 @@
+sinpro.dev {
+	reverse_proxy :3001
+
+	@static path *.avif *.woff2 *.png
+	header @static Cache-Control "public, max-age=86400, must-revalidate"
+}
+
+talk.sinpro.dev {
+	reverse_proxy :3002
+
+	@static path *.avif *.woff2 *.png
+	header @static Cache-Control "public, max-age=86400, must-revalidate"
+}
