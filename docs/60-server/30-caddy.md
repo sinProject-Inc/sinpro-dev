@@ -45,21 +45,21 @@ sudo micro /etc/caddy/Caddyfile
 
 Add your site configurations:
 
-```bash
-example.dev {
+```bash:.server/etc/caddy/Caddyfile
+sinpro.dev {
 	reverse_proxy :3001
 }
 
-talk.example.dev {
+talk.sinpro.dev {
 	reverse_proxy :3002
 }
 ```
 
 Add cache control:
 
-```bash
-talk.example.dev {
-	reverse_proxy :3002
+```bash:.server/etc/caddy/Caddyfile
+sinpro.dev {
+	reverse_proxy :3001
 
 	@static path *.avif *.woff2 *.png
 	header @static Cache-Control "public, max-age=86400, must-revalidate"
