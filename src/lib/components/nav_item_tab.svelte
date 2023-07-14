@@ -10,5 +10,5 @@
 </script>
 
 <Tab {active}>
-	<NavItem {name} />
+	<NavItem {name} hidden />
 </Tab>
