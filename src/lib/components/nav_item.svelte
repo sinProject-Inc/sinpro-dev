@@ -3,6 +3,7 @@
 	import BookIcon from './icons/book_icon.svelte'
 
 	export let name: string
+	export let hidden = false
 
 	$: text = name === 'docs' ? 'Docs' : name
 </script>
@@ -13,7 +14,7 @@
 			<BookIcon />
 		{/if}
 	</div>
-	<span class="nav-item-text">{text}</span>
+	<span class="nav-item-text" class:hidden class:md:contents={hidden}>{text}</span>
 </a>
 
 <style lang="postcss">
