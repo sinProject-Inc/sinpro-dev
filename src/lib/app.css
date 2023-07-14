@@ -330,3 +330,7 @@ blockquote {
 	width: 100%;
 	max-height: 30rem;
 }
+
+.hljs {
+	tab-size: 2;
+}
