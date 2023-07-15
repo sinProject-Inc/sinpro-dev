@@ -32,6 +32,7 @@ test('access a page', async ({ page }) => {
 // })
 
 test('open search modale with keyboard shortcut', async ({ page }) => {
+	await page.waitForLoadState('networkidle')
 	await page.waitForTimeout(500)
 
 	await page.keyboard.press('Control+KeyK')
