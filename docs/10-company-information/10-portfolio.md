@@ -3,6 +3,30 @@ title: Portfolio
 description: sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.
 ---
 
+## sinpro.dev
+
+[sinpro.dev](https://sinpro.dev/) is our showroom and is like a concept car. It introduces what kind of work we are producing and the policies under which we produce our products.
+
+<div class="labels">
+	<span class="label">HTML</span>
+	<span class="label">CSS</span>
+	<span class="label">Markdown</span>
+	<span class="label">JavaScript</span>
+	<span class="label">TypeScript</span>
+	<span class="label">Svelte</span>
+	<span class="label">SvelteKit</span>
+	<span class="label">Tailwind CSS</span>
+	<span class="label">Node.js</span>
+	<span class="label">PM2</span>
+	<span class="label">Caddy</span>
+	<span class="label">Linux</span>
+	<span class="label">VPS</span>
+	<span class="label">Vitest</span>
+	<span class="label">Playwright</span>
+	<span class="label">Prettier</span>
+	<span class="label">ESLint</span>
+</div>
+
 ## Talk
 
 [Talk](https://talk.sinpro.dev/) is an app for conversing in real time with people who speak different languages. You can learn languages in addition to also having conversations through both voice and text.
@@ -12,7 +36,6 @@ description: sinProject Inc. is an software development company in Osaka, Japan.
 <div class="labels">
 	<span class="label">HTML</span>
 	<span class="label">CSS</span>
-	<span class="label">Markdown</span>
 	<span class="label">JavaScript</span>
 	<span class="label">TypeScript</span>
 	<span class="label">Svelte</span>
@@ -118,6 +141,26 @@ Tweecha, Txiicha, and Tweecha2 were unofficial Twitter clients designed to enhan
 	<span class="label">App Store</span>
 </div>
 
+## Simple Web Apps
+
+We made several sinmple web apps with SvelteKit.
+
+- [Sound Pads](https://sinproject.net/teams/sound-pads-2/)
+- [Renda Attack](https://sinproject.net/teams/renda_attack/)
+- [BEST LAP](https://sinproject.net/teams/best_lap/)
+
+<div class="labels">
+	<span class="label">HTML</span>
+	<span class="label">CSS</span>
+	<span class="label">Markdown</span>
+	<span class="label">JavaScript</span>
+	<span class="label">TypeScript</span>
+	<span class="label">Svelte</span>
+	<span class="label">SvelteKit</span>
+	<span class="label">Prettier</span>
+	<span class="label">ESLint</span>
+</div>
+
 ## [sinProject Menu](https://sinproject.net/menu/)
 
 A web application that easily creates menus for restaurants. It can also be utilized for businesses other than restaurants, such as personal portfolios.
@@ -148,7 +191,7 @@ A game where you tilt your mobile device to roll the ball and aim for a high sco
 
 ## Simple Web Games
 
-We made several web games with Flutter.
+We made several simple web games with Flutter.
 
 - [Note Master](https://sinproject.net/teams/note-master/#/)
 - [Fruity Quiz](https://sinproject.net/teams/fruity-quiz/#/)
