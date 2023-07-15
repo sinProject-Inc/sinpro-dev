@@ -164,6 +164,10 @@
 		@apply border-secondary-dark;
 	}
 
+	:global(.content ul) {
+		@apply my-5;
+	}
+
 	:global(.content ul > li::before) {
 		@apply bg-primary-4;
 
