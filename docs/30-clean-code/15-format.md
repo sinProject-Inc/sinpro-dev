@@ -3,6 +3,11 @@ title: Format
 description: This is a guide to producing readable, reusable, and refactorable software for TypeScript.
 ---
 
+## Naming of files and directories
+
+Use snake_case.
+However, for things that constitute a URL, such as HTML, JavaScript, CSS files, image files, and API paths, use kebab-case.
+
 ## Use single quotes
 
 Indeed, each approach has its pros and cons. However, achieving consistency within a project is necessary.
