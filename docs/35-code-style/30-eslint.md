@@ -108,6 +108,18 @@ module.exports = {
 }
 ```
 
+## Using ESLint with Svelte
+
+```json:.vscode/settings.json
+{
+	"eslint.probe": [
+		...
+		"svelte"
+	],
+	"eslint.validate": ["svelte"],
+}
+```
+
 ## Missing return type on function in the HTML part of Svelte
 
 In the HTML part of Svelte, if "Missing return type on function" is displayed, add an eslint-disable line at the bottom of the script block.
