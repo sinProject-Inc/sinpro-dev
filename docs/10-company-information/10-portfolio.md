@@ -5,7 +5,7 @@ description: sinProject Inc. is an software development company in Osaka, Japan.
 
 ## sinpro.dev
 
-[sinpro.dev](https://sinpro.dev/) is our showroom and is like a concept car. It introduces what kind of work we are producing and the policies under which we produce our products.
+[sinpro.dev](https://sinpro.dev/) is our showcase website, similar to a concept car. It introduces what kind of work we are producing and the policies under which we produce our products.
 
 <div class="labels">
 	<span class="label">HTML</span>
@@ -143,7 +143,7 @@ Tweecha, Txiicha, and Tweecha2 were unofficial Twitter clients designed to enhan
 
 ## Simple Web Apps
 
-We made several sinmple web apps with SvelteKit.
+We made several simple web apps with SvelteKit.
 
 - [Sound Pads](https://sinproject.net/teams/sound-pads-2/)
 - [Renda Attack](https://sinproject.net/teams/renda_attack/)
@@ -163,7 +163,7 @@ We made several sinmple web apps with SvelteKit.
 
 ## [sinProject Menu](https://sinproject.net/menu/)
 
-A web application that easily creates menus for restaurants. It can also be utilized for businesses other than restaurants, such as personal portfolios.
+A web application used for easily creating menus for restaurants. It can also be used by businesses other than restaurants, such as personal portfolios.
 
 <div class="labels">
 	<span class="label">Vue.js</span>
@@ -221,9 +221,9 @@ Our company website created with WordPress.
 
 ## Medical Imaging Management System
 
-This system allows centralized management of images from medical examinations from all facilities over the network from the operating room, providing comprehensive support for improving the productivity of radiological technologists' imaging operations.
+This system allows centralized management of images from medical examinations from all facilities over the network from the operating room, providing comprehensive support for improving the productivity of radiological technologists’ imaging operations.
 
-With the version upgrade, we have improved operability and performance.
+We also improved operability and performance in later upgrades.
 
 <div class="labels">
 	<span class="label">C#</span>

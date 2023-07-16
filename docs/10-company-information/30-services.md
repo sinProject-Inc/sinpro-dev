@@ -1,9 +1,9 @@
 ---
 title: Services
-description: We would like to introduce the services we offer.
+description: Here are the services we offer at sinProject Inc.
 ---
 
-We would like to introduce the services we offer.
+Here are the services we offer at sinProject Inc.
 
 <img src="/office.avif" style="width: 100%; aspect-ratio: 154/102;" />
 
@@ -15,7 +15,7 @@ You can use our services 24/7, 365 days a year. A 42.5-inch display is also avai
 
 ## Developer Space
 
-You can tour the space we are developing. You can visit for up to 4 hours a month. Only for members.
+You can tour the space we use for development. You can visit for up to 4 hours a month. Only for members.
 
 - [¥11,000 per Month](https://buy.stripe.com/9AQ29bcR15fFgEg146)
 
