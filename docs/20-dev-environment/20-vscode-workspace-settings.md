@@ -5,6 +5,14 @@ description: Here are the VSCode workspace settings that we commonly use at sinP
 
 Here are the VSCode workspace settings that we commonly use at sinProject.
 
+## Tab Size
+
+```json:.vscode/settings.json
+{
+	"editor.tabSize": 2
+}
+```
+
 ## Bracket Pairs
 
 Show lines connecting pairs of brackets

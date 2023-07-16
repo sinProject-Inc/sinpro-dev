@@ -75,7 +75,5 @@ test('copy code', async ({ page }) => {
 	await page.goto(`${docs_base}/vscode-workspace-settings`, { waitUntil: 'load' })
 	await page.getByTestId('copy-code').first().click()
 
-	expect(await page.evaluate(() => navigator.clipboard.readText())).toContain(
-		'"editor.guides.bracketPairs": true'
-	)
+	expect(await page.evaluate(() => navigator.clipboard.readText())).toContain('"editor.tabSize": 2')
 })
