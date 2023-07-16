@@ -13,6 +13,7 @@ How we define code style using [ESLint](https://eslint.org/).
 ```js:.eslintrc.cjs
 module.exports = {
 	rules: {
+		indent: ['error', 'tab', { SwitchCase: 1, ignoredNodes: ['ConditionalExpression'] }],
 		semi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],
 		'no-unexpected-multiline': 'error',
 		'@typescript-eslint/explicit-member-accessibility': ['error'],
