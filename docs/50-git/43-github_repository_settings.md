@@ -11,4 +11,7 @@ Features:
 
 - Wikis: Uncheck
 - Discussions: Check
+
+Pull Requests:
+
 - Automatically delete head branches: Check
