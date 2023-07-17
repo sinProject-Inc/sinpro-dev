@@ -3,6 +3,20 @@ title: Variables
 description: This is a guide to producing readable, reusable, and refactorable software for TypeScript.
 ---
 
+## Prefer const
+
+Require const declarations for variables that are never reassigned after declared.
+
+```ts:BAD
+let a = 3
+console.log(a)
+```
+
+```ts:GOOD
+const a = 3
+console.log(a)
+```
+
 ## Use meaningful and pronounceable variable names
 
 ```ts::Bad
