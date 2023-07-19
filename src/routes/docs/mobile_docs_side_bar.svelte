@@ -75,13 +75,15 @@
 	tabindex="0"
 />
 
-<div class="pointer-events-none fixed left-0 top-0 z-20 flex h-full w-full justify-center pr-20">
+<div
+	class="pointer-events-none fixed left-0 top-[var(--header-height)] z-20 flex h-full w-full justify-center pr-20"
+>
 	<div
-		class="glass-panel pointer-events-auto mr-auto min-h-screen w-80 items-start rounded-none border-0 bg-primary-dark-8/90 pl-10 dark:bg-primary-8/90"
+		class="glass-panel pointer-events-auto mr-auto min-h-screen w-80 items-start rounded-none rounded-tr-lg border-0 bg-primary-dark-8/90 pl-10 dark:bg-primary-8/90"
 	>
-		<div class="side-bar-navigation h-screen w-full overflow-y-scroll">
+		<div class="side-bar-navigation h-screen w-full overflow-y-scroll pb-8">
 			<SideBar {sections} search_bar_enabled={false} />
-			<IconButton class="absolute right-6 top-6" on:click={close}>
+			<IconButton class="absolute left-4 top-4" on:click={close}>
 				<CloseIcon />
 			</IconButton>
 		</div>
