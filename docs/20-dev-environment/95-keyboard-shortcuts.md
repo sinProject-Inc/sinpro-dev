@@ -30,3 +30,7 @@ We will introduce some keyboard shortcuts that we often use.
 - Reopen Closed Tab : command shift T
 - Select Next Tab : command →
 - Select Previous Tab : command ←
+
+## GitHub
+
+- Submit : command enter
