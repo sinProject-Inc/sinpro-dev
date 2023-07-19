@@ -137,9 +137,9 @@ We have prepared the following scripts to execute Vitest.
 }
 ```
 
-## VSCode Extension
+## VSCode Workspace Extensions
 
-Use [VSCode Extension](./vscode-extensions#testing) for testing through VSCode.
+Use [VSCode Workspace Extensions](./vscode-workspace-extensions#testing) for testing through VSCode.
 
 ## Running tests
 
