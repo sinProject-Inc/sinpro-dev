@@ -31,6 +31,10 @@ Download SVGs from websites as SVGs, PNGs or JPEGs
 
 Simulates colorblindness in your web browser.
 
+- [Video Speed Controller](https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk)
+
+Speed up, slow down, advance and rewind HTML5 audio/video with shortcuts
+
 - [Netflix 同時字幕で英語学習](https://chrome.google.com/webstore/detail/netflix-%E5%90%8C%E6%99%82%E5%AD%97%E5%B9%95%E3%81%A7%E8%8B%B1%E8%AA%9E%E5%AD%A6%E7%BF%92/gibmkmmdicoffkhjkfimmjkojjopoagg?hl=en)
 
 Netflix の日本語と英語字幕を同時に表示。3 秒巻き戻し機能。英単語の意味を表示。ひとつのセリフをリピート再生。再生速度の変更。フレーズをお気に入りに追加。
