@@ -70,5 +70,5 @@ pm2 restart sinpro-dev
 
 ## Announcement
 
-1. If there are [additions or updates to the documentation](https://github.com/sinProject-Inc/talk/commits/main/docs), announce them to the members.
+1. If there are [additions or updates to the documentation](https://github.com/sinProject-Inc/sinpro-dev/commits/main/docs), announce them to the members.
 1. Request the product manager to make an announcement on social media.
