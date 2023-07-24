@@ -33,3 +33,7 @@ module.exports = {
 ```
 
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
+
+## Install Tailwind CSS with SvelteKit
+
+[Setting up Tailwind CSS in a SvelteKit project.](https://tailwindcss.com/docs/guides/sveltekit)
