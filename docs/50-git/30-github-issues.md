@@ -29,6 +29,16 @@ In the template, write tasks for the following:
 Docs: Show scrollbar like Mac
 ```
 
+- Write issue titles in affirmative form, following the format.
+
+```ts::Bad
+Docs: Mobile sidebar button does not show when first navigating
+```
+
+```ts::Good
+Docs: Display icons when first navigating on mobile devices
+```
+
 ## Assignees
 
 Assign the person in charge of the issue.
