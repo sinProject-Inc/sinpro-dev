@@ -111,10 +111,7 @@ a {
 	}
 
 	.card {
-		box-shadow:
-			0 0.1px 0.5px #0000000e,
-			0 0.4px 1.6px #00000014,
-			0 2px 7px #00000021;
+		box-shadow: 0 0.1px 0.5px #0000000e, 0 0.4px 1.6px #00000014, 0 2px 7px #00000021;
 		border-radius: 0.5rem;
 	}
 
