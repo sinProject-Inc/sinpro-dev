@@ -13,7 +13,11 @@
 	<div class="flex h-[calc(100vh-var(--header-height))] flex-col items-center justify-center p-8">
 		<div class="font-title flex max-w-xl flex-col items-center gap-12">
 			<div class="text-3xl">{App.app_name}</div>
-			<div class="text-md">PUSH MENU BUTTON</div>
+			<div class="text-md">
+				<a href="/docs" class="hover:text-secondary dark:hover:text-secondary-dark"
+					>PUSH MENU BUTTON</a
+				>
+			</div>
 			<div class="text-md">We are aiming to revolutionize the world with innovative services.</div>
 			<div><VersionFooter /></div>
 		</div>
