@@ -26,7 +26,7 @@
 		class="mx-3 h-full border-b border-primary-9/[0.06] px-3 dark:border-primary-dark-9/[0.06] md:mx-0 md:px-6"
 	>
 		<div class="center-container flex h-full flex-row items-center gap-4 px-0 font-bold">
-			<a href="{base}/" class="flex items-center gap-2 text-[22px] no-underline">
+			<a href="{base}/" class="flex items-center gap-2 text-[22px] no-underline title">
 				<img src="{base}/icon-64.avif" width="32" height="32" alt="" />
 				{App.app_name}
 			</a>
@@ -69,9 +69,3 @@
 		</div>
 	</div>
 </div>
-
-<style lang="postcss">
-	a:not(.title) {
-		@apply hover:text-secondary dark:hover:text-secondary-dark;
-	}
-</style>

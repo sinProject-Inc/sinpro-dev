@@ -43,6 +43,8 @@ body {
 a {
 	/* color: var(--link-color); */
 	text-decoration: none;
+
+	@apply hover:text-secondary dark:hover:text-secondary-dark;
 }
 
 .text-color {

@@ -8,7 +8,6 @@
 	import { onMount } from 'svelte'
 	import { fly } from 'svelte/transition'
 	import Vivus from 'vivus'
-	import Audio from './audio.svelte'
 	import MobileDocsSideBar from './mobile_docs_side_bar.svelte'
 	import NavbarSecondRow from './navbar_second_row.svelte'
 	import SearchModale from './search_modale.svelte'
@@ -277,8 +276,6 @@
 		}
 	</style>
 </svelte:head>
-
-<Audio />
 
 <div class="doc-base">
 	<Navbar is_on_docs on:show_search_modale={open_search_modale} />

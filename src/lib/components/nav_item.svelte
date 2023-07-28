@@ -16,9 +16,3 @@
 	</div>
 	<span class="nav-item-text" class:hidden class:md:contents={hidden}>{text}</span>
 </a>
-
-<style lang="postcss">
-	a {
-		@apply hover:text-secondary dark:hover:text-secondary-dark;
-	}
-</style>

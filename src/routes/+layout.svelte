@@ -11,6 +11,7 @@
 	import { onMount } from 'svelte'
 	import { fly } from 'svelte/transition'
 	import MobileMenuBar from '$lib/components/mobile_menu_bar.svelte'
+	import Audio from './docs/audio.svelte'
 
 	export let data: LayoutServerData
 
@@ -120,6 +121,8 @@
 		$mobile_menu_open = false
 	})
 </script>
+
+<Audio />
 
 <div class={$theme ? 'visible' : 'invisible'}>
 	<div class="min-h-screen bg-cover bg-fixed bg-no-repeat font-sans">
