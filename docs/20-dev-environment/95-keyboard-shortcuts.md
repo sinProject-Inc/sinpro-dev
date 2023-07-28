@@ -30,9 +30,9 @@ We will introduce some keyboard shortcuts that we often use.
 - Reopen Closed Tab : command shift T
 - Select Next Tab : command →
 - Select Previous Tab : command ←
-- Default Scale Display : command 0
-- Enlarge Display : command +
-- Reduce Display : command -
+- Actual Size : command 0
+- Zoom In : command +
+- Zoom Out : command -
 
 ## GitHub
 
