@@ -14,9 +14,7 @@
 		<div class="font-title flex max-w-xl flex-col items-center gap-12">
 			<div class="text-3xl">{App.app_name}</div>
 			<div class="text-md">
-				<a href="/docs" class="hover:text-secondary dark:hover:text-secondary-dark"
-					>PUSH MENU BUTTON</a
-				>
+				<a href="/docs">PUSH MENU BUTTON</a>
 			</div>
 			<div class="text-md">We are aiming to revolutionize the world with innovative services.</div>
 			<div><VersionFooter /></div>
@@ -24,7 +22,7 @@
 	</div>
 </div>
 
-<style type="postcss">
+<style lang="postcss">
 	@font-face {
 		font-family: 'title';
 		src: url('/fonts/press-start-2p.woff2');
