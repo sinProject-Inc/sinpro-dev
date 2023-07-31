@@ -5,6 +5,7 @@ import MarkdownIt from 'markdown-it'
 // import mdHighlightjs from 'markdown-it-highlightjs'
 import MarkdownItLinkAttributes from 'markdown-it-link-attributes'
 import hljs from 'highlight.js'
+import { MarkdownCodeElement } from './markdown_code_element'
 
 export type Page = {
 	title: string
@@ -22,9 +23,6 @@ type PageSection = {
 	slug: string
 }
 
-const github_url_sinpro_dev = 'https://github.com/sinProject-Inc/sinpro-dev/blob/main/'
-const github_url_talk = 'https://github.com/sinProject-Inc/talk/blob/main/'
-
 export class Markdown {
 	public static docs_base_dir = './docs'
 
@@ -40,7 +38,7 @@ export class Markdown {
 		return { title, description, content }
 	}
 
-	public static generate_sections(source_html_content: string): {
+	private static _generate_sections(source_html_content: string): {
 		sections: PageSection[]
 		html_content: string
 	} {
@@ -92,137 +90,45 @@ export class Markdown {
 		return { sections, html_content }
 	}
 
-	public static generate_link(filename: string): string {
-		if (!filename) return ''
-		if (filename.includes('[talk]')) return filename.replaceAll('[talk]', github_url_talk)
+	private static _highlighted_code(md: MarkdownIt, lang: string, content: string): string {
+		if (lang && hljs.getLanguage(lang)) {
+			try {
+				return hljs.highlight(content, { language: lang }).value
+			} catch (__) {
+				// DO NOTHING
+			}
+		}
 
-		return `${github_url_sinpro_dev}${filename}`
+		return md.utils.escapeHtml(content)
 	}
 
-	public static code_block_name_plugin(md: MarkdownIt): void {
-		md.set({
-			highlight: function (str: string, lang: string) {
-				if (lang && hljs.getLanguage(lang)) {
-					try {
-						return hljs.highlight(str, { language: lang }).value
-					} catch (__) {
-						// DO NOTHING
-					}
-				}
+	private static _code_block_name_plugin(md: MarkdownIt): void {
+		// md.set({
+		// 	highlight: function (str: string, lang: string) {
+		// 		if (lang && hljs.getLanguage(lang)) {
+		// 			try {
+		// 				return hljs.highlight(str, { language: lang }).value
+		// 			} catch (__) {
+		// 				// DO NOTHING
+		// 			}
+		// 		}
 
-				return '' // use external default escaping
-			},
-		})
+		// 		return '' // use external default escaping
+		// 	},
+		// })
 
 		md.renderer.rules.fence = function (tokens, idx): string {
 			const token = tokens[idx]
 			const [lang, filename, title] = (token.info || '').split(':')
+			const content = token.content
 
-			let highlighted_code = ''
+			const highlighted_code = Markdown._highlighted_code(md, lang, content)
 
-			if (lang && hljs.getLanguage(lang)) {
-				try {
-					highlighted_code = hljs.highlight(token.content, { language: lang }).value
-				} catch (__) {
-					// DO NOTHING
-				}
-			} else {
-				highlighted_code = md.utils.escapeHtml(token.content)
-			}
-
-			const display_title = title || filename || hljs.getLanguage(lang)?.name
-			const link = Markdown.generate_link(filename)
-
-			const github_icon_element = `
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="icon icon-tabler icon-tabler-brand-github"
-					width="24"
-					height="24"
-					viewBox="0 0 24 24"
-					stroke-width="2"
-					stroke="currentColor"
-					fill="none"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				>
-					<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-					<path
-						d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
-						fill="none"
-					/>
-				</svg>
-			`
-
-			const title_element = filename
-				? `
-					<a class="code-title flex gap-1.5 items-center font-semibold dark:text-primary-dark-3 text-primary-3 dark:hover:text-primary-dark-4 hover:text-primary-10" href="${link}" target="blank">
-						<div style="width:20px">
-							${github_icon_element}
-						</div>
-						${display_title}
-					</a>
-				`
-				: `
-					<div class="code-title flex gap-1.5 items-center font-semibold dark:text-primary-dark-3 text-primary-3">
-						<div style="width:20px">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="icon icon-tabler icon-tabler-terminal-2"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								stroke-width="2"
-								stroke="currentColor"
-								fill="none"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							>
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<path d="M8 9l3 3l-3 3" fill="none" />
-								<path d="M13 15l3 0" fill="none" />
-								<path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" fill="none" />
-							</svg>
-						</div>
-						${display_title}
-					</div>
-				`
-
-			const code_header_element = `
-				<div class="flex gap-2 justify-between">
-					${title_element}
-					<button data-testid="copy-code" class="copy-code flex gap-1.5 items-center font-semibold dark:text-primary-dark-3 text-primary-3 ">
-						<div class="h-[33px] w-[33px] rounded-full glass-bump-bg-shine active:scale-125 -m-[6.5px] p-[6.5px]"
-						style="transition-duration: 350ms;">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="icon icon-tabler icon-tabler-copy"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								stroke-width="2"
-								stroke="currentColor"
-								fill="none"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							>
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<path
-									d="M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"
-									fill="none"
-								/>
-								<path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" fill="none" />
-							</svg>
-						</div>
-					</button>
-				</div>
-			`
-
-			return `<div class="code-container">${code_header_element}<pre><code class="hljs ${lang}">${highlighted_code}</code></pre></div>`
+			return new MarkdownCodeElement(lang, filename, title, highlighted_code).generate()
 		}
 	}
 
-	public static github_link_plugin(md: MarkdownIt): void {
+	private static _github_link_plugin(md: MarkdownIt): void {
 		const github_icon = `
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -307,11 +213,11 @@ export class Markdown {
 		})
 
 		// md.use(mdHighlightjs)
-		md.use(Markdown.code_block_name_plugin)
-		md.use(Markdown.github_link_plugin)
+		md.use(Markdown._code_block_name_plugin)
+		md.use(Markdown._github_link_plugin)
 
 		const source_html_content = md.render(content)
-		const { sections, html_content } = this.generate_sections(source_html_content)
+		const { sections, html_content } = this._generate_sections(source_html_content)
 
 		return { title, description, html_content, sections }
 	}
