@@ -38,51 +38,75 @@ export class Markdown {
 		return { title, description, content }
 	}
 
+	private static _generate_slug(content: string): string {
+		return content
+			.toLowerCase()
+			.replace(/[^a-z0-9]+/g, '-')
+			.replace(/(^-|-$)+/g, '')
+	}
+
+	private static _generate_link_element(
+		document: Document,
+		title: string,
+		slug: string
+	): HTMLAnchorElement {
+		const anchor_element = document.createElement('a')
+
+		anchor_element.href = `#${slug}`
+		anchor_element.innerHTML = '#'
+		anchor_element.classList.add('permalink')
+		anchor_element.title = title
+
+		anchor_element.innerHTML =
+			'<div><svg width="12" height="12" fill="none" aria-hidden="true"><path d="M3.75 1v10M8.25 1v10M1 3.75h10M1 8.25h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></div>'
+
+		return anchor_element
+	}
+
+	private static _setup_heading(
+		document: Document,
+		heading: Element,
+		title: string,
+		slug: string
+	): void {
+		heading.classList.add('relative')
+		heading.classList.add('section')
+		heading.classList.add('slide-fade-in')
+
+		heading.id = slug
+
+		const anchor_element = Markdown._generate_link_element(document, title, slug)
+
+		heading.appendChild(anchor_element)
+	}
+
+	private static _generate_section(heading: Element, title: string, slug: string): PageSection {
+		return {
+			level: parseInt(heading.tagName[1]),
+			title: title,
+			slug,
+		}
+	}
+
 	private static _generate_sections(source_html_content: string): {
 		sections: PageSection[]
 		html_content: string
 	} {
 		const jsdom = new JSDOM(source_html_content)
 		const document = jsdom.window.document
-
 		const headings = document.querySelectorAll('h2, h3, h4, h5, h6')
-
 		const sections: PageSection[] = []
 
 		headings.forEach((heading) => {
-			const { textContent: text_content } = heading
+			const { textContent: title } = heading
 
-			if (!text_content) return
+			if (!title) return
 
-			const slug = text_content
-				.toLowerCase()
-				.replace(/[^a-z0-9]+/g, '-')
-				.replace(/(^-|-$)+/g, '')
-
-			const section: PageSection = {
-				level: parseInt(heading.tagName[1]),
-				title: text_content,
-				slug,
-			}
+			const slug = Markdown._generate_slug(title)
+			const section = Markdown._generate_section(heading, slug, title)
 
 			sections.push(section)
-
-			heading.classList.add('relative')
-			heading.classList.add('section')
-			heading.classList.add('slide-fade-in')
-
-			heading.id = slug
-
-			const link = document.createElement('a')
-			link.href = `#${slug}`
-			link.innerHTML = '#'
-			link.classList.add('permalink')
-			link.title = text_content
-
-			link.innerHTML =
-				'<div><svg width="12" height="12" fill="none" aria-hidden="true"><path d="M3.75 1v10M8.25 1v10M1 3.75h10M1 8.25h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></div>'
-
-			heading.appendChild(link)
+			Markdown._setup_heading(document, heading, title, slug)
 		})
 
 		const html_content = document.body.innerHTML
@@ -128,8 +152,7 @@ export class Markdown {
 		}
 	}
 
-	private static _github_link_plugin(md: MarkdownIt): void {
-		const github_icon = `
+	private static _github_icon = `
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 					class="icon icon-tabler icon-tabler-brand-github"
@@ -147,7 +170,7 @@ export class Markdown {
 				</svg>
 			`
 
-		const right_arrow = `
+	private static _right_arrow = `
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" aria-hidden="true"
 				class="icon icon-tabler icon-tabler-brand-github-filled"
 				style="width: 8px; height: 8px; stroke: currentColor; fill: none; margin-left: 8px; margin-bottom: 6px;"
@@ -157,6 +180,7 @@ export class Markdown {
 			</svg>
 		`
 
+	private static _github_link_plugin(md: MarkdownIt): void {
 		md.renderer.rules.text = function (tokens, idx): string {
 			const text = md.utils.escapeHtml(tokens[idx].content)
 			let string_after_render = text
@@ -180,9 +204,9 @@ export class Markdown {
 				string_after_render = `
 					<div style="display: flex; flex-direction: row;">
 						<div style="display: flex; align-items: end;">
-							${github_icon}
+							${Markdown._github_icon}
 							${cut_text}
-							${right_arrow}
+							${Markdown._right_arrow}
 						</div>
 					</div>
 				`
