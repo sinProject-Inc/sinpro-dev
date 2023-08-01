@@ -9,7 +9,7 @@ Here are the services we offer at sinProject Inc.
 
 ## Office Space
 
-You can use our services 24/7, 365 days a year. A 42.5-inch display is also available for use. This is exclusive to members only. Please note, you need to bring your own HDMI cable for connectivity.
+You can use our services 24/7, 365 days a year. A 42.5-inch display is also available for use. This is exclusive to members only.
 
 - [¥11,000 per Month](https://buy.stripe.com/28ocNPbMX6jJgEg7st)
 
