@@ -81,11 +81,9 @@ export class Markdown {
 	}
 
 	private static _generate_section(heading: Element, title: string, slug: string): PageSection {
-		return {
-			level: parseInt(heading.tagName[1]),
-			title: title,
-			slug,
-		}
+		const level = parseInt(heading.tagName[1])
+
+		return { level, title, slug }
 	}
 
 	private static _generate_sections(source_html_content: string): {
@@ -103,7 +101,7 @@ export class Markdown {
 			if (!title) return
 
 			const slug = Markdown._generate_slug(title)
-			const section = Markdown._generate_section(heading, slug, title)
+			const section = Markdown._generate_section(heading, title, slug)
 
 			sections.push(section)
 			Markdown._setup_heading(document, heading, title, slug)
