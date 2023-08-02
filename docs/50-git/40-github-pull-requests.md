@@ -36,6 +36,8 @@ Docs: Show scrollbar like Mac #942
 
 Assign the person in charge of reviewing.
 
+PR review and praise what was good about it.
+
 ## Labels
 
 If it's related to an enhancement, add the 'enhancement' label.
