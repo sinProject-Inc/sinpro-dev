@@ -17,7 +17,7 @@ export type Section = {
 	pages: Page[]
 }
 
-type PageSection = {
+export type PageSection = {
 	level: number
 	title: string
 	slug: string
