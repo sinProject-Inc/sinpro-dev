@@ -2,7 +2,7 @@
 	import { browser } from '$app/environment'
 	import { afterNavigate, beforeNavigate } from '$app/navigation'
 	import Navbar from '$lib/components/navbar.svelte'
-	import Snackbar from '$lib/components/snackbar.svelte'
+	import Snackbar from './snackbar.svelte'
 	import { animations_enabled, is_min_width_768 } from '$lib/stores'
 	import { KeyboardShortcutHandler } from '$lib/view/keyboard_shortcut_handler'
 	import { onMount } from 'svelte'
