@@ -1,48 +1,28 @@
-/// <reference types="user-agent-data-types" />
-
 export enum OS {
-	mac_os = 'Mac OS',
-	windows = 'Windows',
-	ios = 'iOS',
 	android = 'Android',
+	ios = 'iOS',
+	windows = 'Windows',
+	mac_os = 'Mac OS',
 	linux = 'Linux',
+	windows_phone = 'Windows Phone',
 	unknown = 'unknown',
 }
 
 export class OSInfo {
-	private static readonly _macos_platforms = [
-		'Macintosh',
-		'MacIntel',
-		'MacPPC',
-		'Mac68K',
-		'Mac',
-		'macOS',
+	private static _os_list: { name: OS; pattern: RegExp }[] = [
+		{ name: OS.android, pattern: /android/i },
+		{ name: OS.ios, pattern: /iPad|iPhone|iPod/ },
+		{ name: OS.windows, pattern: /Windows/ },
+		{ name: OS.mac_os, pattern: /Macintosh|Mac OS X/ },
+		{ name: OS.linux, pattern: /Linux/ },
+		{ name: OS.windows_phone, pattern: /windows phone/i },
 	]
-	private static readonly _windows_platforms = ['Win32', 'Win64', 'Windows', 'WinCE']
-	private static readonly _ios_platforms = ['iPhone', 'iPad', 'iPod']
 
 	public static get_os(): OS {
-		const user_agent = window.navigator.userAgent
-		const platform = navigator?.userAgentData?.platform || navigator?.platform
+		const user_agent = navigator.userAgent
 
-		if (this._macos_platforms.includes(platform)) {
-			return OS.mac_os
-		}
-
-		if (this._ios_platforms.includes(platform)) {
-			return OS.ios
-		}
-
-		if (this._windows_platforms.includes(platform)) {
-			return OS.windows
-		}
-
-		if (/Android/.test(user_agent)) {
-			return OS.android
-		}
-
-		if (/Linux/.test(platform)) {
-			return OS.linux
+		for (const os of OSInfo._os_list) {
+			if (os.pattern.test(user_agent)) return os.name
 		}
 
 		return OS.unknown
