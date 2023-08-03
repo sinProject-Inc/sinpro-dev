@@ -20,44 +20,65 @@ export class SearchResultContext {
 		this._query = query
 	}
 
-	public get_split_context(): SplitContextPortion[] {
-		if (!this._match.value) return []
+	private _add_non_matching_portion(
+		split_context: SplitContextPortion[],
+		text: string,
+		start: number,
+		end?: number
+	): void {
+		if (end && end > start) {
+			split_context.push({
+				text: text.slice(start, end),
+				is_match: false,
+				first_character_index: start,
+			})
+		}
+	}
 
-		const text = this._match.value
-		const regex = new RegExp(this._query, 'gi')
+	private _add_matching_portion(
+		split_context: SplitContextPortion[],
+		match_text: string,
+		index: number
+	): void {
+		split_context.push({ text: match_text, is_match: true, first_character_index: index })
+	}
+
+	private _add_remaining_portion(
+		split_context: SplitContextPortion[],
+		text: string,
+		start_index: number
+	): void {
+		if (start_index < text.length) {
+			split_context.push({
+				text: text.slice(start_index),
+				is_match: false,
+				first_character_index: start_index,
+			})
+		}
+	}
+
+	private _split_text_by_regex(text: string, regex: RegExp): SplitContextPortion[] {
 		const split_context: SplitContextPortion[] = []
-
 		let last_index = 0
 
 		for (const match of text.matchAll(regex)) {
-			if (!match.index) continue
+			const match_index = match.index || 0
 
-			if (match.index > last_index) {
-				split_context.push({
-					text: text.slice(last_index, match.index),
-					is_match: false,
-					first_character_index: last_index,
-				})
-			}
+			this._add_non_matching_portion(split_context, text, last_index, match_index)
+			this._add_matching_portion(split_context, match[0], match_index)
 
-			split_context.push({
-				text: match[0],
-				is_match: true,
-				first_character_index: match.index,
-			})
-
-			last_index = match.index + match[0].length
+			last_index = match_index + match[0].length
 		}
 
-		if (last_index < text.length) {
-			split_context.push({
-				text: text.slice(last_index),
-				is_match: false,
-				first_character_index: last_index,
-			})
-		}
-
+		this._add_remaining_portion(split_context, text, last_index)
 		return split_context
+	}
+
+	public get_split_context(): SplitContextPortion[] {
+		const match_value = this._match.value
+		if (!match_value) return []
+
+		return this._split_text_by_regex(match_value, new RegExp(this._query, 'gi'))
 	}
 
 	public shorten_split_context(
