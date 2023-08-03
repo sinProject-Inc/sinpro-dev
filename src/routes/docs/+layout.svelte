@@ -109,12 +109,14 @@
 		})
 
 		svg_elements.forEach((svg_element, index) => {
-			const vivus = new Vivus(svg_element as unknown as HTMLElement, {
-				duration: 150,
-				animTimingFunction: Vivus.EASE_OUT,
-			})
+			requestAnimationFrame(() => {
+				const vivus = new Vivus(svg_element as unknown as HTMLElement, {
+					duration: 150,
+					animTimingFunction: Vivus.EASE_OUT,
+				})
 
-			vivus_instances.push(vivus)
+				vivus_instances.push(vivus)
+			})
 
 			const observer = new IntersectionObserver(
 				(entries) => {
