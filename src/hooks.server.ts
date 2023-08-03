@@ -1,4 +1,4 @@
-import { base } from '$app/paths'
+// import { base } from '$app/paths'
 import { logger } from '$lib/app/logger'
 import { ClientAddress } from '$lib/network/client_address'
 // import { ClientHostName } from '$lib/network/client_hostname'
@@ -32,11 +32,13 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	const theme = ''
 
-	if (event.url.pathname !== `${base}/api/log`) {
-		logger.info(`${client_address} [${event.request.method}] ${event.url}`)
-	} else {
-		logger.info(`${client_address} [${event.request.method}] ${event.url}`)
-	}
+	logger.info(`${client_address} [${event.request.method}] ${event.url}`)
+
+	// 	if (event.url.pathname !== `${base}/api/log`) {
+	// 	logger.info(`${client_address} [${event.request.method}] ${event.url}`)
+	// } else {
+	// 	logger.info(`${client_address} [${event.request.method}] ${event.url}`)
+	// }
 
 	const response = await resolve(event, {
 		// eslint-disable-next-line @typescript-eslint/naming-convention
