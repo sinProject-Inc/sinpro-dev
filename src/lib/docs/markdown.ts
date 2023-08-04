@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises'
+import fs from 'fs'
 import matter from 'gray-matter'
 import { JSDOM } from 'jsdom'
 import MarkdownIt from 'markdown-it'
@@ -31,17 +31,11 @@ export class Markdown {
 		description: string
 		content: string
 	}> {
-		try {
-			const file_content = await readFile(file_path, 'utf8')
-			const { data: metadata, content } = matter(file_content)
-			const { title, description } = metadata
+		const file_content = await fs.promises.readFile(file_path, 'utf8')
+		const { data: metadata, content } = matter(file_content)
+		const { title, description } = metadata
 
-			return { title, description, content }
-		} catch (error) {
-			// eslint-disable-next-line no-console
-			console.warn((error as Error).message)
-			return { title: '', description: '', content: '' }
-		}
+		return { title, description, content }
 	}
 
 	private static _generate_slug(content: string): string {
@@ -251,14 +245,8 @@ export class Markdown {
 	}
 
 	public static async get_section_title(sub_dir_path: string): Promise<string> {
-		try {
-			const meta = JSON.parse(await readFile(`${sub_dir_path}/meta.json`, 'utf8'))
+		const meta = JSON.parse(await fs.promises.readFile(`${sub_dir_path}/meta.json`, 'utf8'))
 
-			return meta.title
-		} catch (error) {
-			// eslint-disable-next-line no-console
-			console.warn((error as Error).message)
-			return ''
-		}
+		return meta.title
 	}
 }

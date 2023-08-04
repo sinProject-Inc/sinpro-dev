@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import fs from 'fs'
-import { readFile } from 'fs/promises'
 import * as glob from 'glob'
 import matter from 'gray-matter'
 import prettier from 'prettier'
@@ -22,7 +21,7 @@ export class SearchIndex {
 		const markdown_file_paths = glob.sync(`${this._markdown_dir}/**/*.md`)
 
 		const markdown_data = markdown_file_paths.flatMap(async (file_path) => {
-			const file_content = await readFile(file_path, 'utf8')
+			const file_content = await fs.promises.readFile(file_path, 'utf8')
 			const { data: metadata, content } = matter(file_content)
 			const { title, description } = metadata
 
