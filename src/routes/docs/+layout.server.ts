@@ -6,8 +6,8 @@ import type { LayoutServerLoad } from './$types'
 const docs_base_dir = Markdown.docs_base_dir
 const pattern = /^\d\d-/
 
-function get_page(file_path: string): Page {
-	const page = Markdown.read_file(file_path)
+async function get_page(file_path: string): Promise<Page> {
+	const page = await Markdown.read_file(file_path)
 	const file = file_path.split('/').pop()
 	const slug = file?.slice(3, -3)
 
@@ -17,14 +17,14 @@ function get_page(file_path: string): Page {
 	}
 }
 
-function get_pages(sub_dir_path: string): Page[] {
+async function get_pages(sub_dir_path: string): Promise<Page[]> {
 	const pages: Page[] = []
 
 	for (const file of fs.readdirSync(sub_dir_path)) {
 		if (!pattern.test(file)) continue
 
 		const file_path = `${sub_dir_path}/${file}`
-		const page = get_page(file_path)
+		const page = await get_page(file_path)
 
 		pages.push(page)
 	}
@@ -32,9 +32,9 @@ function get_pages(sub_dir_path: string): Page[] {
 	return pages
 }
 
-function get_section(sub_dir_path: string): Section {
-	const title = Markdown.get_section_title(sub_dir_path)
-	const pages = get_pages(sub_dir_path)
+async function get_section(sub_dir_path: string): Promise<Section> {
+	const title = await Markdown.get_section_title(sub_dir_path)
+	const pages = await get_pages(sub_dir_path)
 
 	return {
 		title,
@@ -51,7 +51,7 @@ export const load: LayoutServerLoad = async () => {
 		if (!fs.statSync(sub_dir_path).isDirectory()) continue
 		if (!pattern.test(sub_dir)) return
 
-		const section = get_section(sub_dir_path)
+		const section = await get_section(sub_dir_path)
 
 		sections.push(section)
 	}

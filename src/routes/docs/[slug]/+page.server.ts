@@ -20,7 +20,7 @@ function find_matching_file(sub_dir_path: string, slug: string): string | undefi
 	return fs.readdirSync(sub_dir_path).find((file) => file.slice(3, -3) === slug)
 }
 
-function load_file(sub_dir: string, slug: string): LoadedFile | undefined {
+async function load_file(sub_dir: string, slug: string): Promise<LoadedFile | undefined> {
 	const sub_dir_path = `${docs_base_dir}/${sub_dir}`
 
 	if (!fs.statSync(sub_dir_path).isDirectory()) return
@@ -29,16 +29,16 @@ function load_file(sub_dir: string, slug: string): LoadedFile | undefined {
 
 	if (!matching_file) return
 
-	const category = Markdown.get_section_title(sub_dir_path)
+	const category = await Markdown.get_section_title(sub_dir_path)
 	const file_path = `${sub_dir_path}/${matching_file}`
-	const page = Markdown.generate_page_content(file_path)
+	const page = await Markdown.generate_page_content(file_path)
 
 	return { category, file_path, page }
 }
 
 export const load: PageServerLoad = async ({ params }) => {
 	for (const sub_dir of fs.readdirSync(docs_base_dir)) {
-		const result = load_file(sub_dir, params.slug)
+		const result = await load_file(sub_dir, params.slug)
 		if (result) return result
 	}
 

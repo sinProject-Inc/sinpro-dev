@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import fs from 'fs'
+import { readFile } from 'fs/promises'
 import * as glob from 'glob'
 import matter from 'gray-matter'
 import prettier from 'prettier'
@@ -17,11 +18,11 @@ export type MarkdownData = {
 export class SearchIndex {
 	public constructor(private readonly _markdown_dir: string) {}
 
-	private _load_markdown_files(): MarkdownData[] {
+	private async _load_markdown_files(): Promise<MarkdownData[]> {
 		const markdown_file_paths = glob.sync(`${this._markdown_dir}/**/*.md`)
 
-		return markdown_file_paths.flatMap((file_path) => {
-			const file_content = fs.readFileSync(file_path, 'utf8')
+		const markdown_data = markdown_file_paths.flatMap(async (file_path) => {
+			const file_content = await readFile(file_path, 'utf8')
 			const { data: metadata, content } = matter(file_content)
 			const { title, description } = metadata
 
@@ -68,10 +69,12 @@ export class SearchIndex {
 
 			return [...contents_with_headings, ...standalone_headings, ...standalone_title]
 		})
+
+		return (await Promise.all(markdown_data)).flat()
 	}
 
 	public async save(): Promise<void> {
-		const documents = this._load_markdown_files()
+		const documents = await this._load_markdown_files()
 
 		const documents_without_markdown = this._remove_markdown(documents)
 
