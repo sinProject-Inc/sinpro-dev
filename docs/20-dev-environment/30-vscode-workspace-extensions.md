@@ -188,13 +188,13 @@ Automating the process of writing meaningful log messages.
 
 ## Code Quality
 
-- [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
-
-Display import/require package size in the editor
-
 - [CodeMetrics](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics)
 
 Computes complexity in TypeScript / JavaScript files.
+
+- [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
+
+Display import/require package size in the editor
 
 ## Theme
 
