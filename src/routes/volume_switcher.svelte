@@ -1,7 +1,7 @@
 <script lang="ts">
 	// import { onMount } from 'svelte'
-	import VolumeOffIcon from '../lib/components/icons/volume_off_icon.svelte'
-	import VolumeOnIcon from '../lib/components/icons/volume_on_icon.svelte'
+	import VolumeOffIcon from '$lib/components/icons/volume_off_icon.svelte'
+	import VolumeOnIcon from '$lib/components/icons/volume_on_icon.svelte'
 	import { get } from 'svelte/store'
 	import { volume_enabled } from '$lib/stores'
 
