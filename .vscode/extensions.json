@@ -36,6 +36,8 @@
 		"george-alisson.html-preview-vscode",
 		"naumovs.color-highlight",
 		"ms-vscode-remote.remote-ssh",
-		"kisstkondoros.vscode-codemetrics"
+		"kisstkondoros.vscode-codemetrics",
+		"byi8220.indented-block-highlighting",
+		"sirtori.indenticator"
 	]
 }
