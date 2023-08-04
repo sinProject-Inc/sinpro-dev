@@ -33,7 +33,6 @@ export class Markdown {
 	}> {
 		try {
 			const file_content = await readFile(file_path, 'utf8')
-
 			const { data: metadata, content } = matter(file_content)
 			const { title, description } = metadata
 
