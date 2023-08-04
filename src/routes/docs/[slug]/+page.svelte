@@ -67,7 +67,7 @@
 		<p class="slide-fade-in category">{data.category}</p>
 
 		<div class="content">
-			<h1 class="slide-fade-in glass-text-5">{data.page.title}</h1>
+			<h1 class="slide-fade-in glass-text-5"><a href={$page.url.pathname}>{data.page.title}</a></h1>
 
 			<div class="mb-5 flex">
 				<a
