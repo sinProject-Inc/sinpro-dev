@@ -26,12 +26,12 @@ export type PageSection = {
 export class Markdown {
 	public static docs_base_dir = './docs'
 
-	public static read_file(file_path: string): {
+	public static async read_file(file_path: string): Promise<{
 		title: string
 		description: string
 		content: string
-	} {
-		const file_content = fs.readFileSync(file_path, 'utf8')
+	}> {
+		const file_content = await fs.promises.readFile(file_path, 'utf8')
 		const { data: metadata, content } = matter(file_content)
 		const { title, description } = metadata
 
@@ -214,13 +214,13 @@ export class Markdown {
 		}
 	}
 
-	public static generate_page_content(file_path: string): {
+	public static async generate_page_content(file_path: string): Promise<{
 		title: string
 		description: string
 		html_content: string
 		sections: PageSection[]
-	} {
-		const { title, description, content } = this.read_file(file_path)
+	}> {
+		const { title, description, content } = await this.read_file(file_path)
 
 		const md = new MarkdownIt({ html: true, breaks: true, linkify: true, typographer: true })
 
@@ -244,8 +244,8 @@ export class Markdown {
 		return { title, description, html_content, sections }
 	}
 
-	public static get_section_title(sub_dir_path: string): string {
-		const meta = JSON.parse(fs.readFileSync(`${sub_dir_path}/meta.json`, 'utf8'))
+	public static async get_section_title(sub_dir_path: string): Promise<string> {
+		const meta = JSON.parse(await fs.promises.readFile(`${sub_dir_path}/meta.json`, 'utf8'))
 
 		return meta.title
 	}
