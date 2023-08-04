@@ -116,24 +116,24 @@
 				})
 
 				vivus_instances.push(vivus)
+
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								vivus_instances[index].play()
+							} else {
+								vivus_instances[index].stop()
+								vivus_instances[index].reset()
+							}
+						})
+					},
+					{ rootMargin: '-0px', threshold: 0.5 }
+				)
+
+				observer.observe(svg_element)
+				svg_observers.push(observer)
 			})
-
-			const observer = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							vivus_instances[index].play()
-						} else {
-							vivus_instances[index].stop()
-							vivus_instances[index].reset()
-						}
-					})
-				},
-				{ rootMargin: '-0px', threshold: 0.5 }
-			)
-
-			observer.observe(svg_element)
-			svg_observers.push(observer)
 		})
 	}
 
