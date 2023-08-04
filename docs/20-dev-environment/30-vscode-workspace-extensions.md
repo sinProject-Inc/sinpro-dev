@@ -236,3 +236,11 @@ Mark lines and jump to them
 - [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
 
 Syntax highlighting for modern and experimental CSS in VSCode
+
+- [Indented Block Highlighting](https://marketplace.visualstudio.com/items?itemName=byi8220.indented-block-highlighting)
+
+Highlights everything covered by the currently selected line's indentation level.
+
+- [Indenticator](https://marketplace.visualstudio.com/items?itemName=SirTori.indenticator)
+
+Highlights your current indent depth
