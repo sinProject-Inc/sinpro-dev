@@ -10,7 +10,7 @@
 	import type { LayoutServerData } from './$types'
 	import { onMount } from 'svelte'
 	import { fly } from 'svelte/transition'
-	import MobileMenuBar from '$lib/components/mobile_menu_bar.svelte'
+	import MobileMenuBar from './mobile_menu_bar.svelte'
 	import Audio from './docs/audio.svelte'
 
 	export let data: LayoutServerData

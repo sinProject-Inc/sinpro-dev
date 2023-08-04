@@ -3,7 +3,7 @@
 	import CloseIcon from '$lib/components/icons/close_icon.svelte'
 	import { mobile_menu_open } from '$lib/stores'
 	import MenuItemsSub from './menu_items_sub.svelte'
-	import NavItem from './nav_item.svelte'
+	import NavItem from '$lib/components/nav_item.svelte'
 
 	function close(): void {
 		$mobile_menu_open = false
