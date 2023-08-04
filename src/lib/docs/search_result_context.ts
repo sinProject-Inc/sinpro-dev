@@ -124,21 +124,19 @@ export class SearchResultContext {
 		return !!this._match.value
 	}
 
-	private _has_matching_portion(split_context: SplitContextPortion[]): boolean {
-		return !!this._get_first_matching_portion(split_context)
-	}
+	private _can_perform_shortening(
+		split_context: SplitContextPortion[]
+	): SplitContextPortion | undefined {
+		if (!this._is_match_available()) return undefined
 
-	private _can_split(split_context: SplitContextPortion[]): boolean {
-		return this._is_match_available() && this._has_matching_portion(split_context)
+		return this._get_first_matching_portion(split_context)
 	}
 
 	public shorten_split_context(
 		split_context: SplitContextPortion[],
 		max_length: number
 	): SplitContextPortion[] {
-		if (!this._can_split(split_context)) return []
-
-		const first_matching_portion = this._get_first_matching_portion(split_context)
+		const first_matching_portion = this._can_perform_shortening(split_context)
 		if (!first_matching_portion) return []
 
 		return this._get_shortened_context(split_context, first_matching_portion, max_length)
