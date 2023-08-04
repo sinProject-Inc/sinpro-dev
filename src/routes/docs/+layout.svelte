@@ -109,29 +109,31 @@
 		})
 
 		svg_elements.forEach((svg_element, index) => {
-			const vivus = new Vivus(svg_element as unknown as HTMLElement, {
-				duration: 150,
-				animTimingFunction: Vivus.EASE_OUT,
+			requestAnimationFrame(() => {
+				const vivus = new Vivus(svg_element as unknown as HTMLElement, {
+					duration: 150,
+					animTimingFunction: Vivus.EASE_OUT,
+				})
+
+				vivus_instances.push(vivus)
+
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								vivus_instances[index].play()
+							} else {
+								vivus_instances[index].stop()
+								vivus_instances[index].reset()
+							}
+						})
+					},
+					{ rootMargin: '-0px', threshold: 0.5 }
+				)
+
+				observer.observe(svg_element)
+				svg_observers.push(observer)
 			})
-
-			vivus_instances.push(vivus)
-
-			const observer = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							vivus_instances[index].play()
-						} else {
-							vivus_instances[index].stop()
-							vivus_instances[index].reset()
-						}
-					})
-				},
-				{ rootMargin: '-0px', threshold: 0.5 }
-			)
-
-			observer.observe(svg_element)
-			svg_observers.push(observer)
 		})
 	}
 

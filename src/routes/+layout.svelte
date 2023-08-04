@@ -25,8 +25,6 @@
 	const background_dark_overlay = 'rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.9)'
 	const background_light_overlay = 'rgba(241, 245, 248, 0.9), rgba(241, 245, 248, 0.9)'
 
-	load_backgrounds()
-
 	NProgress.configure({ showSpinner: false })
 
 	$: {
@@ -38,6 +36,7 @@
 	}
 
 	async function transition_background(): Promise<void> {
+		if (!browser) return
 		if (transitioning_background) return
 
 		transitioning_background = true
@@ -47,7 +46,7 @@
 
 		transitioning_background = false
 
-		next_background = next_background.transition_background()
+		next_background = next_background.get_next_background()
 	}
 
 	function load_backgrounds(): void {
@@ -57,22 +56,20 @@
 		next_background = current_background.get_next_background()
 	}
 
-	function execute_transition(): void {
+	function force_transition(): void {
+		if (!browser) return
+
 		clearInterval(transition_background_timer)
 
-		current_background.transition_background()
-		next_background = current_background.get_next_background()
+		requestAnimationFrame(() => {
+			// DrAF
+			requestAnimationFrame(transition_background)
 
-		transition_background()
-
-		transition_background_timer = window.setInterval(() => {
-			transition_background()
-		}, background_period_duration)
+			transition_background_timer = window.setInterval(() => {
+				transition_background()
+			}, background_period_duration)
+		})
 	}
-
-	afterNavigate(() => {
-		execute_transition()
-	})
 
 	async function change_theme(theme: string): Promise<void> {
 		if (!ready_theme_updating) return
@@ -114,7 +111,12 @@
 	let ready_theme_updating = false
 
 	onMount(async () => {
+		load_backgrounds()
 		init_theme()
+	})
+
+	afterNavigate(() => {
+		force_transition()
 	})
 
 	afterNavigate(async () => {
