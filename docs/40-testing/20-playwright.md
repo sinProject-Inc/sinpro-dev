@@ -72,7 +72,7 @@ const config: PlaywrightTestConfig = {
 		// },
 
 		// ...
-	}
+	],
 }
 ```
 
@@ -98,7 +98,7 @@ const config: PlaywrightTestConfig = {
 	],
 	use: {
 		baseURL: `http://127.0.0.1:5173${base}/`,
-	}
+	},
 }
 ```
 
@@ -120,7 +120,7 @@ const config: PlaywrightTestConfig = {
 			},
 			dependencies: ['setup'],
 		},
-	}
+	],
 }
 ```
 
