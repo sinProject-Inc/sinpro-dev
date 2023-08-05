@@ -34,12 +34,6 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	logger.info(`${client_address} [${event.request.method}] ${event.url}`)
 
-	// 	if (event.url.pathname !== `${base}/api/log`) {
-	// 	logger.info(`${client_address} [${event.request.method}] ${event.url}`)
-	// } else {
-	// 	logger.info(`${client_address} [${event.request.method}] ${event.url}`)
-	// }
-
 	const response = await resolve(event, {
 		// eslint-disable-next-line @typescript-eslint/naming-convention
 		transformPageChunk: ({ html }) =>
