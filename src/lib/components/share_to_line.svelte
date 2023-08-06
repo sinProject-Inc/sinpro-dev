@@ -1,13 +1,12 @@
 <script>
+	import { App } from '$lib/app/app'
 	import LineIcon from './icons/line_icon.svelte'
 	import { page } from '$app/stores'
 	import { current_page_title } from '$lib/docs/current_page_store'
-
-	const url = 'https://sinpro.dev' + $page.url.pathname
 </script>
 
 <a
-	href="http://line.me/R/msg/text/?{url}%0a{$current_page_title}"
+	href="http://line.me/R/msg/text/?{App.get_docs_title($current_page_title)}%0D%0A{$page.url.href}"
 	target="_blank"
 	rel="nofollow noopener"
 	class="border-none"

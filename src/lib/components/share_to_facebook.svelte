@@ -1,12 +1,10 @@
 <script>
 	import FacebookIcon from './icons/facebook_icon.svelte'
 	import { page } from '$app/stores'
-
-	const url = 'https://sinpro.dev' + $page.url.pathname
 </script>
 
 <a
-	href="http://www.facebook.com/share.php?u={url}"
+	href="http://www.facebook.com/share.php?u={$page.url.href}"
 	rel="nofollow noopener"
 	target="_blank"
 	class="border-none"
