@@ -95,7 +95,7 @@
 			{@html data.page.html_content}
 		</div>
 
-		<div class="flex justify-end gap-1">
+		<div class="flex justify-end gap-3">
 			<ShareToX />
 			<ShareToFacebook />
 			<ShareToLine />
