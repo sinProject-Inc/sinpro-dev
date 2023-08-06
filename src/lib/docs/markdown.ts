@@ -183,19 +183,6 @@ export class Markdown {
 			const text = md.utils.escapeHtml(tokens[idx].content)
 			let string_after_render = text
 
-			// TODO: replace ">" to arrow
-			// if (text.includes('&gt;')) {
-			// 	const cut_text = text.replace('&gt;', '')
-
-			// 	string_after_render = `
-			// 		<div style="display: flex; flex-direction: row;">
-			// 			<div class="link-with-arrow">
-			// 				${cut_text}
-			// 			</div>
-			// 		</div>
-			// 	`
-			// }
-
 			if (text.includes('on GitHub &gt;')) {
 				const cut_text = text.replace('on GitHub &gt;', '')
 
