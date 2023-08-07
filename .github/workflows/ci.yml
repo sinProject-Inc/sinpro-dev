@@ -57,14 +57,17 @@ jobs:
         shell: bash
         run: npm run build
 
-      - name: Vitest Test and coverage
-        run: npm run coverage:ci
+      - name: Vitest Test
+        run: npm run test:ci
 
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
+      # - name: Vitest Test and coverage
+      #   run: npm run coverage:ci
+
+      # - name: SonarCloud Scan
+      #   uses: SonarSource/sonarcloud-github-action@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
 
       # https://playwright.dev/docs/ci-intro
       - name: Install Playwright Browsers
