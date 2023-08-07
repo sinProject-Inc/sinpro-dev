@@ -6,11 +6,15 @@ description: This is a guide to producing readable, reusable, and refactorable s
 ## Add "Use fs.promises" as first element
 
 ```ts::Bad
-fs.readFileSync()
+import fs from 'fs'
+
+const file = fs.readFileSync()
 ```
 
 ```ts::Good
-fs.promises.readfile()
+import fs from 'fs'
+
+const file = await fs.readFileSync()
 ```
 
 ## Use Promises, not callbacks
