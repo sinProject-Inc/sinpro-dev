@@ -1,5 +1,8 @@
 import { test, expect } from 'vitest'
 import { ClientAddress } from './client_address'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 test('ClientAddress should return x-forwarded-for header if it exists', () => {
 	const mock_request = {
@@ -11,7 +14,7 @@ test('ClientAddress should return x-forwarded-for header if it exists', () => {
 		},
 	} as unknown as Request
 
-	const client_address = new ClientAddress(mock_request, () => '192.168.0.1')
+	const client_address = new ClientAddress(mock_request, () => process.env.TEST_IP_ADDRESS ?? '')
 	const result = client_address.value
 
 	expect(result).toBe('123.456.789.101')
@@ -24,8 +27,8 @@ test('ClientAddress should call _get_client_address function if x-forwarded-for 
 		},
 	} as unknown as Request
 
-	const client_address = new ClientAddress(mock_request, () => '192.168.0.1')
+	const client_address = new ClientAddress(mock_request, () => process.env.TEST_IP_ADDRESS ?? '')
 	const result = client_address.value
 
-	expect(result).toBe('192.168.0.1')
+	expect(result).toBe(process.env.TEST_IP_ADDRESS)
 })
