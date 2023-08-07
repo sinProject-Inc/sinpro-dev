@@ -17,7 +17,7 @@ test('ClientAddress should return x-forwarded-for header if it exists', () => {
 	const client_address = new ClientAddress(mock_request, () => process.env.TEST_IP_ADDRESS ?? '')
 	const result = client_address.value
 
-	expect(result).toBe('123.456.789.101')
+	expect(result).toEqual('123.456.789.101')
 })
 
 test('ClientAddress should call _get_client_address function if x-forwarded-for header does not exist', () => {
@@ -30,5 +30,5 @@ test('ClientAddress should call _get_client_address function if x-forwarded-for 
 	const client_address = new ClientAddress(mock_request, () => process.env.TEST_IP_ADDRESS ?? '')
 	const result = client_address.value
 
-	expect(result).toBe(process.env.TEST_IP_ADDRESS)
+	expect(result).toEqual(process.env.TEST_IP_ADDRESS)
 })
