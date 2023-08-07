@@ -3,6 +3,20 @@ title: Concurrency
 description: This is a guide to producing readable, reusable, and refactorable software for TypeScript.
 ---
 
+## Use fs.promises
+
+```ts::Bad
+import fs from 'fs'
+
+const file = fs.readFileSync(...)
+```
+
+```ts::Good
+import fs from 'fs'
+
+const file = await fs.promises.readFile(...)
+```
+
 ## Use Promises, not callbacks
 
 ```ts::Bad
