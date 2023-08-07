@@ -12,7 +12,7 @@ export default defineConfig({
 		hookTimeout: 3000,
 		teardownTimeout: 0,
 		coverage: {
-			// all: true,
+			all: true,
 			include: ['src/**/*.{ts,js}'],
 			reporter: ['lcov', 'text'],
 		},
