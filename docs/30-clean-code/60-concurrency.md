@@ -8,13 +8,13 @@ description: This is a guide to producing readable, reusable, and refactorable s
 ```ts::Bad
 import fs from 'fs'
 
-const file = fs.readFileSync()
+const file = fs.readFileSync(...)
 ```
 
 ```ts::Good
 import fs from 'fs'
 
-const file = await fs.promises.readFile()
+const file = await fs.promises.readFile(...)
 ```
 
 ## Use Promises, not callbacks
