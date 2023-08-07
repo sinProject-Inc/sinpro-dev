@@ -86,6 +86,7 @@
 						<RightArrowIcon />
 					</div>
 				</a>
+
 				<div class="flex gap-3">
 					<ShareToX />
 					<ShareToFacebook />
@@ -95,11 +96,12 @@
 			{@html data.page.html_content}
 		</div>
 
-		<div class="flex justify-end gap-3">
+		<div class="flex justify-end gap-3 my-8">
 			<ShareToX />
 			<ShareToFacebook />
 			<ShareToLine />
 		</div>
+
 		<footer class="text-s mt-12 leading-6">
 			<div class="glass-text-3 flex items-center text-sm font-semibold">
 				{#if prev_page}
