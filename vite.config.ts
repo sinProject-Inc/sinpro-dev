@@ -11,6 +11,11 @@ export default defineConfig({
 		include: ['src/**/*.test.ts'],
 		hookTimeout: 3000,
 		teardownTimeout: 0,
+		coverage: {
+			// all: true,
+			include: ['src/**/*.{ts,js}'],
+			reporter: ['lcov', 'text'],
+		},
 		// coverage: {
 		// 	all: true,
 		// 	include: ['src/**/*.ts'],
