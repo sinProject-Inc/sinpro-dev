@@ -132,7 +132,8 @@ export class MarkdownCodeElement {
 		private readonly _original_title: string,
 		private readonly _content: string
 	) {
-		this._title = this._original_title || this._filename || hljs.getLanguage(this._lang)?.name || ''
+		this._title =
+			(this._original_title || this._filename || hljs.getLanguage(this._lang)?.name) ?? 'UNKNOWN'
 		this._link = this._generate_link()
 	}
 

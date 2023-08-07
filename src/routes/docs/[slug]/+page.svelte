@@ -4,6 +4,9 @@
 	import { App } from '$lib/app/app'
 	import GithubIcon from '$lib/components/icons/github_icon.svelte'
 	import RightArrowIcon from '$lib/components/icons/right_arrow_icon.svelte'
+	import ShareToX from '$lib/components/share_to_x.svelte'
+	import ShareToFacebook from '$lib/components/share_to_facebook.svelte'
+	import ShareToLine from '$lib/components/share_to_line.svelte'
 	import SocialMetaTags from '$lib/components/social_meta_tags.svelte'
 	import VersionFooter from '$lib/components/version_footer.svelte'
 	import { current_page_category, current_page_title } from '$lib/docs/current_page_store'
@@ -69,7 +72,7 @@
 		<div class="content">
 			<h1 class="slide-fade-in glass-text-5"><a href={$page.url.pathname}>{data.page.title}</a></h1>
 
-			<div class="mb-5 flex">
+			<div class="mb-5 flex justify-between">
 				<a
 					href={git_path}
 					target="_blank"
@@ -83,9 +86,20 @@
 						<RightArrowIcon />
 					</div>
 				</a>
-			</div>
 
+				<div class="flex gap-3">
+					<ShareToX />
+					<ShareToFacebook />
+					<ShareToLine />
+				</div>
+			</div>
 			{@html data.page.html_content}
+		</div>
+
+		<div class="flex justify-end gap-3 my-8">
+			<ShareToX />
+			<ShareToFacebook />
+			<ShareToLine />
 		</div>
 
 		<footer class="text-s mt-12 leading-6">
