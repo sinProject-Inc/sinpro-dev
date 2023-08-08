@@ -16,3 +16,9 @@ How we use [Slack](https://slack.com/) to communicate and collaborate.
 - Share information for the benefit of others.
 - Send a message when starting a task.
 - Send a message including your thoughts when finishing a task.
+
+## Settings
+
+- Open the Mentions & reactions menu
+- Click the settings icon
+- Check @channel mentions
