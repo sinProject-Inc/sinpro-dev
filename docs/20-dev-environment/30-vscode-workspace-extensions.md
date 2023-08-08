@@ -188,6 +188,10 @@ Automating the process of writing meaningful log messages.
 
 ## Code Quality
 
+- [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode)
+
+Linter to detect & fix coding issues locally in JS/TS, Python, PHP, Java, C, C++, Go, IaC. Use with SonarQube & SonarCloud for optimal team performance.
+
 - [CodeMetrics](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics)
 
 Computes complexity in TypeScript / JavaScript files.
