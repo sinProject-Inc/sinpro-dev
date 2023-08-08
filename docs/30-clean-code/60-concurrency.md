@@ -36,7 +36,7 @@ public async get_hostname(): Promise<string> {
 }
 ```
 
-```ts::God
+```ts::Good
 public async get_hostname(): Promise<string> {
 	const reverse_dns = util.promisify(dns.reverse)
 
