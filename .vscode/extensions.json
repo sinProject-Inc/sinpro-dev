@@ -39,6 +39,7 @@
 		"kisstkondoros.vscode-codemetrics",
 		"byi8220.indented-block-highlighting",
 		"sirtori.indenticator",
-		"sonarsource.sonarlint-vscode"
+		"sonarsource.sonarlint-vscode",
+		"yzhang.markdown-all-in-one"
 	]
 }
