@@ -1,4 +1,6 @@
-name: PR Review
+# https://github.com/akiojin/auto-review-github-action
+# https://qiita.com/akiojin/items/c7fce6084c558180eb0d
+name: Code Review by akiojin
 
 on:
   pull_request:
