@@ -7,43 +7,31 @@ async function to_have_title(page: Page, title: string): Promise<void> {
 }
 
 test.beforeEach(async ({ page }) => {
-	await page.goto(docs_base, { waitUntil: 'load' })
+	await page.goto(docs_base)
 	await to_have_title(page, 'Portfolio')
 })
 
 test('access a page', async ({ page }) => {
-	await page.goto(`${docs_base}/about`, { waitUntil: 'load' })
+	await page.goto(`${docs_base}/about`)
 	await to_have_title(page, 'About')
 })
 
-test('open search modale with keyboard shortcut', async ({ page }) => {
-	await page.waitForTimeout(500)
-
-	await page.keyboard.press('Control+KeyK')
-
-	const search_modale = page.getByTestId('search-modale')
-
-	await expect(search_modale).toBeVisible()
-})
-
 test('close search modale with keyboard shortcut', async ({ page }) => {
-	await page.waitForTimeout(500)
-
-	await page.keyboard.press('Control+KeyK')
+	const search_button = page.getByTestId('search-button')
+	await search_button.click()
 
 	const search_modale = page.getByTestId('search-modale')
-
 	await expect(search_modale).toBeVisible()
 
 	await page.keyboard.press('Control+KeyK')
-
 	await expect(search_modale).not.toBeVisible()
+
+	await page.keyboard.press('Control+KeyK')
+	await expect(search_modale).toBeVisible()
 })
 
 test('open search modale with navbar button', async ({ page }) => {
 	page.setViewportSize({ width: 480, height: 600 })
-
-	await page.waitForTimeout(500)
 
 	const search_button = page.getByTestId('navbar-search-button')
 	await search_button.click()
