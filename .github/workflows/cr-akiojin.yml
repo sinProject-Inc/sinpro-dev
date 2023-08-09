@@ -4,7 +4,7 @@ name: Code Review by akiojin
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, reopened, synchronize]
 
 jobs:
   review:
