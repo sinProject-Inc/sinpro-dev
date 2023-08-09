@@ -11,6 +11,7 @@ on:
 
 jobs:
   review:
+    name: Code Review by ChatGPT-CodeReview
     # if: ${{ contains(github.event.*.labels.*.name, 'gpt review') }} # Optional; to run only when a label is attached
     runs-on: ubuntu-latest
     steps:
