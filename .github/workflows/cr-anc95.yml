@@ -10,7 +10,7 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
-  test:
+  review:
     # if: ${{ contains(github.event.*.labels.*.name, 'gpt review') }} # Optional; to run only when a label is attached
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +19,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # Optional
-          LANGUAGE: Japanese
+          LANGUAGE: English
           OPENAI_API_ENDPOINT: https://api.openai.com/v1
           MODEL: gpt-3.5-turbo # https://platform.openai.com/docs/models
           PROMPT: # example: Please check if there are any confusions or irregularities in the following code diff:

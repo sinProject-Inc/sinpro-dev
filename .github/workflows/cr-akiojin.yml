@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  Build:
+  review:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -24,4 +24,4 @@ jobs:
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
           target: 'ts,js,cjs,html,css,md,yml'
-          language: 日本語
+          language: English
