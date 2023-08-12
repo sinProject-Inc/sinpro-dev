@@ -11,6 +11,7 @@
 	],
 	"eslint.validate": ["svelte"],
 	"cSpell.words": [
+		"adsbygoogle",
 		"authtoken",
 		"autocompletes",
 		"autocrlf",

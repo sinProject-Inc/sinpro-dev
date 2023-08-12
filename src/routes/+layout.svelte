@@ -12,6 +12,7 @@
 	import { fly } from 'svelte/transition'
 	import MobileMenuBar from './mobile_menu_bar.svelte'
 	import Audio from './docs/audio.svelte'
+	import AdSense from './ad_sense.svelte'
 
 	export let data: LayoutServerData
 
@@ -124,14 +125,7 @@
 	})
 </script>
 
-<svelte:head>
-	<script
-		async
-		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4064604490139558"
-		crossorigin="anonymous"
-	></script>
-</svelte:head>
-
+<AdSense />
 <Audio />
 
 <div class={$theme ? 'visible' : 'invisible'}>
