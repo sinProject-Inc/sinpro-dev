@@ -24,5 +24,5 @@ jobs:
         continue-on-error: true
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          target: 'ts,js,cjs,html,css,md,yml'
+          target: 'html,css,ts,js,svelte,cjs,md,yml'
           language: English
