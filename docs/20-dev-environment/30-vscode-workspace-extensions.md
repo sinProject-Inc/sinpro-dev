@@ -203,7 +203,8 @@ Display import/require package size in the editor
 ## Markdown
 
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
-  All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)
+
+All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)
 
 ## Theme
 
