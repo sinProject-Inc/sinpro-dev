@@ -2,6 +2,7 @@
 	import { afterNavigate } from '$app/navigation'
 	import { page } from '$app/stores'
 	import type { PageData } from './$types'
+	import AdSense, { AdsId } from './ad_sense.svelte'
 
 	export let details: PageData['page']
 
@@ -91,6 +92,8 @@
 			{/each}
 		</ul>
 	</nav>
+
+	<AdSense id={AdsId.display_3} />
 </aside>
 
 <style lang="postcss">
