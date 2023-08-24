@@ -188,6 +188,10 @@ Automating the process of writing meaningful log messages.
 
 ## Code Quality
 
+- [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode)
+
+Linter to detect & fix coding issues locally in JS/TS, Python, PHP, Java, C, C++, Go, IaC. Use with SonarQube & SonarCloud for optimal team performance.
+
 - [CodeMetrics](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics)
 
 Computes complexity in TypeScript / JavaScript files.
@@ -195,6 +199,12 @@ Computes complexity in TypeScript / JavaScript files.
 - [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
 
 Display import/require package size in the editor
+
+## Markdown
+
+- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+
+All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)
 
 ## Theme
 

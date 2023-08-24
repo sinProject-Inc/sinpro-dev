@@ -38,6 +38,8 @@
 		"ms-vscode-remote.remote-ssh",
 		"kisstkondoros.vscode-codemetrics",
 		"byi8220.indented-block-highlighting",
-		"sirtori.indenticator"
+		"sirtori.indenticator",
+		"sonarsource.sonarlint-vscode",
+		"yzhang.markdown-all-in-one"
 	]
 }
