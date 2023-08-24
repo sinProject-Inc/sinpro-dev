@@ -12,6 +12,7 @@
 	import { current_page_category, current_page_title } from '$lib/docs/current_page_store'
 	import { theme } from '$lib/stores'
 	import OnThisPage from './on_this_page.svelte'
+	import AdSense, { AdsId } from './ad_sense.svelte'
 	// import '/node_modules/highlight.js/styles/atom-one-dark.css'
 	// import '/node_modules/highlight.js/styles/atom-one-light.css'
 
@@ -93,8 +94,12 @@
 					<ShareToLine />
 				</div>
 			</div>
+
+			<AdSense id={AdsId.display_1} />
 			{@html data.page.html_content}
 		</div>
+
+		<AdSense id={AdsId.display_2} />
 
 		<div class="flex justify-end gap-3 my-8">
 			<ShareToX />
@@ -142,6 +147,8 @@
 				{/if}
 			</div>
 		</footer>
+
+		<AdSense id={AdsId.multiplex_1} />
 	</div>
 
 	<div class="mt-8 border-t border-slate-200 pt-8 dark:border-slate-200/5">

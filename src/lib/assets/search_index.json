@@ -192,22 +192,8 @@
     "path": "docs-history",
     "title": "Docs History",
     "description": "We will provide a list and update history of the document files.",
-    "content": "\nWe will provide a list and update history of the document files.\n",
+    "content": "\nWe will provide a list and update history of the document files.\n\nReleases\nCommits\nFiles\n",
     "heading": ""
-  },
-  {
-    "path": "docs-history#docs-history",
-    "title": "Docs History",
-    "description": "We will provide a list and update history of the document files.",
-    "content": "\n\nView history on GitHub >\n",
-    "heading": "Docs History"
-  },
-  {
-    "path": "docs-history#docs-files",
-    "title": "Docs History",
-    "description": "We will provide a list and update history of the document files.",
-    "content": "\n\nView files on GitHub &gt;\n",
-    "heading": "Docs Files"
   },
   {
     "path": "docs-history",
@@ -215,20 +201,6 @@
     "description": "",
     "heading": "",
     "content": ""
-  },
-  {
-    "path": "docs-history#docs-history",
-    "title": "Docs History",
-    "description": "",
-    "heading": "Docs History",
-    "content": "Docs History"
-  },
-  {
-    "path": "docs-history#docs-files",
-    "title": "Docs History",
-    "description": "",
-    "heading": "Docs Files",
-    "content": "Docs Files"
   },
   {
     "path": "docs-history",
@@ -294,6 +266,13 @@
     "heading": "Communication"
   },
   {
+    "path": "slack#settings",
+    "title": "Slack",
+    "description": "How we use Slack to communicate and collaborate.",
+    "content": "\n\nOpen the Mentions & reactions menu\nClick the settings icon\nCheck @channel mentions\n",
+    "heading": "Settings"
+  },
+  {
     "path": "slack",
     "title": "Slack",
     "description": "",
@@ -313,6 +292,13 @@
     "description": "",
     "heading": "Communication",
     "content": "Communication"
+  },
+  {
+    "path": "slack#settings",
+    "title": "Slack",
+    "description": "",
+    "heading": "Settings",
+    "content": "Settings"
   },
   {
     "path": "slack",
@@ -367,7 +353,7 @@
     "path": "equipment-and-supplies#electronics-cables-and-chargers",
     "title": "Equipment and Supplies",
     "description": "We will introduce the equipment and supplies we use and recommend.",
-    "content": "\n\nAnker 747 Charger (GaNPrime 150W) (USB PD 充電器 USB-A & USB-C 4 ポート)【独自技術 Anker GaNPrime 採用 / PowerIQ 4.0 搭載 / PPS 規格対応 / PSE 技術基準適合 / 折りたたみ式プラグ】MacBook PD 対応 Windows PC iPad iPhone Galaxy Android スマートフォン ノート PC 各種 その他機器対応 (ブラック)\n\nRAMPOW USB-C & USB-C ケーブル【100W PD 対応/USB 3.2 Gen 2x2-20Gbps データ転送】PD3.0/QC3.0 超高速充電 4K/60Hz 映像出力 超高耐久 type-c ケーブル MacBook Pro/iPad Pro/Google Pixel/Galaxy 等タイプ C 対応 在宅勤務/出張支援 ネイビー 2M\n\nエレコム HDMI ケーブル 2m スリム プレミアムハイスピード 4K 2K (60P)対応 ナイロンメッシュケーブル アルミコネクタ ブラック DH-HDP14ES20SBK\n",
+    "content": "\n\nMOTTERU (モッテル) モバイルバッテリー 20000mAh 大容量 PD60W 出力対応 PD30W 入力対応 USB PD 対応 ノートPC サブバッテリー MacBook MacBook Pro iPad iPhone Apple Watch Android Lenovo HP Surface Dell Windows PC 各種対応 PPS対応 USB-C入出力 USB-A出力 低電流モード搭載 PD3.0 PSE対応 電熱ベスト対応 キャンプ アウトドア スモーキーブラック MOT-MB20001-BK\n\nAnker 747 Charger (GaNPrime 150W) (USB PD 充電器 USB-A & USB-C 4 ポート)【独自技術 Anker GaNPrime 採用 / PowerIQ 4.0 搭載 / PPS 規格対応 / PSE 技術基準適合 / 折りたたみ式プラグ】MacBook PD 対応 Windows PC iPad iPhone Galaxy Android スマートフォン ノート PC 各種 その他機器対応 (ブラック)\n\nUGREEN L字 USB Cケーブル 映像出力【60W/3A急速充電 USB3.1 PD対応 4K / 60Hz 1m】タイプc ケーブル 5Gbps データコード MacBook Pro Air iPad Pro Galaxy S23 S22 等type c機種対応\n\nRAMPOW USB-C & USB-C ケーブル【100W PD 対応/USB 3.2 Gen 2x2-20Gbps データ転送】PD3.0/QC3.0 超高速充電 4K/60Hz 映像出力 超高耐久 type-c ケーブル MacBook Pro/iPad Pro/Google Pixel/Galaxy 等タイプ C 対応 在宅勤務/出張支援 ネイビー 2M\n\nエレコム HDMI ケーブル 2m スリム プレミアムハイスピード 4K 2K (60P)対応 ナイロンメッシュケーブル アルミコネクタ ブラック DH-HDP14ES20SBK\n",
     "heading": "Electronics Cables and Chargers"
   },
   {
@@ -787,7 +773,7 @@
     "path": "caddy#caddy-configuration",
     "title": "Caddy",
     "description": "Caddy is an open-source, HTTP/2-enabled web server written in Go.",
-    "content": "\n\nEdit the Caddyfile:\n\nsudo micro /etc/caddy/Caddyfile\n\nAdd your site configurations:\n\nexample.dev {\n\treverse_proxy :3001\n}\n\ntalk.example.dev {\n\treverse_proxy :3002\n}\n\nAdd cache control:\n\ntalk.example.dev {\n\treverse_proxy :3002\n\n\t@static path *.avif *.woff2 *.png\n\theader @static Cache-Control \"public, max-age=86400, must-revalidate\"\n}\n\nFinally, restart the Caddy service to apply the changes:\n\nsudo systemctl restart caddy\n\nMore info >\n",
+    "content": "\n\nEdit the Caddyfile:\n\nsudo micro /etc/caddy/Caddyfile\n\nAdd your site configurations:\n\nsinpro.dev {\n\treverse_proxy :3001\n}\n\ntalk.sinpro.dev {\n\treverse_proxy :3002\n}\n\nAdd cache control:\n\nsinpro.dev {\n\treverse_proxy :3001\n\n\t@static path *.avif *.woff2 *.png\n\theader @static Cache-Control \"public, max-age=86400, must-revalidate\"\n}\n\nFinally, restart the Caddy service to apply the changes:\n\nsudo systemctl restart caddy\n\nMore info >\n",
     "heading": "Caddy Configuration"
   },
   {
@@ -871,7 +857,7 @@
     "path": "pm2#ecosystem-file",
     "title": "PM2",
     "description": "PM2 is a daemon process manager that will help you manage and keep your application online 24/7.",
-    "content": "\n\nmodule.exports = {\n\tapps: [\n\t\t{\n\t\t\tname: 'talk',\n\t\t\tscript: './server/index.ts',\n\t\t\tinterpreter: 'node',\n\t\t\tinterpreterArgs: '--loader tsx',\n\t\t\tinstances: '-1',\n\t\t\texec_mode: 'cluster',\n\t\t\twatch: false,\n\t\t\tignore_watch: ['logs'],\n\t\t\tenv: {\n\t\t\t\tPORT: 3002,\n\t\t\t},\n\t\t},\n\t],\n}\n\nStart it easily:\n\npm2 start ecosystem.config.cjs\n\nMore info >\n",
+    "content": "\n\nmodule.exports = {\n\tapps: [\n\t\t{\n\t\t\tname: 'sinpro-dev',\n\t\t\tscript: 'build',\n\t\t\tinterpreter: 'node',\n\t\t\tinterpreterArgs: '--loader tsx',\n\t\t\tinstances: '-1',\n\t\t\texec_mode: 'cluster',\n\t\t\twatch: false,\n\t\t\tignore_watch: ['logs'],\n\t\t\tenv: {\n\t\t\t\tPORT: 3001,\n\t\t\t},\n\t\t},\n\t],\n}\n\nmodule.exports = {\n\tapps: [\n\t\t{\n\t\t\tname: 'talk',\n\t\t\tscript: './server/index.ts',\n\t\t\tinterpreter: 'node',\n\t\t\tinterpreterArgs: '--loader tsx',\n\t\t\tinstances: '-1',\n\t\t\texec_mode: 'cluster',\n\t\t\twatch: false,\n\t\t\tignore_watch: ['logs'],\n\t\t\tenv: {\n\t\t\t\tPORT: 3002,\n\t\t\t},\n\t\t},\n\t],\n}\n\nStart it easily:\n\npm2 start ecosystem.config.cjs\n\nMore info >\n",
     "heading": "Ecosystem File"
   },
   {
@@ -1197,69 +1183,6 @@
     "content": "GitHub Actions"
   },
   {
-    "path": "git-hooks",
-    "title": "Git Hooks",
-    "description": "We use lint-staged and Husky for our Git Hooks.",
-    "content": "\nWe use lint-staged and Husky for our Git Hooks.\n\nlint-staged - Run linters against staged git files and don't let 💩 slip into your code base!\nHusky - Husky improves your commits and more 🐶 woof!\n",
-    "heading": ""
-  },
-  {
-    "path": "git-hooks#installation",
-    "title": "Git Hooks",
-    "description": "We use lint-staged and Husky for our Git Hooks.",
-    "content": "\n\nnpm install --save-dev lint-staged\n\nnpx husky-init && npm install\n",
-    "heading": "Installation"
-  },
-  {
-    "path": "git-hooks#pre-commit",
-    "title": "Git Hooks",
-    "description": "We use lint-staged and Husky for our Git Hooks.",
-    "content": "\n\nCombine ESLint, Stylelint, Prettier, and lint-staged to format code.\n\n{\n\t\"scripts\": {\n\t\t\"lint\": \"prettier --plugin-search-dir . --check . && eslint .\"\n\t},\n\t\"lint-staged\": {\n\t\t\"*.{js,ts,svelte}\": \"eslint --cache --fix\",\n\t\t\"*.css\": \"stylelint --fix\",\n\t\t\"*.{js,css,md,ts,svelte,css,scss,json}\": \"prettier --write\"\n\t}\n}\n\n#!/bin/sh\n. \"$(dirname \"$0\")/_/husky.sh\"\n\nnpx lint-staged\n\nnpm run lint\n",
-    "heading": "pre-commit"
-  },
-  {
-    "path": "git-hooks#pre-push",
-    "title": "Git Hooks",
-    "description": "We use lint-staged and Husky for our Git Hooks.",
-    "content": "\n\nPerform TypeScript type checking, run tests with Vitest, and finally check for conflicts.\n\n{\n\t\"scripts\": {\n\t\t\"test:run\": \"vitest run\",\n\t\t\"test:e2e\": \"playwright test\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"typecheck\": \"tsc --noEmit\"\n\t}\n}\n\n#!/bin/sh\n. \"$(dirname \"$0\")/_/husky.sh\"\n\nnpm run typecheck\nnpm run check\n\nnpm run test:run\nnpm run test:e2e\n\nnpm run build\n\ngit fetch origin\ngit merge --no-commit --no-ff origin/main\ngit reset --hard HEAD\n",
-    "heading": "pre-push"
-  },
-  {
-    "path": "git-hooks",
-    "title": "Git Hooks",
-    "description": "",
-    "heading": "",
-    "content": ""
-  },
-  {
-    "path": "git-hooks#installation",
-    "title": "Git Hooks",
-    "description": "",
-    "heading": "Installation",
-    "content": "Installation"
-  },
-  {
-    "path": "git-hooks#pre-commit",
-    "title": "Git Hooks",
-    "description": "",
-    "heading": "pre-commit",
-    "content": "pre-commit"
-  },
-  {
-    "path": "git-hooks#pre-push",
-    "title": "Git Hooks",
-    "description": "",
-    "heading": "pre-push",
-    "content": "pre-push"
-  },
-  {
-    "path": "git-hooks",
-    "title": "Git Hooks",
-    "description": "",
-    "heading": "",
-    "content": "Git Hooks"
-  },
-  {
     "path": "github-branch-protection",
     "title": "GitHub Branch Protection",
     "description": "You can create a branch protection rule to enforce certain workflows for one or more branches, such as requiring an approving review or passing status checks for all pull requests merged into the protected branch.",
@@ -1321,6 +1244,272 @@
     "description": "",
     "heading": "",
     "content": "GitHub Branch Protection"
+  },
+  {
+    "path": "github_repository_settings",
+    "title": "GitHub Repository Settings",
+    "description": "We are modifying the initial settings of the repository as follows.",
+    "content": "\nWe are modifying the initial settings of the repository as follows.\n",
+    "heading": ""
+  },
+  {
+    "path": "github_repository_settings#general",
+    "title": "GitHub Repository Settings",
+    "description": "We are modifying the initial settings of the repository as follows.",
+    "content": "\n\nFeatures:\n\nWikis: Uncheck\nDiscussions: Check\n\nPull Requests:\n\nAutomatically delete head branches: Check\n",
+    "heading": "General"
+  },
+  {
+    "path": "github_repository_settings",
+    "title": "GitHub Repository Settings",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "github_repository_settings#general",
+    "title": "GitHub Repository Settings",
+    "description": "",
+    "heading": "General",
+    "content": "General"
+  },
+  {
+    "path": "github_repository_settings",
+    "title": "GitHub Repository Settings",
+    "description": "",
+    "heading": "",
+    "content": "GitHub Repository Settings"
+  },
+  {
+    "path": "github-pull-requests",
+    "title": "GitHub Pull Requests",
+    "description": "On completing an issues, we create a pull request (PR).",
+    "content": "\nOn completing an issues, we create a pull request (PR).\n",
+    "heading": ""
+  },
+  {
+    "path": "github-pull-requests#pull-request-template",
+    "title": "GitHub Pull Requests",
+    "description": "On completing an issues, we create a pull request (PR).",
+    "content": "\n\nIn the template, write tasks for the following:\n\nFor the Submitter\n  Tasks\nFor the Reviewer\n  Before Reviewing\n  Checks\n  After Reviewing\n\nView this file on GitHub >\n",
+    "heading": "Pull Request Template"
+  },
+  {
+    "path": "github-pull-requests#title",
+    "title": "GitHub Pull Requests",
+    "description": "On completing an issues, we create a pull request (PR).",
+    "content": "\n\nFormat\n\n\nExample\n\nDocs: Show scrollbar like Mac #942\n",
+    "heading": "Title"
+  },
+  {
+    "path": "github-pull-requests#reviewers",
+    "title": "GitHub Pull Requests",
+    "description": "On completing an issues, we create a pull request (PR).",
+    "content": "\n\nAssign the person in charge of reviewing.\n\nPR review and praise what was good about it.\n",
+    "heading": "Reviewers"
+  },
+  {
+    "path": "github-pull-requests#labels",
+    "title": "GitHub Pull Requests",
+    "description": "On completing an issues, we create a pull request (PR).",
+    "content": "\n\nIf it's related to an enhancement, add the 'enhancement' label.\n\nIf it involves a significant change, add the 'breaking-change' label.\n",
+    "heading": "Labels"
+  },
+  {
+    "path": "github-pull-requests",
+    "title": "GitHub Pull Requests",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "github-pull-requests#pull-request-template",
+    "title": "GitHub Pull Requests",
+    "description": "",
+    "heading": "Pull Request Template",
+    "content": "Pull Request Template"
+  },
+  {
+    "path": "github-pull-requests#title",
+    "title": "GitHub Pull Requests",
+    "description": "",
+    "heading": "Title",
+    "content": "Title"
+  },
+  {
+    "path": "github-pull-requests#reviewers",
+    "title": "GitHub Pull Requests",
+    "description": "",
+    "heading": "Reviewers",
+    "content": "Reviewers"
+  },
+  {
+    "path": "github-pull-requests#labels",
+    "title": "GitHub Pull Requests",
+    "description": "",
+    "heading": "Labels",
+    "content": "Labels"
+  },
+  {
+    "path": "github-pull-requests",
+    "title": "GitHub Pull Requests",
+    "description": "",
+    "heading": "",
+    "content": "GitHub Pull Requests"
+  },
+  {
+    "path": "github-issues",
+    "title": "GitHub Issues",
+    "description": "We manage tasks using GitHub issues.",
+    "content": "\nWe manage tasks using GitHub issues.\n",
+    "heading": ""
+  },
+  {
+    "path": "github-issues#issue-template",
+    "title": "GitHub Issues",
+    "description": "We manage tasks using GitHub issues.",
+    "content": "\n\nIn the template, write tasks for the following:\n\nWriting the issue\nBefore Working on the issue\nPre-PR Checks\n\nView this file on GitHub >\n",
+    "heading": "Issue Template"
+  },
+  {
+    "path": "github-issues#title",
+    "title": "GitHub Issues",
+    "description": "We manage tasks using GitHub issues.",
+    "content": "\n\nFormat\n\n:\n\nExample\n\nDocs: Show scrollbar like Mac\n\nWrite issue titles in affirmative form, following the following format.\n\nDocs: Mobile sidebar button does not show when first navigating\n\nDocs: Display icons when first navigating on mobile devices\n",
+    "heading": "Title"
+  },
+  {
+    "path": "github-issues#assignees",
+    "title": "GitHub Issues",
+    "description": "We manage tasks using GitHub issues.",
+    "content": "\n\nAssign the person in charge of the issue.\n",
+    "heading": "Assignees"
+  },
+  {
+    "path": "github-issues#labels",
+    "title": "GitHub Issues",
+    "description": "We manage tasks using GitHub issues.",
+    "content": "\n\nSpecify one or more labels. If there are no available labels, propose a new one.\n",
+    "heading": "Labels"
+  },
+  {
+    "path": "github-issues#milestones",
+    "title": "GitHub Issues",
+    "description": "We manage tasks using GitHub issues.",
+    "content": "\n\nCreate milestones for items with a deadline and associate them with the milestone.\n",
+    "heading": "Milestones"
+  },
+  {
+    "path": "github-issues",
+    "title": "GitHub Issues",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "github-issues#issue-template",
+    "title": "GitHub Issues",
+    "description": "",
+    "heading": "Issue Template",
+    "content": "Issue Template"
+  },
+  {
+    "path": "github-issues#title",
+    "title": "GitHub Issues",
+    "description": "",
+    "heading": "Title",
+    "content": "Title"
+  },
+  {
+    "path": "github-issues#assignees",
+    "title": "GitHub Issues",
+    "description": "",
+    "heading": "Assignees",
+    "content": "Assignees"
+  },
+  {
+    "path": "github-issues#labels",
+    "title": "GitHub Issues",
+    "description": "",
+    "heading": "Labels",
+    "content": "Labels"
+  },
+  {
+    "path": "github-issues#milestones",
+    "title": "GitHub Issues",
+    "description": "",
+    "heading": "Milestones",
+    "content": "Milestones"
+  },
+  {
+    "path": "github-issues",
+    "title": "GitHub Issues",
+    "description": "",
+    "heading": "",
+    "content": "GitHub Issues"
+  },
+  {
+    "path": "git-hooks",
+    "title": "Git Hooks",
+    "description": "We use lint-staged and Husky for our Git Hooks.",
+    "content": "\nWe use lint-staged and Husky for our Git Hooks.\n\nlint-staged - Run linters against staged git files and don't let 💩 slip into your code base!\nHusky - Husky improves your commits and more 🐶 woof!\n",
+    "heading": ""
+  },
+  {
+    "path": "git-hooks#installation",
+    "title": "Git Hooks",
+    "description": "We use lint-staged and Husky for our Git Hooks.",
+    "content": "\n\nnpm install --save-dev lint-staged\n\nnpx husky-init && npm install\n",
+    "heading": "Installation"
+  },
+  {
+    "path": "git-hooks#pre-commit",
+    "title": "Git Hooks",
+    "description": "We use lint-staged and Husky for our Git Hooks.",
+    "content": "\n\nCombine ESLint, Stylelint, Prettier, and lint-staged to format code.\n\n{\n\t\"scripts\": {\n\t\t\"lint\": \"prettier --plugin-search-dir . --check . && eslint .\"\n\t},\n\t\"lint-staged\": {\n\t\t\"*.{js,ts,svelte}\": \"eslint --cache --fix\",\n\t\t\"*.css\": \"stylelint --fix\",\n\t\t\"*.{js,css,md,ts,svelte,css,scss,json}\": \"prettier --write\"\n\t}\n}\n\n#!/bin/sh\n. \"$(dirname \"$0\")/_/husky.sh\"\n\nnpx lint-staged\n\nnpm run lint\n",
+    "heading": "pre-commit"
+  },
+  {
+    "path": "git-hooks#pre-push",
+    "title": "Git Hooks",
+    "description": "We use lint-staged and Husky for our Git Hooks.",
+    "content": "\n\nPerform TypeScript type checking, run tests with Vitest, and finally check for conflicts.\n\n{\n\t\"scripts\": {\n\t\t\"test:run\": \"vitest run\",\n\t\t\"test:e2e\": \"playwright test\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"typecheck\": \"tsc --noEmit\"\n\t}\n}\n\n#!/bin/sh\n. \"$(dirname \"$0\")/_/husky.sh\"\n\nnpm run typecheck\nnpm run check\n\nnpm run test:run\nnpm run test:e2e\n\nnpm run build\n\ngit fetch origin\ngit merge --no-commit --no-ff origin/main\ngit reset --hard HEAD\n",
+    "heading": "pre-push"
+  },
+  {
+    "path": "git-hooks",
+    "title": "Git Hooks",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "git-hooks#installation",
+    "title": "Git Hooks",
+    "description": "",
+    "heading": "Installation",
+    "content": "Installation"
+  },
+  {
+    "path": "git-hooks#pre-commit",
+    "title": "Git Hooks",
+    "description": "",
+    "heading": "pre-commit",
+    "content": "pre-commit"
+  },
+  {
+    "path": "git-hooks#pre-push",
+    "title": "Git Hooks",
+    "description": "",
+    "heading": "pre-push",
+    "content": "pre-push"
+  },
+  {
+    "path": "git-hooks",
+    "title": "Git Hooks",
+    "description": "",
+    "heading": "",
+    "content": "Git Hooks"
   },
   {
     "path": "git-branches-and-commits",
@@ -1400,174 +1589,6 @@
     "content": "Git Branches and Commits"
   },
   {
-    "path": "github-pull-requests",
-    "title": "GitHub Pull Requests",
-    "description": "On completing an issues, we create a pull request (PR).",
-    "content": "\nOn completing an issues, we create a pull request (PR).\n",
-    "heading": ""
-  },
-  {
-    "path": "github-pull-requests#pull-request-template",
-    "title": "GitHub Pull Requests",
-    "description": "On completing an issues, we create a pull request (PR).",
-    "content": "\n\nIn the template, write tasks for the following:\n\nFor the Submitter\n  Tasks\nFor the Reviewer\n  Before Reviewing\n  Checks\n  After Reviewing\n\nView this file on GitHub >\n",
-    "heading": "Pull Request Template"
-  },
-  {
-    "path": "github-pull-requests#title",
-    "title": "GitHub Pull Requests",
-    "description": "On completing an issues, we create a pull request (PR).",
-    "content": "\n\nFormat\n\n\nExample\n\nDocs: Show scrollbar like Mac #942\n",
-    "heading": "Title"
-  },
-  {
-    "path": "github-pull-requests#reviewers",
-    "title": "GitHub Pull Requests",
-    "description": "On completing an issues, we create a pull request (PR).",
-    "content": "\n\nAssign the person in charge of reviewing.\n",
-    "heading": "Reviewers"
-  },
-  {
-    "path": "github-pull-requests#labels",
-    "title": "GitHub Pull Requests",
-    "description": "On completing an issues, we create a pull request (PR).",
-    "content": "\n\nIf it's related to an enhancement, add the 'enhancement' label.\n\nIf it involves a significant change, add the 'breaking-change' label.\n",
-    "heading": "Labels"
-  },
-  {
-    "path": "github-pull-requests",
-    "title": "GitHub Pull Requests",
-    "description": "",
-    "heading": "",
-    "content": ""
-  },
-  {
-    "path": "github-pull-requests#pull-request-template",
-    "title": "GitHub Pull Requests",
-    "description": "",
-    "heading": "Pull Request Template",
-    "content": "Pull Request Template"
-  },
-  {
-    "path": "github-pull-requests#title",
-    "title": "GitHub Pull Requests",
-    "description": "",
-    "heading": "Title",
-    "content": "Title"
-  },
-  {
-    "path": "github-pull-requests#reviewers",
-    "title": "GitHub Pull Requests",
-    "description": "",
-    "heading": "Reviewers",
-    "content": "Reviewers"
-  },
-  {
-    "path": "github-pull-requests#labels",
-    "title": "GitHub Pull Requests",
-    "description": "",
-    "heading": "Labels",
-    "content": "Labels"
-  },
-  {
-    "path": "github-pull-requests",
-    "title": "GitHub Pull Requests",
-    "description": "",
-    "heading": "",
-    "content": "GitHub Pull Requests"
-  },
-  {
-    "path": "github-issues",
-    "title": "GitHub Issues",
-    "description": "We manage tasks using GitHub issues.",
-    "content": "\nWe manage tasks using GitHub issues.\n",
-    "heading": ""
-  },
-  {
-    "path": "github-issues#issue-template",
-    "title": "GitHub Issues",
-    "description": "We manage tasks using GitHub issues.",
-    "content": "\n\nIn the template, write tasks for the following:\n\nWriting the issue\nBefore Working on the issue\nPre-PR Checks\n\nView this file on GitHub >\n",
-    "heading": "Issue Template"
-  },
-  {
-    "path": "github-issues#title",
-    "title": "GitHub Issues",
-    "description": "We manage tasks using GitHub issues.",
-    "content": "\n\nFormat\n\n:\n\nExample\n\nDocs: Show scrollbar like Mac\n",
-    "heading": "Title"
-  },
-  {
-    "path": "github-issues#assignees",
-    "title": "GitHub Issues",
-    "description": "We manage tasks using GitHub issues.",
-    "content": "\n\nAssign the person in charge of the issue.\n",
-    "heading": "Assignees"
-  },
-  {
-    "path": "github-issues#labels",
-    "title": "GitHub Issues",
-    "description": "We manage tasks using GitHub issues.",
-    "content": "\n\nSpecify one or more labels. If there are no available labels, propose a new one.\n",
-    "heading": "Labels"
-  },
-  {
-    "path": "github-issues#milestones",
-    "title": "GitHub Issues",
-    "description": "We manage tasks using GitHub issues.",
-    "content": "\n\nCreate milestones for items with a deadline and associate them with the milestone.\n",
-    "heading": "Milestones"
-  },
-  {
-    "path": "github-issues",
-    "title": "GitHub Issues",
-    "description": "",
-    "heading": "",
-    "content": ""
-  },
-  {
-    "path": "github-issues#issue-template",
-    "title": "GitHub Issues",
-    "description": "",
-    "heading": "Issue Template",
-    "content": "Issue Template"
-  },
-  {
-    "path": "github-issues#title",
-    "title": "GitHub Issues",
-    "description": "",
-    "heading": "Title",
-    "content": "Title"
-  },
-  {
-    "path": "github-issues#assignees",
-    "title": "GitHub Issues",
-    "description": "",
-    "heading": "Assignees",
-    "content": "Assignees"
-  },
-  {
-    "path": "github-issues#labels",
-    "title": "GitHub Issues",
-    "description": "",
-    "heading": "Labels",
-    "content": "Labels"
-  },
-  {
-    "path": "github-issues#milestones",
-    "title": "GitHub Issues",
-    "description": "",
-    "heading": "Milestones",
-    "content": "Milestones"
-  },
-  {
-    "path": "github-issues",
-    "title": "GitHub Issues",
-    "description": "",
-    "heading": "",
-    "content": "GitHub Issues"
-  },
-  {
     "path": "playwright",
     "title": "Playwright",
     "description": "How we automate our tests using Playwright. Playwright is an E2E (end-to-end) testing framework.",
@@ -1592,7 +1613,7 @@
     "path": "playwright#configuration",
     "title": "Playwright",
     "description": "How we automate our tests using Playwright. Playwright is an E2E (end-to-end) testing framework.",
-    "content": "\nBasic changes\n\nChange the test directory, timeout duration, and other settings as needed.\n\nConfigure the reporter not to open automatically, and output a video when an error occurs.\n\nconst config: PlaywrightTestConfig = {\n\ttestDir: './e2e',\n\ttimeout: process.env.CI ? 20 * 1000 : 5 * 1000,\n\texpect: {\n\t\ttimeout: 2000,\n\t},\n\treporter: [['html', { open: 'never' }]],\n\tuse: {\n\t\tvideo: 'retain-on-failure',\n\t\tcontextOptions: {\n\t\t\tpermissions: ['clipboard-read', 'clipboard-write', 'accessibility-events'],\n\t\t},\n\t},\n}\n\nPlaywright - TestConfig >\n\nTarget Browsers\n\nEnsure that tests are not run on browsers where testing is not necessary.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t},\n\n\t\t// {\n\t\t//   name: 'firefox',\n\t\t//   use: {\n\t\t//     ...devices['Desktop Firefox'],\n\t\t//   },\n\t\t// },\n\n\t\t// ...\n\t}\n}\n\nWeb Server\n\nTo perform tests quickly, use a development server. Also, change the baseURL.\n\nconst base = ''\n// const base = '/sinpro-dev'\nconst config: PlaywrightTestConfig = {\n\twebServer: [\n\t\t{\n\t\t\tcommand: 'npm run dev',\n\t\t\turl: http://127.0.0.1:5173${base}/,\n\t\t\treuseExistingServer: !process.env.CI,\n\t\t},\n\t\t// {\n\t\t// \tcommand: 'npm run build && npm run preview',\n\t\t// \tport: 4173,\n\t\t// \treuseExistingServer: !process.env.CI,\n\t\t// },\n\t],\n\tuse: {\n\t\tbaseURL: http://127.0.0.1:5173${base}/,\n\t}\n}\n\nMore information >\n\nSetup\n\nSpecify processes to be executed beforehand, such as logging in. Add dependencies to the browser settings.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{ name: 'setup', testMatch: /.*\\.setup\\.ts/ },\n\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t\tdependencies: ['setup'],\n\t\t},\n\t}\n}\n",
+    "content": "\nBasic changes\n\nChange the test directory, timeout duration, and other settings as needed.\n\nConfigure the reporter not to open automatically, and output a video when an error occurs.\n\nconst config: PlaywrightTestConfig = {\n\ttestDir: './e2e',\n\ttimeout: process.env.CI ? 20 * 1000 : 5 * 1000,\n\texpect: {\n\t\ttimeout: process.env.CI ? 5000 : 2000,\n\t},\n\treporter: [['html', { open: 'never' }]],\n\tuse: {\n\t\tvideo: 'retain-on-failure',\n\t\tcontextOptions: {\n\t\t\tpermissions: ['clipboard-read', 'clipboard-write', 'accessibility-events'],\n\t\t},\n\t},\n}\n\nPlaywright - TestConfig >\n\nTarget Browsers\n\nEnsure that tests are not run on browsers where testing is not necessary.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t},\n\n\t\t// {\n\t\t//   name: 'firefox',\n\t\t//   use: {\n\t\t//     ...devices['Desktop Firefox'],\n\t\t//   },\n\t\t// },\n\n\t\t// ...\n\t],\n}\n\nWeb Server\n\nTo perform tests quickly, use a development server. Also, change the baseURL.\n\nconst base = ''\n// const base = '/sinpro-dev'\nconst config: PlaywrightTestConfig = {\n\twebServer: [\n\t\t{\n\t\t\tcommand: 'npm run dev',\n\t\t\turl: http://127.0.0.1:5173${base}/,\n\t\t\treuseExistingServer: !process.env.CI,\n\t\t},\n\t\t// {\n\t\t// \tcommand: 'npm run build && npm run preview',\n\t\t// \tport: 4173,\n\t\t// \treuseExistingServer: !process.env.CI,\n\t\t// },\n\t],\n\tuse: {\n\t\tbaseURL: http://127.0.0.1:5173${base}/,\n\t},\n}\n\nMore information >\n\nSetup\n\nSpecify processes to be executed beforehand, such as logging in. Add dependencies to the browser settings.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{ name: 'setup', testMatch: /.*\\.setup\\.ts/ },\n\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t\tdependencies: ['setup'],\n\t\t},\n\t],\n}\n",
     "heading": "Configuration"
   },
   {
@@ -1907,15 +1928,22 @@
     "path": "eslint#rules",
     "title": "ESLint",
     "description": "How we define code style using ESLint.",
-    "content": "\n\nMake accessibility and return type mandatory.\nProhibit console output.\n\nmodule.exports = {\n\trules: {\n\t\tsemi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],\n\t\t'no-unexpected-multiline': 'error',\n\t\t'@typescript-eslint/explicit-member-accessibility': ['error'],\n\t\t'@typescript-eslint/explicit-function-return-type': ['error'],\n\t\t'no-console': ['error'],\n\t},\n}\n\ntypescript-eslint - explicit-member-accessibility >\n\ntypescript-eslint - explicit-function-return-type >\n\nESLint - no-console >\n",
+    "content": "\n\nMake accessibility and return type mandatory.\nProhibit console output.\n\nmodule.exports = {\n\trules: {\n\t\tindent: ['error', 'tab', { SwitchCase: 1, ignoredNodes: ['ConditionalExpression'] }],\n\t\tsemi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],\n\t\t'no-unexpected-multiline': 'error',\n\t\t'@typescript-eslint/explicit-member-accessibility': ['error'],\n\t\t'@typescript-eslint/explicit-function-return-type': ['error'],\n\t\t'no-console': ['error'],\n\t},\n}\n\ntypescript-eslint - explicit-member-accessibility >\n\ntypescript-eslint - explicit-function-return-type >\n\nESLint - no-console >\n",
     "heading": "Rules"
   },
   {
     "path": "eslint#naming-conventions",
     "title": "ESLint",
     "description": "How we define code style using ESLint.",
-    "content": "\n\nEnforce naming conventions for everything across a codebase.\n\nSet variable names, argument names, and function names to snake_case.\nPrefix private variables with an underscore.\n\nmodule.exports = {\n\trules: {\n\t\t'@typescript-eslint/naming-convention': [\n\t\t\t'error',\n\t\t\t{\n\t\t\t\tselector: 'typeParameter',\n\t\t\t\tformat: ['UPPER_CASE'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['class', 'interface', 'typeAlias'],\n\t\t\t\tformat: ['PascalCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tmodifiers: ['private'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tmodifiers: ['protected'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\t// format: ['snake_case', 'camelCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: [\n\t\t\t\t\t'property',\n\t\t\t\t\t'accessor',\n\t\t\t\t\t'parameter',\n\t\t\t\t\t'parameterProperty',\n\t\t\t\t\t'variable',\n\t\t\t\t\t'enumMember',\n\t\t\t\t],\n\t\t\t\tmodifiers: ['private'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: [\n\t\t\t\t\t'property',\n\t\t\t\t\t'accessor',\n\t\t\t\t\t'parameter',\n\t\t\t\t\t'parameterProperty',\n\t\t\t\t\t'variable',\n\t\t\t\t\t'enumMember',\n\t\t\t\t],\n\t\t\t\tmodifiers: ['protected'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['accessor', 'parameter', 'parameterProperty', 'enumMember'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['property'],\n\t\t\t\tformat: ['snake_case', 'camelCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['variable'],\n\t\t\t\tformat: ['snake_case', 'UPPER_CASE'],\n\t\t\t},\n\t\t],\n\t},\n}\n",
+    "content": "\n\nEnforce naming conventions for everything across a codebase.\n\nDefine variable names, argument names, and function names with snake_case.\nPrefix private variables with an underscore.\n\nmodule.exports = {\n\trules: {\n\t\t'@typescript-eslint/naming-convention': [\n\t\t\t'error',\n\t\t\t{\n\t\t\t\tselector: 'typeParameter',\n\t\t\t\tformat: ['UPPER_CASE'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['class', 'interface', 'typeAlias'],\n\t\t\t\tformat: ['PascalCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tmodifiers: ['private'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tmodifiers: ['protected'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['method', 'function'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\t// format: ['snake_case', 'camelCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: [\n\t\t\t\t\t'property',\n\t\t\t\t\t'accessor',\n\t\t\t\t\t'parameter',\n\t\t\t\t\t'parameterProperty',\n\t\t\t\t\t'variable',\n\t\t\t\t\t'enumMember',\n\t\t\t\t],\n\t\t\t\tmodifiers: ['private'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: [\n\t\t\t\t\t'property',\n\t\t\t\t\t'accessor',\n\t\t\t\t\t'parameter',\n\t\t\t\t\t'parameterProperty',\n\t\t\t\t\t'variable',\n\t\t\t\t\t'enumMember',\n\t\t\t\t],\n\t\t\t\tmodifiers: ['protected'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t\tleadingUnderscore: 'require',\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['accessor', 'parameter', 'parameterProperty', 'enumMember'],\n\t\t\t\tformat: ['snake_case'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['property'],\n\t\t\t\tformat: ['snake_case', 'camelCase'],\n\t\t\t},\n\t\t\t{\n\t\t\t\tselector: ['variable'],\n\t\t\t\tformat: ['snake_case', 'UPPER_CASE'],\n\t\t\t},\n\t\t],\n\t},\n}\n",
     "heading": "Naming conventions"
+  },
+  {
+    "path": "eslint#using-eslint-with-svelte",
+    "title": "ESLint",
+    "description": "How we define code style using ESLint.",
+    "content": "\n\n{\n\t\"eslint.probe\": [\n\t\t...\n\t\t\"svelte\"\n\t],\n\t\"eslint.validate\": [\"svelte\"],\n}\n",
+    "heading": "Using ESLint with Svelte"
   },
   {
     "path": "eslint#missing-return-type-on-function-in-the-html-part-of-svelte",
@@ -1944,6 +1972,13 @@
     "description": "",
     "heading": "Naming conventions",
     "content": "Naming conventions"
+  },
+  {
+    "path": "eslint#using-eslint-with-svelte",
+    "title": "ESLint",
+    "description": "",
+    "heading": "Using ESLint with Svelte",
+    "content": "Using ESLint with Svelte"
   },
   {
     "path": "eslint#missing-return-type-on-function-in-the-html-part-of-svelte",
@@ -2163,6 +2198,13 @@
     "heading": ""
   },
   {
+    "path": "concurrency#use-fs-promises",
+    "title": "Concurrency",
+    "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
+    "content": "\n\nimport fs from 'fs'\n\nconst file = fs.readFileSync(...)\n\nimport fs from 'fs'\n\nconst file = await fs.promises.readFile(...)\n",
+    "heading": "Use fs.promises"
+  },
+  {
     "path": "concurrency#use-promises-not-callbacks",
     "title": "Concurrency",
     "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
@@ -2175,6 +2217,13 @@
     "description": "",
     "heading": "",
     "content": ""
+  },
+  {
+    "path": "concurrency#use-fs-promises",
+    "title": "Concurrency",
+    "description": "",
+    "heading": "Use fs.promises",
+    "content": "Use fs.promises"
   },
   {
     "path": "concurrency#use-promises-not-callbacks",
@@ -2240,6 +2289,13 @@
     "heading": "Make objects have private/protected members"
   },
   {
+    "path": "objects-and-data-structures#prefix-private-members-with-an-underscore",
+    "title": "Objects and Data Structures",
+    "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
+    "content": "\n\nclass Foo {\n  private readonly bar: number\n\n  private baz(): number {\n    ...\n  }\n}\n\nclass Foo {\n  private readonly _bar: number\n\n  private _baz(): number {\n    ...\n  }\n}\n",
+    "heading": "Prefix private members with an underscore"
+  },
+  {
     "path": "objects-and-data-structures",
     "title": "Objects and Data Structures",
     "description": "",
@@ -2252,6 +2308,13 @@
     "description": "",
     "heading": "Make objects have private/protected members",
     "content": "Make objects have private/protected members"
+  },
+  {
+    "path": "objects-and-data-structures#prefix-private-members-with-an-underscore",
+    "title": "Objects and Data Structures",
+    "description": "",
+    "heading": "Prefix private members with an underscore",
+    "content": "Prefix private members with an underscore"
   },
   {
     "path": "objects-and-data-structures",
@@ -2373,6 +2436,13 @@
     "heading": ""
   },
   {
+    "path": "variables#prefer-const",
+    "title": "Variables",
+    "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
+    "content": "\n\nRequire const declarations for variables that are never reassigned after declared.\n\nlet a = 3\nconsole.log(a)\n\nconst a = 3\nconsole.log(a)\n",
+    "heading": "Prefer const"
+  },
+  {
     "path": "variables#use-meaningful-and-pronounceable-variable-names",
     "title": "Variables",
     "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
@@ -2427,6 +2497,13 @@
     "description": "",
     "heading": "",
     "content": ""
+  },
+  {
+    "path": "variables#prefer-const",
+    "title": "Variables",
+    "description": "",
+    "heading": "Prefer const",
+    "content": "Prefer const"
   },
   {
     "path": "variables#use-meaningful-and-pronounceable-variable-names",
@@ -2555,10 +2632,17 @@
     "heading": ""
   },
   {
+    "path": "format#naming-of-files-and-directories",
+    "title": "Format",
+    "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
+    "content": "\n\nUse snake_case.\nHowever, for things that constitute a URL, such as HTML, JavaScript, CSS files, image files, and API paths, use kebab-case.\n",
+    "heading": "Naming of files and directories"
+  },
+  {
     "path": "format#use-single-quotes",
     "title": "Format",
     "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
-    "content": "\n\nIndeed, each approach has its pros and cons. However, achieving consistency within a project is necessary.\n\nOrdinary string literals are delimited with single quotes ('), rather than double quotes (\").\nTip: if a string contains a single quote character, consider using a template string to avoid having to escape the quote.\n\nFor more information: Google JavaScript Style Guide\n\nconsole.log(\"Hello\")\nconsole.log('World')\n\nconsole.log('Hello')\nconsole.log('World')\n",
+    "content": "\n\nBoth double quotes and single quotes has their own pros and cons. However, achieving consistency within a project is a necessity.\n\nDelimit ordinary string literals with single quotes ('), rather than double quotes (\").\nTip: if a string contains a single quote character, consider using a template string to avoid having to escape the quote.\n\nFor more information: Google JavaScript Style Guide\n\nconsole.log(\"Hello\")\nconsole.log('World')\n\nconsole.log('Hello')\nconsole.log('World')\n",
     "heading": "Use single quotes"
   },
   {
@@ -2623,6 +2707,13 @@
     "description": "",
     "heading": "",
     "content": ""
+  },
+  {
+    "path": "format#naming-of-files-and-directories",
+    "title": "Format",
+    "description": "",
+    "heading": "Naming of files and directories",
+    "content": "Naming of files and directories"
   },
   {
     "path": "format#use-single-quotes",
@@ -2919,6 +3010,83 @@
     "content": "Assets"
   },
   {
+    "path": "keyboard-shortcuts",
+    "title": "Keyboard Shortcuts",
+    "description": "We will introduce some keyboard shortcuts that we often use.",
+    "content": "\nWe will introduce some keyboard shortcuts that we often use.\n",
+    "heading": ""
+  },
+  {
+    "path": "keyboard-shortcuts#macos",
+    "title": "Keyboard Shortcuts",
+    "description": "We will introduce some keyboard shortcuts that we often use.",
+    "content": "\n\nLaunch Alfred : Opt + Space\nDelete : Cmd + Delete\n",
+    "heading": "macOS"
+  },
+  {
+    "path": "keyboard-shortcuts#vscode",
+    "title": "Keyboard Shortcuts",
+    "description": "We will introduce some keyboard shortcuts that we often use.",
+    "content": "\n\nShow All Commands: command shift P\nGo to File... : command P\nOrganize Imports : option shift O\nGo Back : control -\nGo Forward : control shift -\nClose All Editors : command K, command W\nClose Editor : command W\nSelect All Occurrences of FInd Match : command shift L\nCut (line) : command X\nNew Window : command shift N\nMove Line up / down : option ↑ / ↓\n",
+    "heading": "VSCode"
+  },
+  {
+    "path": "keyboard-shortcuts#google-chrome",
+    "title": "Keyboard Shortcuts",
+    "description": "We will introduce some keyboard shortcuts that we often use.",
+    "content": "\n\nDeveloper Tools : command option I\nReopen Closed Tab : command shift T\nSelect Next Tab : command →\nSelect Previous Tab : command ←\nActual Size : command 0\nZoom In : command +\nZoom Out : command -\n",
+    "heading": "Google Chrome"
+  },
+  {
+    "path": "keyboard-shortcuts#github",
+    "title": "Keyboard Shortcuts",
+    "description": "We will introduce some keyboard shortcuts that we often use.",
+    "content": "\n\nSubmit : command enter\n",
+    "heading": "GitHub"
+  },
+  {
+    "path": "keyboard-shortcuts",
+    "title": "Keyboard Shortcuts",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "keyboard-shortcuts#macos",
+    "title": "Keyboard Shortcuts",
+    "description": "",
+    "heading": "macOS",
+    "content": "macOS"
+  },
+  {
+    "path": "keyboard-shortcuts#vscode",
+    "title": "Keyboard Shortcuts",
+    "description": "",
+    "heading": "VSCode",
+    "content": "VSCode"
+  },
+  {
+    "path": "keyboard-shortcuts#google-chrome",
+    "title": "Keyboard Shortcuts",
+    "description": "",
+    "heading": "Google Chrome",
+    "content": "Google Chrome"
+  },
+  {
+    "path": "keyboard-shortcuts#github",
+    "title": "Keyboard Shortcuts",
+    "description": "",
+    "heading": "GitHub",
+    "content": "GitHub"
+  },
+  {
+    "path": "keyboard-shortcuts",
+    "title": "Keyboard Shortcuts",
+    "description": "",
+    "heading": "",
+    "content": "Keyboard Shortcuts"
+  },
+  {
     "path": "warp",
     "title": "Warp",
     "description": "Warp is a blazingly fast, Rust-based terminal reimagined from the ground up to work like a modern app.",
@@ -2982,6 +3150,13 @@
     "heading": "Config"
   },
   {
+    "path": "tailwind-css#install-tailwind-css-with-sveltekit",
+    "title": "Tailwind CSS",
+    "description": "For designing user interfaces, we utilize Tailwind CSS.",
+    "content": "\n\nSetting up Tailwind CSS in a SvelteKit project.\n",
+    "heading": "Install Tailwind CSS with SvelteKit"
+  },
+  {
     "path": "tailwind-css",
     "title": "Tailwind CSS",
     "description": "",
@@ -3008,6 +3183,13 @@
     "description": "",
     "heading": "Config",
     "content": "Config"
+  },
+  {
+    "path": "tailwind-css#install-tailwind-css-with-sveltekit",
+    "title": "Tailwind CSS",
+    "description": "",
+    "heading": "Install Tailwind CSS with SvelteKit",
+    "content": "Install Tailwind CSS with SvelteKit"
   },
   {
     "path": "tailwind-css",
@@ -3440,7 +3622,7 @@
     "path": "vscode-workspace-extensions#code-quality",
     "title": "VSCode Workspace Extensions",
     "description": "Here are the VSCode extensions that we commonly use at sinProject.",
-    "content": "\n\nImport Cost\n\nDisplay import/require package size in the editor\n",
+    "content": "\n\nCodeMetrics\n\nComputes complexity in TypeScript / JavaScript files.\n\nImport Cost\n\nDisplay import/require package size in the editor\n",
     "heading": "Code Quality"
   },
   {
@@ -3456,6 +3638,13 @@
     "description": "Here are the VSCode extensions that we commonly use at sinProject.",
     "content": "\n\nLive Share\n\nReal-time collaborative development from the comfort of your favorite tools.\n",
     "heading": "Team Collaboration"
+  },
+  {
+    "path": "vscode-workspace-extensions#highlighting",
+    "title": "VSCode Workspace Extensions",
+    "description": "Here are the VSCode extensions that we commonly use at sinProject.",
+    "content": "\n\nIndented Block Highlighting\n\nHighlights everything covered by the currently selected line's indentation level.\n\nIndenticator\n\nHighlights your current indent depth\n",
+    "heading": "Highlighting"
   },
   {
     "path": "vscode-workspace-extensions#localization",
@@ -3584,6 +3773,13 @@
     "content": "Team Collaboration"
   },
   {
+    "path": "vscode-workspace-extensions#highlighting",
+    "title": "VSCode Workspace Extensions",
+    "description": "",
+    "heading": "Highlighting",
+    "content": "Highlighting"
+  },
+  {
     "path": "vscode-workspace-extensions#localization",
     "title": "VSCode Workspace Extensions",
     "description": "",
@@ -3612,6 +3808,13 @@
     "heading": ""
   },
   {
+    "path": "vscode-workspace-settings#tab-size",
+    "title": "VSCode Workspace Settings",
+    "description": "Here are the VSCode workspace settings that we commonly use at sinProject.",
+    "content": "\n\n{\n\t\"editor.tabSize\": 2\n}\n",
+    "heading": "Tab Size"
+  },
+  {
     "path": "vscode-workspace-settings#bracket-pairs",
     "title": "VSCode Workspace Settings",
     "description": "Here are the VSCode workspace settings that we commonly use at sinProject.",
@@ -3638,6 +3841,13 @@
     "description": "",
     "heading": "",
     "content": ""
+  },
+  {
+    "path": "vscode-workspace-settings#tab-size",
+    "title": "VSCode Workspace Settings",
+    "description": "",
+    "heading": "Tab Size",
+    "content": "Tab Size"
   },
   {
     "path": "vscode-workspace-settings#bracket-pairs",
@@ -3678,7 +3888,7 @@
     "path": "chrome-extensions#extensions",
     "title": "Chrome Extensions",
     "description": "Here are the Chrome extensions that we commonly use at sinProject.",
-    "content": "\n\nGoogle Translate\n\nView translations easily as you browse the web. By the Google Translate team.\n\nOutline Chrome Extension\n\nAdd an outline style and see the boundaries of every HTML element without affecting the layout (sizing or positioning).\n\nWappalyzer - Technology profiler\n\nWappalyzer is a technology profiler that shows you what websites are built with.\n\nSVG Export\n\nDownload SVGs from websites as SVGs, PNGs or JPEGs\n\nColorblindly\n\nSimulates colorblindness in your web browser.\n",
+    "content": "\n\nGoogle Translate\n\nView translations easily as you browse the web. By the Google Translate team.\n\nOutline Chrome Extension\n\nAdd an outline style and see the boundaries of every HTML element without affecting the layout (sizing or positioning).\n\nMaterial Icons for GitHub\n\nReplace the file/folder icons on the GitHub file browser with icons representing the file's type and which tool it is used by.\n\nWappalyzer - Technology profiler\n\nWappalyzer is a technology profiler that shows you what websites are built with.\n\nSVG Export\n\nDownload SVGs from websites as SVGs, PNGs or JPEGs\n\nColorblindly\n\nSimulates colorblindness in your web browser.\n\nVideo Speed Controller\n\nSpeed up, slow down, advance and rewind HTML5 audio/video with shortcuts\n\nNetflix 同時字幕で英語学習\n\nNetflix の日本語と英語字幕を同時に表示。3 秒巻き戻し機能。英単語の意味を表示。ひとつのセリフをリピート再生。再生速度の変更。フレーズをお気に入りに追加。\n",
     "heading": "Extensions"
   },
   {
@@ -3780,6 +3990,69 @@
     "content": "macOS Settings"
   },
   {
+    "path": "services",
+    "title": "Services",
+    "description": "Here are the services we offer at sinProject Inc.",
+    "content": "\nHere are the services we offer at sinProject Inc.\n\n\n",
+    "heading": ""
+  },
+  {
+    "path": "services#office-space",
+    "title": "Services",
+    "description": "Here are the services we offer at sinProject Inc.",
+    "content": "\n\nYou can use our services 24/7, 365 days a year. A 42.5-inch display is also available for use. This is exclusive to members only.\n\n¥11,000 per Month\n",
+    "heading": "Office Space"
+  },
+  {
+    "path": "services#developer-space",
+    "title": "Services",
+    "description": "Here are the services we offer at sinProject Inc.",
+    "content": "\n\nYou can tour the space we use for development. You can visit for up to 4 hours a month. Only for members.\n\n¥11,000 per Month\n",
+    "heading": "Developer Space"
+  },
+  {
+    "path": "services#sponsors",
+    "title": "Services",
+    "description": "Here are the services we offer at sinProject Inc.",
+    "content": "\n\nWe are seeking sponsors.\n\nBuy me a Coffee\nsinpro.dev - ¥11,000 per Month\nTalk - ¥11,000 per Month\n",
+    "heading": "Sponsors"
+  },
+  {
+    "path": "services",
+    "title": "Services",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "services#office-space",
+    "title": "Services",
+    "description": "",
+    "heading": "Office Space",
+    "content": "Office Space"
+  },
+  {
+    "path": "services#developer-space",
+    "title": "Services",
+    "description": "",
+    "heading": "Developer Space",
+    "content": "Developer Space"
+  },
+  {
+    "path": "services#sponsors",
+    "title": "Services",
+    "description": "",
+    "heading": "Sponsors",
+    "content": "Sponsors"
+  },
+  {
+    "path": "services",
+    "title": "Services",
+    "description": "",
+    "heading": "",
+    "content": "Services"
+  },
+  {
     "path": "about",
     "title": "About",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
@@ -3790,7 +4063,7 @@
     "path": "about#sinproject",
     "title": "About",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nsinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.\n\nFounded: October 2014\nCEO: sinYa Iwasaki\nOur affiliated banks include:\n  Mitsubishi UFJ Bank, Kujo Branch\n  Eiwa Shinkin Bank, Honcho Branch\nGoogle Map\nGitHub\n",
+    "content": "\n\n\n\t\n\n\nsinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.\n\nFounded: October 2014\nCEO: sinYa Iwasaki\nOur affiliated banks include:\n  Mitsubishi UFJ Bank, Kujo Branch\n  Eiwa Shinkin Bank, Honcho Branch\nGoogle Map\nGitHub\n",
     "heading": "sinProject"
   },
   {
@@ -3878,10 +4151,17 @@
     "heading": ""
   },
   {
+    "path": "portfolio#sinpro-dev",
+    "title": "Portfolio",
+    "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
+    "content": "\n\nsinpro.dev is our showcase website, similar to a concept car. It introduces what kind of work we are producing and the policies under which we produce our products.\n\n\n\tHTML\n\tCSS\n\tMarkdown\n\tJavaScript\n\tTypeScript\n\tSvelte\n\tSvelteKit\n\tTailwind CSS\n\tNode.js\n\tPM2\n\tCaddy\n\tLinux\n\tVPS\n\tVitest\n\tPlaywright\n\tPrettier\n\tESLint\n\n",
+    "heading": "sinpro.dev"
+  },
+  {
     "path": "portfolio#talk",
     "title": "Portfolio",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nTalk is an app for conversing in real time with people who speak different languages. You can learn languages in addition to also having conversations through both voice and text.\n\nTalk - Docs\n\n\n\tHTML\n\tCSS\n\tMarkdown\n\tJavaScript\n\tTypeScript\n\tSvelte\n\tSvelteKit\n\tTailwind CSS\n\tGoogle Cloud Translation\n\tGoogle Cloud Text-to-Speech\n\tMySQL\n\tPrisma\n\tRedis\n\tWebSocket\n\tNode.js\n\tPM2\n\tCaddy\n\tLinux\n\tVPS\n\tVitest\n\tPlaywright\n\tPrettier\n\tESLint\n\n",
+    "content": "\n\nTalk is an app for conversing in real time with people who speak different languages. You can learn languages in addition to also having conversations through both voice and text.\n\nTalk - Docs\n\n\n\tHTML\n\tCSS\n\tJavaScript\n\tTypeScript\n\tSvelte\n\tSvelteKit\n\tTailwind CSS\n\tGoogle Cloud Translation\n\tGoogle Cloud Text-to-Speech\n\tMySQL\n\tPrisma\n\tRedis\n\tWebSocket\n\tNode.js\n\tPM2\n\tCaddy\n\tLinux\n\tVPS\n\tVitest\n\tPlaywright\n\tPrettier\n\tESLint\n\n",
     "heading": "Talk"
   },
   {
@@ -3913,10 +4193,17 @@
     "heading": "Tweecha / Txiicha / Tweecha2"
   },
   {
+    "path": "portfolio#simple-web-apps",
+    "title": "Portfolio",
+    "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
+    "content": "\n\nWe made several simple web apps with SvelteKit.\n\nSound Pads\nRenda Attack\nBEST LAP\n\n\n\tHTML\n\tCSS\n\tMarkdown\n\tJavaScript\n\tTypeScript\n\tSvelte\n\tSvelteKit\n\tPrettier\n\tESLint\n\n",
+    "heading": "Simple Web Apps"
+  },
+  {
     "path": "portfolio#sinproject-menu-https-sinproject-net-menu",
     "title": "Portfolio",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nA web application that easily creates menus for restaurants. It can also be utilized for businesses other than restaurants, such as personal portfolios.\n\n\n\tVue.js\n\tNuxt.js\n\tVercel\n\tFlutter\n\tDart\n\n",
+    "content": "\n\nA web application used for easily creating menus for restaurants. It can also be used by businesses other than restaurants, such as personal portfolios.\n\n\n\tVue.js\n\tNuxt.js\n\tVercel\n\tFlutter\n\tDart\n\n",
     "heading": "sinProject Menu"
   },
   {
@@ -3930,7 +4217,7 @@
     "path": "portfolio#simple-web-games",
     "title": "Portfolio",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nWe made several web games with Flutter.\n\nNote Master\nFruity Quiz\nDino Master\nTodofuken Master\nAddition\nKokki Clicker\nColor Clicker\n\n\n\tFlutter\n\tDart\n\tNIFCLOUD mobile backend\n\n",
+    "content": "\n\nWe made several simple web games with Flutter.\n\nNote Master\nFruity Quiz\nDino Master\nTodofuken Master\nAddition\nKokki Clicker\nColor Clicker\n\n\n\tFlutter\n\tDart\n\tNIFCLOUD mobile backend\n\n",
     "heading": "Simple Web Games"
   },
   {
@@ -3944,7 +4231,7 @@
     "path": "portfolio#medical-imaging-management-system",
     "title": "Portfolio",
     "description": "sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.",
-    "content": "\n\nThis system allows centralized management of images from medical examinations from all facilities over the network from the operating room, providing comprehensive support for improving the productivity of radiological technologists' imaging operations.\n\nWith the version upgrade, we have improved operability and performance.\n\n\n\tC#\n\t.NET Framework\n\tSQL Server\n\tWindows\n\tDICOM\n\tPACS\n\n",
+    "content": "\n\nThis system allows centralized management of images from medical examinations from all facilities over the network from the operating room, providing comprehensive support for improving the productivity of radiological technologists’ imaging operations.\n\nWe also improved operability and performance in later upgrades.\n\n\n\tC#\n\t.NET Framework\n\tSQL Server\n\tWindows\n\tDICOM\n\tPACS\n\n",
     "heading": "Medical Imaging Management System"
   },
   {
@@ -3974,6 +4261,13 @@
     "description": "",
     "heading": "",
     "content": ""
+  },
+  {
+    "path": "portfolio#sinpro-dev",
+    "title": "Portfolio",
+    "description": "",
+    "heading": "sinpro.dev",
+    "content": "sinpro.dev"
   },
   {
     "path": "portfolio#talk",
@@ -4009,6 +4303,13 @@
     "description": "",
     "heading": "Tweecha / Txiicha / Tweecha2",
     "content": "Tweecha / Txiicha / Tweecha2"
+  },
+  {
+    "path": "portfolio#simple-web-apps",
+    "title": "Portfolio",
+    "description": "",
+    "heading": "Simple Web Apps",
+    "content": "Simple Web Apps"
   },
   {
     "path": "portfolio#sinproject-menu-https-sinproject-net-menu",
