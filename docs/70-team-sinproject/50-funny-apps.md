@@ -14,7 +14,7 @@ Here are some of our favorite apps and games.
 - [hollywood](https://github.com/dustinkirkland/hollywood)
   - To install:
     1. `brew brew tap real-aazam/homebrew-aazam`
-    1. `brew install hollywood`
+    2. `brew install hollywood`
 
 ## Web
 
