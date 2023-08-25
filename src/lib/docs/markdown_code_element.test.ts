@@ -9,41 +9,42 @@ const talk_file_params: Params = ['ts', '[talk]vite.config.js', '', 'console.log
 const bash_params: Params = ['bash', '', '', 'console.log("test")']
 const unknown_params: Params = ['', '', '', 'console.log("test")']
 
-test('MarkdownCodeElement generates correct title element', async () => {
-	const html = new MarkdownCodeElement(...normal_params).generate()
+function generate_html(params: Params): string {
+	return new MarkdownCodeElement(...params).generate()
+}
 
-	expect(html).toContain('Test Title')
-	expect(html).toContain('path/to/file.js')
+function expect_to_contain(
+	html: string,
+	expected_items: string[],
+	not_expected_items: string[] = []
+): void {
+	expected_items.forEach((expected) => expect(html).toContain(expected))
+	not_expected_items.forEach((not_expected) => expect(html).not.toContain(not_expected))
+}
+
+test('MarkdownCodeElement generates correct title element', async () => {
+	expect_to_contain(generate_html(normal_params), ['Test Title', 'path/to/file.js'])
 })
 
 test('MarkdownCodeElement generates correct code content', async () => {
-	const html = new MarkdownCodeElement(...normal_params).generate()
-
-	expect(html).toContain('console.log("test")')
+	expect_to_contain(generate_html(normal_params), ['console.log("test")'])
 })
 
 test('MarkdownCodeElement handles missing filename', async () => {
-	const html = new MarkdownCodeElement(...no_path_params).generate()
-
-	expect(html).toContain('Test Title')
-	expect(html).not.toContain('path/to/file.js')
+	expect_to_contain(generate_html(no_path_params), ['Test Title'], ['path/to/file.js'])
 })
 
 test('talk link', async () => {
-	const html = new MarkdownCodeElement(...talk_file_params).generate()
-
-	expect(html).toContain('[talk]vite.config.js')
-	expect(html).toContain('https://github.com/sinProject-Inc/talk/blob/main/vite.config.js')
+	expect_to_contain(generate_html(talk_file_params), [
+		'[talk]vite.config.js',
+		'https://github.com/sinProject-Inc/talk/blob/main/vite.config.js',
+	])
 })
 
 test('talk link', async () => {
-	const html = new MarkdownCodeElement(...bash_params).generate()
-
-	expect(html).toContain('Bash')
+	expect(generate_html(bash_params)).toContain('Bash')
 })
 
 test('unknown language', async () => {
-	const html = new MarkdownCodeElement(...unknown_params).generate()
-
-	expect(html).toContain('UNKNOWN')
+	expect(generate_html(unknown_params)).toContain('UNKNOWN')
 })
