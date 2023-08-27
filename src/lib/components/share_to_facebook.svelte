@@ -4,7 +4,7 @@
 </script>
 
 <a
-	href="http://www.facebook.com/share.php?u={$page.url.href}"
+	href="https://www.facebook.com/sharer?u={$page.url.href}"
 	rel="nofollow noopener"
 	target="_blank"
 	class="border-none"
