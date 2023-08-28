@@ -92,6 +92,7 @@
 				if (copied_snackbar_timeout) clearTimeout(copied_snackbar_timeout)
 
 				copied_snackbar_visible = true
+
 				copied_snackbar_timeout = window.setTimeout(() => {
 					copied_snackbar_visible = false
 				}, 2000)
@@ -241,6 +242,7 @@
 
 		const media_query = window.matchMedia('(min-width: 768px)')
 		const handle_media_change = (e: MediaQueryListEvent): boolean => ($is_min_width_768 = e.matches)
+
 		media_query.addEventListener('change', handle_media_change)
 
 		$is_min_width_768 = media_query.matches

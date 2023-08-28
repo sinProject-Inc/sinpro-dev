@@ -119,6 +119,7 @@ export class MarkdownCodeElement {
 
 	private _generate_link(): string {
 		if (!this._filename) return ''
+
 		if (this._filename.includes('[talk]')) {
 			return this._filename.replaceAll('[talk]', MarkdownCodeElement._github_url_talk)
 		}
@@ -134,6 +135,7 @@ export class MarkdownCodeElement {
 	) {
 		this._title =
 			(this._original_title || this._filename || hljs.getLanguage(this._lang)?.name) ?? 'UNKNOWN'
+
 		this._link = this._generate_link()
 	}
 

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { App } from '$lib/app/app'
 	import LineIcon from './icons/line_icon.svelte'
 	import { page } from '$app/stores'

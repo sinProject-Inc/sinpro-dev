@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import FacebookIcon from './icons/facebook_icon.svelte'
 	import { page } from '$app/stores'
 </script>

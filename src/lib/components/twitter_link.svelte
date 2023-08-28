@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import TwitterIcon from './icons/x_icon.svelte'
 </script>
 

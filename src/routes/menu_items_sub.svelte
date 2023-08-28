@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { is_min_width_768 } from '$lib/stores'
 	import AnimationSwitcher from './animation_switcher.svelte'
 	import GithubLink from '$lib/components/github_link.svelte'

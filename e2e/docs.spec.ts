@@ -18,9 +18,11 @@ test('access a page', async ({ page }) => {
 
 test('close search modale with keyboard shortcut', async ({ page }) => {
 	const search_button = page.getByTestId('search-button')
+
 	await search_button.click()
 
 	const search_modale = page.getByTestId('search-modale')
+
 	await expect(search_modale).toBeVisible()
 
 	await page.keyboard.press('Control+KeyK')
@@ -34,6 +36,7 @@ test('open search modale with navbar button', async ({ page }) => {
 	page.setViewportSize({ width: 480, height: 600 })
 
 	const search_button = page.getByTestId('navbar-search-button')
+
 	await search_button.click()
 
 	const search_modale = page.getByTestId('search-modale')

@@ -147,16 +147,16 @@
 	"editor.formatOnSave": true,
 	"editor.formatOnPaste": true,
 	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[svelte]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"[css]": {
 		"editor.defaultFormatter": "vscode.css-language-features"
@@ -185,5 +185,6 @@
 	},
 	"files.eol": "\n",
 	"rest-client.previewResponseInUntitledDocument": true,
-	"editor.tabSize": 2
+	"editor.tabSize": 2,
+	"eslint.format.enable": true
 }
