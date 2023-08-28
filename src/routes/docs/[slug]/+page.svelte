@@ -91,9 +91,7 @@
 				<div class="flex gap-3">
 					<ShareToX />
 					<ShareToFacebook />
-					<div class="block md:hidden">
-						<ShareToLine />
-					</div>
+					<ShareToLine />
 				</div>
 			</div>
 
@@ -106,9 +104,7 @@
 		<div class="flex justify-end gap-3 my-8">
 			<ShareToX />
 			<ShareToFacebook />
-			<div class="block md:hidden">
-				<ShareToLine />
-			</div>
+			<ShareToLine />
 		</div>
 
 		<footer class="text-s mt-12 leading-6">
