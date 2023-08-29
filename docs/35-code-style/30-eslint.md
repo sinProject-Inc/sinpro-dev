@@ -5,7 +5,23 @@ description: How we define code style using ESLint.
 
 How we define code style using [ESLint](https://eslint.org/).
 
-## Rules
+## Plugins
+
+Install:
+
+```bash
+npm i eslint-plugin-prettier -D
+```
+
+Add prettier on plugins section:
+
+```js:.eslintrc.cjs
+module.exports = {
+	plugins: ['@typescript-eslint', 'prettier'],
+}
+```
+
+## Base Rules
 
 - Make accessibility and return type mandatory.
 - Prohibit console output.
@@ -13,11 +29,13 @@ How we define code style using [ESLint](https://eslint.org/).
 ```js:.eslintrc.cjs
 module.exports = {
 	rules: {
+		'prettier/prettier': 'error',
 		indent: ['error', 'tab', { SwitchCase: 1, ignoredNodes: ['ConditionalExpression'] }],
 		semi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],
 		'no-unexpected-multiline': 'error',
 		'@typescript-eslint/explicit-member-accessibility': ['error'],
 		'@typescript-eslint/explicit-function-return-type': ['error'],
+		'no-var': 'error',
 		'no-console': ['error'],
 	},
 }
@@ -28,6 +46,34 @@ module.exports = {
 [typescript-eslint - explicit-function-return-type >](https://typescript-eslint.io/rules/explicit-function-return-type/)
 
 [ESLint - no-console >](https://eslint.org/docs/latest/rules/no-console)
+
+## Padding line between statements
+
+Insert blank lines where appropriate as needed.
+This rule will also be applied to the format.
+
+```js:.eslintrc.cjs
+module.exports = {
+	rules: {
+		'padding-line-between-statements': [
+			'error',
+			{ blankLine: 'always', prev: 'import', next: '*' },
+			{ blankLine: 'any', prev: 'import', next: 'import' },
+			{ blankLine: 'always', prev: 'export', next: '*' },
+			{ blankLine: 'always', prev: '*', next: 'export' },
+			{ blankLine: 'any', prev: 'export', next: 'export' },
+			{ blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+			{ blankLine: 'always', prev: '*', next: ['const', 'let', 'var'] },
+			{ blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
+			{ blankLine: 'always', prev: '*', next: 'return' },
+			{ blankLine: 'always', prev: 'multiline-block-like', next: '*' },
+			{ blankLine: 'always', prev: '*', next: 'multiline-block-like' },
+			{ blankLine: 'always', prev: 'multiline-expression', next: '*' },
+			{ blankLine: 'always', prev: '*', next: 'multiline-expression' },
+		],
+	},
+}
+```
 
 ## Naming conventions
 
@@ -109,6 +155,24 @@ module.exports = {
 }
 ```
 
+## Overrides
+
+Disable some rules for .cjs files.
+
+```js:.eslintrc.cjs
+module.exports = {
+	overrides: [
+		{
+			files: '*.cjs',
+			rules: {
+				'@typescript-eslint/no-var-requires': 'off',
+				'@typescript-eslint/naming-convention': 'off',
+			},
+		},
+	],
+}
+```
+
 ## Using ESLint with Svelte
 
 ```json:.vscode/settings.json
@@ -118,6 +182,52 @@ module.exports = {
 		"svelte"
 	],
 	"eslint.validate": ["svelte"],
+}
+```
+
+## Formatting
+
+We have changed our policy to format with ESLint.
+
+- Enable format on save and paste events.
+- Use ESLint to format TypeScript, JavaScript, HTML, and Svelte files.
+
+```json:.vscode/settings.json
+{
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"eslint.format.enable": true,
+	"[typescript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+}
+```
+
+## Change Scripts
+
+Change the lint and format scripts.
+
+```json:package.json
+{
+	"scripts": {
+		"lint": "eslint .",
+		"format": "eslint . --fix",
+	}
 }
 ```
 

@@ -29,6 +29,7 @@
 		"compinit",
 		"Consolas",
 		"datasource",
+		"dbaeumer",
 		"deepl",
 		"DICOM",
 		"Elementor",
@@ -146,6 +147,7 @@
 	"editor.guides.bracketPairs": true,
 	"editor.formatOnSave": true,
 	"editor.formatOnPaste": true,
+	"eslint.format.enable": true,
 	"[typescript]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
@@ -185,6 +187,5 @@
 	},
 	"files.eol": "\n",
 	"rest-client.previewResponseInUntitledDocument": true,
-	"editor.tabSize": 2,
-	"eslint.format.enable": true
+	"editor.tabSize": 2
 }

@@ -18,27 +18,4 @@ When creating a SvelteKit project, modify the following items in the generated .
 
 ## Formatting
 
-- Enable format on save and paste events.
-- Use Prettier to format TypeScript, JavaScript, HTML, Svelte, and JSON files.
-
-```json:.vscode/settings.json
-{
-	"editor.formatOnSave": true,
-	"editor.formatOnPaste": true,
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[svelte]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
-}
-```
+We have changed our policy to format with [ESLint](./eslint).
