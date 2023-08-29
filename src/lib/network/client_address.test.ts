@@ -11,6 +11,7 @@ test('ClientAddress should return x-forwarded-for header if it exists', () => {
 		headers: {
 			get: (name: string) => {
 				if (name === 'x-forwarded-for') return '123.456.789.101'
+
 				return null
 			},
 		},

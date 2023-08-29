@@ -85,6 +85,7 @@
 
 	function add_event_listeners(): void {
 		const elements = document.querySelectorAll('a, button')
+
 		for (let element of elements) {
 			// element.addEventListener('mouseenter', play_sound_on_on_mouse_enter)
 			element.addEventListener('click', play_sound_on_click)

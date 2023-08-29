@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { App } from '$lib/app/app'
 	import XIcon from './icons/x_icon.svelte'
 	import { page } from '$app/stores'

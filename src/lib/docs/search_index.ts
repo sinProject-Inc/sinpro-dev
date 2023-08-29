@@ -26,7 +26,9 @@ export class SearchIndex {
 			const { title, description } = metadata
 
 			const file = file_path.split(/[/\\]/).pop()
+
 			if (!file) throw new Error('File path is invalid')
+
 			const slug = file.slice(3, -3)
 
 			const contents = content.split(/\n## /)
@@ -97,4 +99,5 @@ export class SearchIndex {
 }
 
 const search_index = new SearchIndex(Markdown.docs_base_dir)
+
 await search_index.save()

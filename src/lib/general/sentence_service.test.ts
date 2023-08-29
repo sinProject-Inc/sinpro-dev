@@ -4,6 +4,7 @@ import { SentenceService } from './sentence_service'
 function run_test(input: string, expected_output: string[]): void {
 	const service = new SentenceService(input)
 	const result = service.split()
+
 	expect(result).toEqual(expected_output)
 }
 

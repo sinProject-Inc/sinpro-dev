@@ -39,6 +39,7 @@ async function load_file(sub_dir: string, slug: string): Promise<LoadedFile | un
 export const load: PageServerLoad = async ({ params }) => {
 	for (const sub_dir of fs.readdirSync(docs_base_dir)) {
 		const result = await load_file(sub_dir, params.slug)
+
 		if (result) return result
 	}
 

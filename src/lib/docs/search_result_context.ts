@@ -71,11 +71,13 @@ export class SearchResultContext {
 		}
 
 		this._add_remaining_portion(split_context, text, last_index)
+
 		return split_context
 	}
 
 	public get_split_context(): SplitContextPortion[] {
 		const match_value = this._match.value
+
 		if (!match_value) return []
 
 		return this._split_text_by_regex(match_value, new RegExp(this._query, 'gi'))
@@ -137,6 +139,7 @@ export class SearchResultContext {
 		max_length: number
 	): SplitContextPortion[] {
 		const first_matching_portion = this._can_perform_shortening(split_context)
+
 		if (!first_matching_portion) return []
 
 		return this._get_shortened_context(split_context, first_matching_portion, max_length)
@@ -170,6 +173,7 @@ export class SearchResultContext {
 
 		if (end > text.length) {
 			const overflow = end - text.length
+
 			start -= overflow
 
 			if (start >= 0) {
