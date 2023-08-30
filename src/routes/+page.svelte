@@ -16,7 +16,7 @@
 			<div class="text-md">
 				<a href="/docs">PUSH MENU BUTTON</a>
 			</div>
-			<div class="text-md">We are aiming to revolutionize the world with innovative services.</div>
+			<div class="text-md">{App.description}</div>
 			<div><VersionFooter /></div>
 		</div>
 	</div>
