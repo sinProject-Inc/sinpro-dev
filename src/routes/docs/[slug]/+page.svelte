@@ -101,7 +101,7 @@
 
 		<AdSense id={AdsId.display_2} />
 
-		<div class="flex justify-end gap-3 my-8">
+		<div class="my-8 flex justify-end gap-3">
 			<ShareToX />
 			<ShareToFacebook />
 			<ShareToLine />
