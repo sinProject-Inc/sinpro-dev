@@ -7,12 +7,11 @@
 	import { mobile_menu_open, theme } from '$lib/stores'
 	import NProgress from 'nprogress'
 	import 'nprogress/nprogress.css'
-	import type { LayoutServerData } from './$types'
 	import { onMount } from 'svelte'
 	import { fly } from 'svelte/transition'
-	import MobileMenuBar from './mobile_menu_bar.svelte'
+	import type { LayoutServerData } from './$types'
 	import Audio from './docs/audio.svelte'
-	import AdSenseHead from './ad_sense_head.svelte'
+	import MobileMenuBar from './mobile_menu_bar.svelte'
 
 	export let data: LayoutServerData
 
@@ -128,7 +127,6 @@
 	})
 </script>
 
-<AdSenseHead />
 <Audio />
 
 <div class={$theme ? 'visible' : 'invisible'}>
