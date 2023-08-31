@@ -10,6 +10,7 @@
 	rel="nofollow noopener"
 	target="_blank"
 	class="border-none"
+	title="Share to X"
 >
 	<div class="h-nav-icon">
 		<XIcon />

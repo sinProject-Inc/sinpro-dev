@@ -8,6 +8,7 @@
 	rel="nofollow noopener"
 	target="_blank"
 	class="border-none"
+	title="Share to Facebook"
 >
 	<div class="h-nav-icon">
 		<FacebookIcon />

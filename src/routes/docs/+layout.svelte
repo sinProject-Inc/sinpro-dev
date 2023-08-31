@@ -2,7 +2,6 @@
 	import { browser } from '$app/environment'
 	import { afterNavigate, beforeNavigate } from '$app/navigation'
 	import Navbar from '$lib/components/navbar.svelte'
-	import Snackbar from './snackbar.svelte'
 	import { animations_enabled, is_min_width_768 } from '$lib/stores'
 	import { KeyboardShortcutHandler } from '$lib/view/keyboard_shortcut_handler'
 	import { onMount } from 'svelte'
@@ -12,6 +11,7 @@
 	import NavbarSecondRow from './navbar_second_row.svelte'
 	import SearchModale from './search_modale.svelte'
 	import SideBar from './side_bar.svelte'
+	import Snackbar from './snackbar.svelte'
 
 	let search_modale_open = false
 	let mobile_docs_side_bar_open = false
