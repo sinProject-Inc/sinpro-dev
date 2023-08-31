@@ -7,7 +7,7 @@ description: This is a guide to producing readable, reusable, and refactorable s
 
 ```ts::Bad
 class Circle {
-  public radius: number;
+  public radius: number
 
   public constructor(radius: number) {
     this.radius = radius
