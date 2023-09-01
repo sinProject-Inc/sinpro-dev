@@ -7,6 +7,10 @@ Here are the Chrome extensions that we commonly use at sinProject.
 
 ## Extensions
 
+- [DeepL for Chrome](https://www.deepl.com/ja/chrome-extension)
+
+Translate while you read and write within Chrome. Powered by the world’s most accurate AI translator.
+
 - [Google Translate](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
 
 View translations easily as you browse the web. By the Google Translate team.
