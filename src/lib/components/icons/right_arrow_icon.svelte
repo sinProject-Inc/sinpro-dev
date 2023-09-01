@@ -1,4 +1,4 @@
-<svg aria-hidden="true" class="px-2 overflow-visible"
+<svg aria-hidden="true" class="overflow-visible px-2"
 	><path
 		d="M0 0L3 3L0 6"
 		fill="none"
