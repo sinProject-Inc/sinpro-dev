@@ -97,7 +97,9 @@
 	})
 
 	onMount(() => {
-		load_ad_sense_script()
+		setTimeout(() => {
+			load_ad_sense_script()
+		})
 
 		setTimeout(() => {
 			load_ad()
