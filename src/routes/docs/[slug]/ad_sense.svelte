@@ -81,7 +81,9 @@
 
 		if (!ads_by_google) return
 
-		ads_by_google.push({})
+		setTimeout(() => {
+			ads_by_google.push({})
+		})
 	}
 
 	function load_ad(): void {
