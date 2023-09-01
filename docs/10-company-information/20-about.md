@@ -6,7 +6,7 @@ description: sinProject Inc. is an software development company in Osaka, Japan.
 ## sinProject
 
 <div style="display: flex; justify-content: center;">
-	<img src="/icon-512.avif" width="256" />
+	<img src="/icon-512.avif" alt="sinProject Logo" width="256" height="256" />
 </div>
 
 sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.
