@@ -43,12 +43,12 @@ do_stuff()
  * 2015-03-14: Added combine with type-checking (JR)
  */
 function combine(a: number, b: number): number {
-  return a + b;
+  return a + b
 }
 ```
 
 ```ts::Good
 function combine(a: number, b: number): number {
-  return a + b;
+  return a + b
 }
 ```

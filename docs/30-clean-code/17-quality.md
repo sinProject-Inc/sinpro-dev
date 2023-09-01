@@ -33,17 +33,17 @@ function foo(): void {
 ```ts::Bad
 function check_odd_or_even(input_number: number): string {
   if (input_number % 2 == 0) {
-    return `${input_number} is Even`;
+    return `${input_number} is Even`
   } else {
-    return `${input_number} is Odd`;
+    return `${input_number} is Odd`
   }
 }
 ```
 
 ```ts::Good
 function check_odd_or_even(input_number: number): string {
-  let result = input_number % 2 == 0 ? 'Even' : 'Odd';
+  let result = input_number % 2 == 0 ? 'Even' : 'Odd'
 
-  return `${input_number} is ${result}`;
+  return `${input_number} is ${result}`
 }
 ```

@@ -116,14 +116,14 @@ function bar(): void {
 ```ts::Bad
 function foo() {
   // ...
-  return true;
+  return true
 }
 ```
 
 ```ts::Good
 function foo(): boolean {
   // ...
-  return true;
+  return true
 }
 ```
 
@@ -132,15 +132,15 @@ function foo(): boolean {
 ```ts::Bad
 function foo(): boolean {
   // ...
-  return true;
-  console.log('Hello');
+  return true
+  console.log('Hello')
 }
 ```
 
 ```ts::Good
 function foo(): boolean {
   // ...
-  return true;
+  return true
 }
 ```
 
