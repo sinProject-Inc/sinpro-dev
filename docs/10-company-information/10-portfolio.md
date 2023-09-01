@@ -122,7 +122,7 @@ We reviewed iOS apps created with Swift and Android apps created with Kotlin fro
 
 Tweecha, Txiicha, and Tweecha2 were unofficial Twitter clients designed to enhance the Twitter experience. They offered various features such as saving images and videos, simultaneous retweeting and liking, as well as customizable color themes. Thanks to these features and custom elements, they held the top spot in the popularity charts for Android Twitter clients for three years. However, due to changes in Twitter's policies, these apps are no longer functional.
 
-<iframe loading=”lazy” class="youtube" src="https://www.youtube.com/embed/tc7iMadvs2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe loading="lazy" class="youtube" src="https://www.youtube.com/embed/tc7iMadvs2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <div class="labels">
 	<span class="label">Java</span>
@@ -177,7 +177,7 @@ A web application used for easily creating menus for restaurants. It can also be
 
 A game where you tilt your mobile device to roll the ball and aim for a high score.
 
-<iframe loading=”lazy” class="youtube" src="https://www.youtube.com/embed/fSMeioI9aRk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe loading="lazy" class="youtube" src="https://www.youtube.com/embed/fSMeioI9aRk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <div class="labels">
 	<span class="label">C#</span>
