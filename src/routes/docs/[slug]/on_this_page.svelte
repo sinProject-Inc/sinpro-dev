@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment'
 	import { afterNavigate } from '$app/navigation'
 	import { page } from '$app/stores'
 	import type { PageData } from './$types'
@@ -63,6 +64,16 @@
 		return ids.includes(id)
 	}
 
+	let width = 0
+
+	if (browser) {
+		width = window.innerWidth
+
+		window.addEventListener('resize', () => {
+			width = window.innerWidth
+		})
+	}
+
 	afterNavigate(() => {
 		observe_contents()
 	})
@@ -93,7 +104,9 @@
 		</ul>
 	</nav>
 
-	<AdSense id={AdsId.display_3} />
+	{#if width >= 1280}
+		<AdSense id={AdsId.display_3} />
+	{/if}
 </aside>
 
 <style lang="postcss">
