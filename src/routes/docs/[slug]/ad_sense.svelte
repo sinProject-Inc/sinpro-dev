@@ -8,11 +8,27 @@
 </script>
 
 <script lang="ts">
+	import { onMount } from 'svelte'
 	import { afterNavigate } from '$app/navigation'
 
 	let ad_container: HTMLDivElement
 
 	export let id: AdsId
+
+	function load_ad_sense_script(): void {
+		if (document.getElementById('ad_sense_script')) return
+
+		const script = document.createElement('script')
+
+		script.id = 'ad_sense_script'
+		script.async = true
+		script.crossOrigin = 'anonymous'
+
+		script.src =
+			'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4064604490139558'
+
+		document.body.appendChild(script)
+	}
 
 	function create_ad_template(): HTMLModElement {
 		const ad_slot = document.createElement('ins')
@@ -65,9 +81,7 @@
 
 		if (!ads_by_google) return
 
-		setTimeout(() => {
-			ads_by_google.push({})
-		})
+		ads_by_google.push({})
 	}
 
 	function load_ad(): void {
@@ -78,6 +92,14 @@
 
 	afterNavigate(() => {
 		load_ad()
+	})
+
+	onMount(() => {
+		load_ad_sense_script()
+
+		setTimeout(() => {
+			load_ad()
+		}, 500)
 	})
 </script>
 

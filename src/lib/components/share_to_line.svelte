@@ -12,6 +12,7 @@
 		target="_blank"
 		rel="nofollow noopener"
 		class="border-none"
+		title="Share to LINE"
 	>
 		<div class="h-nav-icon">
 			<LineIcon />

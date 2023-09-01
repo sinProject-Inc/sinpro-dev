@@ -210,6 +210,69 @@
     "content": "Docs History"
   },
   {
+    "path": "funny-apps",
+    "title": "Funny Apps",
+    "description": "Here are some of our favorite apps and games.",
+    "content": "\nHere are some of our favorite apps and games.\n",
+    "heading": ""
+  },
+  {
+    "path": "funny-apps#joke-apps",
+    "title": "Funny Apps",
+    "description": "Here are some of our favorite apps and games.",
+    "content": "\n\nCool-Retro-Term\nunimatrix\nsl\n  To install: brew install\nhollywood\n  To install:\n    brew brew tap real-aazam/homebrew-aazam\n    brew install hollywood\n",
+    "heading": "Joke Apps"
+  },
+  {
+    "path": "funny-apps#web",
+    "title": "Funny Apps",
+    "description": "Here are some of our favorite apps and games.",
+    "content": "\n\nGEEKTyper.com - Cyberpunk\nHacker Typer\n",
+    "heading": "Web"
+  },
+  {
+    "path": "funny-apps#games",
+    "title": "Funny Apps",
+    "description": "Here are some of our favorite apps and games.",
+    "content": "\n\nHacknet\n",
+    "heading": "Games"
+  },
+  {
+    "path": "funny-apps",
+    "title": "Funny Apps",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "funny-apps#joke-apps",
+    "title": "Funny Apps",
+    "description": "",
+    "heading": "Joke Apps",
+    "content": "Joke Apps"
+  },
+  {
+    "path": "funny-apps#web",
+    "title": "Funny Apps",
+    "description": "",
+    "heading": "Web",
+    "content": "Web"
+  },
+  {
+    "path": "funny-apps#games",
+    "title": "Funny Apps",
+    "description": "",
+    "heading": "Games",
+    "content": "Games"
+  },
+  {
+    "path": "funny-apps",
+    "title": "Funny Apps",
+    "description": "",
+    "heading": "",
+    "content": "Funny Apps"
+  },
+  {
     "path": "locales",
     "title": "Locales",
     "description": "This is an explanation about the Locales setting.",
@@ -1925,11 +1988,25 @@
     "heading": ""
   },
   {
-    "path": "eslint#rules",
+    "path": "eslint#plugins",
     "title": "ESLint",
     "description": "How we define code style using ESLint.",
-    "content": "\n\nMake accessibility and return type mandatory.\nProhibit console output.\n\nmodule.exports = {\n\trules: {\n\t\tindent: ['error', 'tab', { SwitchCase: 1, ignoredNodes: ['ConditionalExpression'] }],\n\t\tsemi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],\n\t\t'no-unexpected-multiline': 'error',\n\t\t'@typescript-eslint/explicit-member-accessibility': ['error'],\n\t\t'@typescript-eslint/explicit-function-return-type': ['error'],\n\t\t'no-console': ['error'],\n\t},\n}\n\ntypescript-eslint - explicit-member-accessibility >\n\ntypescript-eslint - explicit-function-return-type >\n\nESLint - no-console >\n",
-    "heading": "Rules"
+    "content": "\n\nInstall:\n\nnpm i eslint-plugin-prettier -D\n\nAdd prettier on plugins section:\n\nmodule.exports = {\n\tplugins: ['@typescript-eslint', 'prettier'],\n}\n",
+    "heading": "Plugins"
+  },
+  {
+    "path": "eslint#base-rules",
+    "title": "ESLint",
+    "description": "How we define code style using ESLint.",
+    "content": "\n\nMake accessibility and return type mandatory.\nProhibit console output.\n\nmodule.exports = {\n\trules: {\n\t\t'prettier/prettier': 'error',\n\t\tindent: ['error', 'tab', { SwitchCase: 1, ignoredNodes: ['ConditionalExpression'] }],\n\t\tsemi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],\n\t\t'no-unexpected-multiline': 'error',\n\t\t'@typescript-eslint/explicit-member-accessibility': ['error'],\n\t\t'@typescript-eslint/explicit-function-return-type': ['error'],\n\t\t'no-var': 'error',\n\t\t'no-console': ['error'],\n\t},\n}\n\ntypescript-eslint - explicit-member-accessibility >\n\ntypescript-eslint - explicit-function-return-type >\n\nESLint - no-console >\n",
+    "heading": "Base Rules"
+  },
+  {
+    "path": "eslint#padding-line-between-statements",
+    "title": "ESLint",
+    "description": "How we define code style using ESLint.",
+    "content": "\n\nInsert blank lines where appropriate as needed.\nThis rule will also be applied to the format.\n\nmodule.exports = {\n\trules: {\n\t\t'padding-line-between-statements': [\n\t\t\t'error',\n\t\t\t{ blankLine: 'always', prev: 'import', next: '*' },\n\t\t\t{ blankLine: 'any', prev: 'import', next: 'import' },\n\t\t\t{ blankLine: 'always', prev: 'export', next: '*' },\n\t\t\t{ blankLine: 'always', prev: '*', next: 'export' },\n\t\t\t{ blankLine: 'any', prev: 'export', next: 'export' },\n\t\t\t{ blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },\n\t\t\t{ blankLine: 'always', prev: '*', next: ['const', 'let', 'var'] },\n\t\t\t{ blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },\n\t\t\t{ blankLine: 'always', prev: '*', next: 'return' },\n\t\t\t{ blankLine: 'always', prev: 'multiline-block-like', next: '*' },\n\t\t\t{ blankLine: 'always', prev: '*', next: 'multiline-block-like' },\n\t\t\t{ blankLine: 'always', prev: 'multiline-expression', next: '*' },\n\t\t\t{ blankLine: 'always', prev: '*', next: 'multiline-expression' },\n\t\t],\n\t},\n}\n",
+    "heading": "Padding line between statements"
   },
   {
     "path": "eslint#naming-conventions",
@@ -1939,11 +2016,32 @@
     "heading": "Naming conventions"
   },
   {
+    "path": "eslint#overrides",
+    "title": "ESLint",
+    "description": "How we define code style using ESLint.",
+    "content": "\n\nDisable some rules for .cjs files.\n\nmodule.exports = {\n\toverrides: [\n\t\t{\n\t\t\tfiles: '*.cjs',\n\t\t\trules: {\n\t\t\t\t'@typescript-eslint/no-var-requires': 'off',\n\t\t\t\t'@typescript-eslint/naming-convention': 'off',\n\t\t\t},\n\t\t},\n\t],\n}\n",
+    "heading": "Overrides"
+  },
+  {
     "path": "eslint#using-eslint-with-svelte",
     "title": "ESLint",
     "description": "How we define code style using ESLint.",
     "content": "\n\n{\n\t\"eslint.probe\": [\n\t\t...\n\t\t\"svelte\"\n\t],\n\t\"eslint.validate\": [\"svelte\"],\n}\n",
     "heading": "Using ESLint with Svelte"
+  },
+  {
+    "path": "eslint#formatting",
+    "title": "ESLint",
+    "description": "How we define code style using ESLint.",
+    "content": "\n\nWe have changed our policy to format with ESLint.\n\nEnable format on save and paste events.\nUse ESLint to format TypeScript, JavaScript, HTML, and Svelte files.\n\n{\n\t\"editor.formatOnSave\": true,\n\t\"editor.formatOnPaste\": true,\n\t\"eslint.format.enable\": true,\n\t\"[typescript]\": {\n\t\t\"editor.defaultFormatter\": \"dbaeumer.vscode-eslint\"\n\t},\n\t\"[javascript]\": {\n\t\t\"editor.defaultFormatter\": \"dbaeumer.vscode-eslint\"\n\t},\n\t\"[html]\": {\n\t\t\"editor.defaultFormatter\": \"dbaeumer.vscode-eslint\"\n\t},\n\t\"[svelte]\": {\n\t\t\"editor.defaultFormatter\": \"dbaeumer.vscode-eslint\"\n\t},\n\t\"[css]\": {\n\t\t\"editor.defaultFormatter\": \"vscode.css-language-features\"\n\t},\n\t\"[json]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n}\n",
+    "heading": "Formatting"
+  },
+  {
+    "path": "eslint#change-scripts",
+    "title": "ESLint",
+    "description": "How we define code style using ESLint.",
+    "content": "\n\nChange the lint and format scripts.\n\n{\n\t\"scripts\": {\n\t\t\"lint\": \"eslint .\",\n\t\t\"format\": \"eslint . --fix\",\n\t}\n}\n",
+    "heading": "Change Scripts"
   },
   {
     "path": "eslint#missing-return-type-on-function-in-the-html-part-of-svelte",
@@ -1960,11 +2058,25 @@
     "content": ""
   },
   {
-    "path": "eslint#rules",
+    "path": "eslint#plugins",
     "title": "ESLint",
     "description": "",
-    "heading": "Rules",
-    "content": "Rules"
+    "heading": "Plugins",
+    "content": "Plugins"
+  },
+  {
+    "path": "eslint#base-rules",
+    "title": "ESLint",
+    "description": "",
+    "heading": "Base Rules",
+    "content": "Base Rules"
+  },
+  {
+    "path": "eslint#padding-line-between-statements",
+    "title": "ESLint",
+    "description": "",
+    "heading": "Padding line between statements",
+    "content": "Padding line between statements"
   },
   {
     "path": "eslint#naming-conventions",
@@ -1974,11 +2086,32 @@
     "content": "Naming conventions"
   },
   {
+    "path": "eslint#overrides",
+    "title": "ESLint",
+    "description": "",
+    "heading": "Overrides",
+    "content": "Overrides"
+  },
+  {
     "path": "eslint#using-eslint-with-svelte",
     "title": "ESLint",
     "description": "",
     "heading": "Using ESLint with Svelte",
     "content": "Using ESLint with Svelte"
+  },
+  {
+    "path": "eslint#formatting",
+    "title": "ESLint",
+    "description": "",
+    "heading": "Formatting",
+    "content": "Formatting"
+  },
+  {
+    "path": "eslint#change-scripts",
+    "title": "ESLint",
+    "description": "",
+    "heading": "Change Scripts",
+    "content": "Change Scripts"
   },
   {
     "path": "eslint#missing-return-type-on-function-in-the-html-part-of-svelte",
@@ -2012,7 +2145,7 @@
     "path": "prettier#formatting",
     "title": "Prettier",
     "description": "How we use Prettier to automate formatting.",
-    "content": "\n\nEnable format on save and paste events.\nUse Prettier to format TypeScript, JavaScript, HTML, Svelte, and JSON files.\n\n{\n\t\"editor.formatOnSave\": true,\n\t\"editor.formatOnPaste\": true,\n\t\"[typescript]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[javascript]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[html]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[svelte]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t},\n\t\"[json]\": {\n\t\t\"editor.defaultFormatter\": \"esbenp.prettier-vscode\"\n\t}\n}\n",
+    "content": "\n\nWe have changed our policy to format with ESLint.\n",
     "heading": "Formatting"
   },
   {
@@ -3622,8 +3755,15 @@
     "path": "vscode-workspace-extensions#code-quality",
     "title": "VSCode Workspace Extensions",
     "description": "Here are the VSCode extensions that we commonly use at sinProject.",
-    "content": "\n\nCodeMetrics\n\nComputes complexity in TypeScript / JavaScript files.\n\nImport Cost\n\nDisplay import/require package size in the editor\n",
+    "content": "\n\nSonarLint\n\nLinter to detect & fix coding issues locally in JS/TS, Python, PHP, Java, C, C++, Go, IaC. Use with SonarQube & SonarCloud for optimal team performance.\n\nCodeMetrics\n\nComputes complexity in TypeScript / JavaScript files.\n\nImport Cost\n\nDisplay import/require package size in the editor\n",
     "heading": "Code Quality"
+  },
+  {
+    "path": "vscode-workspace-extensions#markdown",
+    "title": "VSCode Workspace Extensions",
+    "description": "Here are the VSCode extensions that we commonly use at sinProject.",
+    "content": "\n\nMarkdown All in One\n\nAll you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)\n",
+    "heading": "Markdown"
   },
   {
     "path": "vscode-workspace-extensions#theme",
@@ -3757,6 +3897,13 @@
     "description": "",
     "heading": "Code Quality",
     "content": "Code Quality"
+  },
+  {
+    "path": "vscode-workspace-extensions#markdown",
+    "title": "VSCode Workspace Extensions",
+    "description": "",
+    "heading": "Markdown",
+    "content": "Markdown"
   },
   {
     "path": "vscode-workspace-extensions#theme",

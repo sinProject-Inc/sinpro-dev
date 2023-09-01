@@ -78,13 +78,15 @@
 					href={git_path}
 					target="_blank"
 					rel="noreferrer"
-					class="glass-text-3 flex items-center gap-1 border-none text-sm font-semibold hover:text-primary-10 dark:hover:text-primary-dark-4"
-					><div class="h-nav-icon">
-						<GithubIcon />
-					</div>
-					<div>Edit this page</div>
-					<div class="-mx-2 h-1 w-1">
-						<RightArrowIcon />
+					class="glass-text-3 border-none text-sm font-semibold hover:text-primary-10 dark:hover:text-primary-dark-4"
+					><div class="flex items-center gap-1">
+						<div class="h-nav-icon">
+							<GithubIcon />
+						</div>
+						<div>Edit this page</div>
+						<div class="h-1 w-1">
+							<RightArrowIcon />
+						</div>
 					</div>
 				</a>
 
@@ -101,7 +103,7 @@
 
 		<AdSense id={AdsId.display_2} />
 
-		<div class="flex justify-end gap-3 my-8">
+		<div class="my-8 flex justify-end gap-3">
 			<ShareToX />
 			<ShareToFacebook />
 			<ShareToLine />

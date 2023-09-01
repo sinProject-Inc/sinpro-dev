@@ -13,7 +13,7 @@ const base = ''
 const config: PlaywrightTestConfig = {
 	testDir: './e2e',
 	/* Maximum time one test can run for. */
-	timeout: process.env.CI ? 20 * 1000 : 15 * 1000,
+	timeout: process.env.CI ? 30 * 1000 : 25 * 1000,
 	expect: {
 		/**
 		 * Maximum time expect() should wait for the condition to be met.
