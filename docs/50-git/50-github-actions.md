@@ -87,26 +87,30 @@ jobs:
 
 ### GitHub Apps
 
-- [Code Climate](https://codeclimate.com/)
+- [SonarCloud](https://www.sonarsource.com/products/sonarcloud/)
 
-CodeClimate Quality is a feature within CodeClimate that assesses the maintainability of code by analyzing its complexity, duplication, and other factors. It provides a grade and insights to help improve code quality.
+SonarCloud is a cloud-based code quality and security analysis service that automatically reviews code to detect bugs, vulnerabilities, and code smells. It integrates with popular version control platforms and CI/CD pipelines to provide real-time feedback on code changes.
 
 - [ChatGPT-CodeReview](https://github.com/anc95/ChatGPT-CodeReview)
 
 ChatGPT-CodeReview is a code review bot that uses ChatGPT. It is available in multiple languages, including English, Chinese, Japanese, and Korean. The bot is currently only used for testing purposes and is deployed on AWS Lambda with rate limit restrictions.
 
-- [SonarCloud](https://www.sonarsource.com/products/sonarcloud/)
+- [Code Climate](https://codeclimate.com/)
 
-SonarCloud is a cloud-based code quality and security analysis service that automatically reviews code to detect bugs, vulnerabilities, and code smells. It integrates with popular version control platforms and CI/CD pipelines to provide real-time feedback on code changes.
+CodeClimate Quality is a feature within CodeClimate that assesses the maintainability of code by analyzing its complexity, duplication, and other factors. It provides a grade and insights to help improve code quality.
 
 ### GitHub Actions
 
-- CI / Lint Check, Type Check, Svelte CHeck
-- CI / Vitest Test, Playwright Test
-- Code Review by akiojin
-- Code Review by akiojin GPT-4
-- Sonar Cloud Code Analysis
-- codeclimate
-- CodeQL / Analyze (javascript) (dynamic)
-- Code scanning results / CodeQL
-- Code scanning results / SonarCloud
+- [Checks and Tests](https://github.com/sinProject-Inc/sinpro-dev/blob/main/.github/workflows/ci.yml)
+  - CI / Lint Check, Type Check, Svelte CHeck
+  - CI / Vitest Test, Playwright Test
+- Code Review by AI
+  - [Code Review by akiojin](https://github.com/sinProject-Inc/sinpro-dev/blob/main/.github/workflows/cr-akiojin.yml)
+  - [Code Review by akiojin GPT-4](https://github.com/sinProject-Inc/sinpro-dev/blob/main/.github/workflows/cr-akiojin-gpt-4.yml)
+- Static Code Analysis
+  - [Sonar Cloud Code Analysis](https://www.sonarsource.com/products/sonarcloud/)
+  - [codeclimate](https://codeclimate.com/)
+- [GitHub Code Scanning](https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning) (Security Code Analysis)
+  - CodeQL / Analyze (javascript) (dynamic)
+  - Code scanning results / CodeQL
+  - Code scanning results / SonarCloud
