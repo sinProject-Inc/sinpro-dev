@@ -82,3 +82,23 @@ jobs:
           path: logs/
           retention-days: 30
 ```
+
+## Our Checks for PR
+
+### GitHub Apps
+
+- CodeClimate
+- CR.GPT
+- SonarCloud
+
+## GitHub Actions
+
+- CI / Lint Check, Type Check, Svelte CHeck
+- CI / Vitest Test, Playwright Test
+- Code Review by akiojin
+- Code Review by akiojin GPT-4
+- Sonar Cloud Code Analysis
+- codeclimate
+- CodeQL / Analyze (javascript) (dynamic)
+- Code scanning results / CodeQL
+- Code scanning results / SonarCloud

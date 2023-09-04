@@ -12,6 +12,7 @@
 	"eslint.validate": ["svelte"],
 	"cSpell.words": [
 		"adsbygoogle",
+		"akiojin",
 		"authtoken",
 		"autocompletes",
 		"autocrlf",
@@ -22,6 +23,7 @@
 		"blazingly",
 		"Caddyfile",
 		"cavif",
+		"codeclimate",
 		"codegen",
 		"cognitiveservices",
 		"Colorblindly",
@@ -64,6 +66,7 @@
 		"Noto",
 		"nprogress",
 		"Nuxt",
+		"OPENAI",
 		"Pexels",
 		"Piseth",
 		"pixabay",
