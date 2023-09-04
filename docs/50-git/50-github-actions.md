@@ -91,7 +91,7 @@ jobs:
 - CR.GPT
 - SonarCloud
 
-## GitHub Actions
+### GitHub Actions
 
 - CI / Lint Check, Type Check, Svelte CHeck
 - CI / Vitest Test, Playwright Test
