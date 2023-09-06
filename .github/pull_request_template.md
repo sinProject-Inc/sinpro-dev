@@ -8,6 +8,7 @@ closes #ISSUE_NUMBER
 - [ ] Attach the enhancement label for update tasks
 - [ ] Make sure CI completes successfully
 - [ ] Fix the issues pointed out by AI
+- [ ] Check everything written in the PR
 - [ ] Add reviewers
 - [ ] On Slack, mention the PR reviewer, write your thoughts on the issue, and inform them that the PR has been created
 
