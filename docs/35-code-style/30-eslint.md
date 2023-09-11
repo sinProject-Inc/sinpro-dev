@@ -55,21 +55,23 @@ This rule will also be applied to the format.
 ```js:.eslintrc.cjs
 module.exports = {
 	rules: {
+		// 'lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: true }],
+		'@typescript-eslint/lines-between-class-members': [
+			'error',
+			'always',
+			{ exceptAfterSingleLine: true, exceptAfterOverload: true },
+		],
 		'padding-line-between-statements': [
 			'error',
-			{ blankLine: 'always', prev: 'import', next: '*' },
-			{ blankLine: 'any', prev: 'import', next: 'import' },
-			{ blankLine: 'always', prev: 'export', next: '*' },
-			{ blankLine: 'always', prev: '*', next: 'export' },
+			{
+				blankLine: 'always',
+				prev: '*',
+				next: ['export', 'const', 'let', 'return', 'multiline-block-like', 'multiline-expression'],
+			},
+
 			{ blankLine: 'any', prev: 'export', next: 'export' },
-			{ blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
-			{ blankLine: 'always', prev: '*', next: ['const', 'let', 'var'] },
-			{ blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
-			{ blankLine: 'always', prev: '*', next: 'return' },
-			{ blankLine: 'always', prev: 'multiline-block-like', next: '*' },
-			{ blankLine: 'always', prev: '*', next: 'multiline-block-like' },
-			{ blankLine: 'always', prev: 'multiline-expression', next: '*' },
-			{ blankLine: 'always', prev: '*', next: 'multiline-expression' },
+			{ blankLine: 'any', prev: 'const', next: 'const' },
+			{ blankLine: 'any', prev: 'let', next: 'let' },
 		],
 	},
 }

@@ -181,6 +181,7 @@ export class Markdown {
 	private static _github_link_plugin(md: MarkdownIt): void {
 		md.renderer.rules.text = function (tokens, idx): string {
 			const text = md.utils.escapeHtml(tokens[idx].content)
+
 			let string_after_render = text
 
 			if (text.includes('on GitHub &gt;')) {
