@@ -59,6 +59,7 @@ export class SearchResultContext {
 
 	private _split_text_by_regex(text: string, regex: RegExp): SplitContextPortion[] {
 		const split_context: SplitContextPortion[] = []
+
 		let last_index = 0
 
 		for (const match of text.matchAll(regex)) {

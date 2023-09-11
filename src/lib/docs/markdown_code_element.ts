@@ -112,6 +112,7 @@ export class MarkdownCodeElement {
 
 	private static readonly _github_url_sinpro_dev =
 		'https://github.com/sinProject-Inc/sinpro-dev/blob/main/'
+
 	private static readonly _github_url_talk = 'https://github.com/sinProject-Inc/talk/blob/main/'
 
 	private readonly _title: string

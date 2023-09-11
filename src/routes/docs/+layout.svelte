@@ -75,6 +75,7 @@
 				if (!event.target) return
 
 				const target_element = event.target as HTMLElement
+
 				let current_element = target_element.parentElement
 
 				while (current_element) {
