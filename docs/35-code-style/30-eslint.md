@@ -1,6 +1,6 @@
 ---
 title: ESLint
-description: How we define code style using ESLint.
+description: How we define code style using ESLint
 ---
 
 How we define code style using [ESLint](https://eslint.org/).
