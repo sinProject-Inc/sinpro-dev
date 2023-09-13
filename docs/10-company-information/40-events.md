@@ -5,9 +5,11 @@ description: Here are some of the events organized by sinProject
 
 Here are some of the events organized by sinProject
 
+## Tsukutterumon Misetai
+
 <img loading="lazy" src="/misetai.avif" alt="Tsukutterumon Misetai" style="width: 100%; aspect-ratio: 1590/863;" />
 
-## Tsukutterumon Misetai
+### About
 
 Beginners OK / Observations OK / Any kind of technology is OK
 Any kind of production is OK!
