@@ -1204,6 +1204,13 @@
     "heading": "Output"
   },
   {
+    "path": "github-actions#our-checks-for-pr",
+    "title": "GitHub Actions",
+    "description": "We use GitHub Actions to perform two types of CI Checks and tests.",
+    "content": "\nGitHub Apps\n\nSonarCloud\n\nSonarCloud is a cloud-based code quality and security analysis service that automatically reviews code to detect bugs, vulnerabilities, and code smells. It integrates with popular version control platforms and CI/CD pipelines to provide real-time feedback on code changes.\n\nCode Climate\n\nCodeClimate Quality is a feature within CodeClimate that assesses the maintainability of code by analyzing its complexity, duplication, and other factors. It provides a grade and insights to help improve code quality.\n\nChatGPT-CodeReview (Not in use now)\n\nChatGPT-CodeReview is a code review bot that uses ChatGPT. It is available in multiple languages, including English, Chinese, Japanese, and Korean. The bot is currently only used for testing purposes and is deployed on AWS Lambda with rate limit restrictions.\n\nGitHub Actions\n\nChecks and Tests\n  CI / Lint Check, Type Check, Svelte CHeck\n  CI / Vitest Test, Playwright Test\nCode Review by AI\n  Code Review by akiojin GPT-4\n  Code Review by akiojin (Not in use now)\nStatic Code Analysis\n  Sonar Cloud Code Analysis\n  codeclimate\nGitHub Code Scanning (Security Code Analysis)\n  CodeQL / Analyze (javascript) (dynamic)\n  Code scanning results / CodeQL\n  Code scanning results / SonarCloud\n",
+    "heading": "Our Checks for PR"
+  },
+  {
     "path": "github-actions",
     "title": "GitHub Actions",
     "description": "",
@@ -1237,6 +1244,13 @@
     "description": "",
     "heading": "Output",
     "content": "Output"
+  },
+  {
+    "path": "github-actions#our-checks-for-pr",
+    "title": "GitHub Actions",
+    "description": "",
+    "heading": "Our Checks for PR",
+    "content": "Our Checks for PR"
   },
   {
     "path": "github-actions",
@@ -2005,7 +2019,7 @@
     "path": "eslint#padding-line-between-statements",
     "title": "ESLint",
     "description": "How we define code style using ESLint.",
-    "content": "\n\nInsert blank lines where appropriate as needed.\nThis rule will also be applied to the format.\n\nmodule.exports = {\n\trules: {\n\t\t'padding-line-between-statements': [\n\t\t\t'error',\n\t\t\t{ blankLine: 'always', prev: 'import', next: '*' },\n\t\t\t{ blankLine: 'any', prev: 'import', next: 'import' },\n\t\t\t{ blankLine: 'always', prev: 'export', next: '*' },\n\t\t\t{ blankLine: 'always', prev: '*', next: 'export' },\n\t\t\t{ blankLine: 'any', prev: 'export', next: 'export' },\n\t\t\t{ blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },\n\t\t\t{ blankLine: 'always', prev: '*', next: ['const', 'let', 'var'] },\n\t\t\t{ blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },\n\t\t\t{ blankLine: 'always', prev: '*', next: 'return' },\n\t\t\t{ blankLine: 'always', prev: 'multiline-block-like', next: '*' },\n\t\t\t{ blankLine: 'always', prev: '*', next: 'multiline-block-like' },\n\t\t\t{ blankLine: 'always', prev: 'multiline-expression', next: '*' },\n\t\t\t{ blankLine: 'always', prev: '*', next: 'multiline-expression' },\n\t\t],\n\t},\n}\n",
+    "content": "\n\nInsert blank lines where appropriate as needed.\nThis rule will also be applied to the format.\n\nmodule.exports = {\n\trules: {\n\t\t// 'lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: true }],\n\t\t'@typescript-eslint/lines-between-class-members': [\n\t\t\t'error',\n\t\t\t'always',\n\t\t\t{ exceptAfterSingleLine: true, exceptAfterOverload: true },\n\t\t],\n\t\t'padding-line-between-statements': [\n\t\t\t'error',\n\t\t\t{\n\t\t\t\tblankLine: 'always',\n\t\t\t\tprev: '*',\n\t\t\t\tnext: ['export', 'const', 'let', 'return', 'multiline-block-like', 'multiline-expression'],\n\t\t\t},\n\n\t\t\t{ blankLine: 'any', prev: 'export', next: 'export' },\n\t\t\t{ blankLine: 'any', prev: 'const', next: 'const' },\n\t\t\t{ blankLine: 'any', prev: 'let', next: 'let' },\n\t\t],\n\t},\n}\n",
     "heading": "Padding line between statements"
   },
   {
@@ -2236,7 +2250,7 @@
     "path": "comments#don-t-have-journal-comments",
     "title": "Comments",
     "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
-    "content": "\n\n/**\n 2016-12-20: Removed monads, didn't understand them (RM)\n 2016-10-01: Improved using special monads (JP)\n 2016-02-03: Removed type-checking (LI)\n 2015-03-14: Added combine with type-checking (JR)\n */\nfunction combine(a: number, b: number): number {\n  return a + b;\n}\n\nfunction combine(a: number, b: number): number {\n  return a + b;\n}\n",
+    "content": "\n\n/**\n 2016-12-20: Removed monads, didn't understand them (RM)\n 2016-10-01: Improved using special monads (JP)\n 2016-02-03: Removed type-checking (LI)\n 2015-03-14: Added combine with type-checking (JR)\n */\nfunction combine(a: number, b: number): number {\n  return a + b\n}\n\nfunction combine(a: number, b: number): number {\n  return a + b\n}\n",
     "heading": "Don't have journal comments"
   },
   {
@@ -2418,7 +2432,7 @@
     "path": "objects-and-data-structures#make-objects-have-private-protected-members",
     "title": "Objects and Data Structures",
     "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
-    "content": "\n\nclass Circle {\n  public radius: number;\n\n  public constructor(radius: number) {\n    this.radius = radius\n  }\n}\n\nclass Circle {\n  public constructor(private readonly _radius: number) {}\n}\n",
+    "content": "\n\nclass Circle {\n  public radius: number\n\n  public constructor(radius: number) {\n    this.radius = radius\n  }\n}\n\nclass Circle {\n  public constructor(private readonly _radius: number) {}\n}\n",
     "heading": "Make objects have private/protected members"
   },
   {
@@ -2719,7 +2733,7 @@
     "path": "quality#don-t-allow-code-clones",
     "title": "Quality",
     "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
-    "content": "\n\nfunction check_odd_or_even(input_number: number): string {\n  if (input_number % 2 == 0) {\n    return ${input_number} is Even;\n  } else {\n    return ${input_number} is Odd;\n  }\n}\n\nfunction check_odd_or_even(input_number: number): string {\n  let result = input_number % 2 == 0 ? 'Even' : 'Odd';\n\n  return ${input_number} is ${result};\n}\n",
+    "content": "\n\nfunction check_odd_or_even(input_number: number): string {\n  if (input_number % 2 == 0) {\n    return ${input_number} is Even\n  } else {\n    return ${input_number} is Odd\n  }\n}\n\nfunction check_odd_or_even(input_number: number): string {\n  let result = input_number % 2 == 0 ? 'Even' : 'Odd'\n\n  return ${input_number} is ${result}\n}\n",
     "heading": "Don't allow code clones"
   },
   {
@@ -2810,14 +2824,14 @@
     "path": "format#explicit-function-return-type",
     "title": "Format",
     "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
-    "content": "\n\nfunction foo() {\n  // ...\n  return true;\n}\n\nfunction foo(): boolean {\n  // ...\n  return true;\n}\n",
+    "content": "\n\nfunction foo() {\n  // ...\n  return true\n}\n\nfunction foo(): boolean {\n  // ...\n  return true\n}\n",
     "heading": "Explicit function return type"
   },
   {
     "path": "format#don-t-allow-unreachable-code",
     "title": "Format",
     "description": "This is a guide to producing readable, reusable, and refactorable software for TypeScript.",
-    "content": "\n\nfunction foo(): boolean {\n  // ...\n  return true;\n  console.log('Hello');\n}\n\nfunction foo(): boolean {\n  // ...\n  return true;\n}\n",
+    "content": "\n\nfunction foo(): boolean {\n  // ...\n  return true\n  console.log('Hello')\n}\n\nfunction foo(): boolean {\n  // ...\n  return true\n}\n",
     "heading": "Don't allow unreachable code"
   },
   {
@@ -4035,7 +4049,7 @@
     "path": "chrome-extensions#extensions",
     "title": "Chrome Extensions",
     "description": "Here are the Chrome extensions that we commonly use at sinProject.",
-    "content": "\n\nGoogle Translate\n\nView translations easily as you browse the web. By the Google Translate team.\n\nOutline Chrome Extension\n\nAdd an outline style and see the boundaries of every HTML element without affecting the layout (sizing or positioning).\n\nMaterial Icons for GitHub\n\nReplace the file/folder icons on the GitHub file browser with icons representing the file's type and which tool it is used by.\n\nWappalyzer - Technology profiler\n\nWappalyzer is a technology profiler that shows you what websites are built with.\n\nSVG Export\n\nDownload SVGs from websites as SVGs, PNGs or JPEGs\n\nColorblindly\n\nSimulates colorblindness in your web browser.\n\nVideo Speed Controller\n\nSpeed up, slow down, advance and rewind HTML5 audio/video with shortcuts\n\nNetflix 同時字幕で英語学習\n\nNetflix の日本語と英語字幕を同時に表示。3 秒巻き戻し機能。英単語の意味を表示。ひとつのセリフをリピート再生。再生速度の変更。フレーズをお気に入りに追加。\n",
+    "content": "\n\nDeepL for Chrome\n\nTranslate while you read and write within Chrome. Powered by the world’s most accurate AI translator.\n\nGoogle Translate\n\nView translations easily as you browse the web. By the Google Translate team.\n\nOutline Chrome Extension\n\nAdd an outline style and see the boundaries of every HTML element without affecting the layout (sizing or positioning).\n\nMaterial Icons for GitHub\n\nReplace the file/folder icons on the GitHub file browser with icons representing the file's type and which tool it is used by.\n\nWappalyzer - Technology profiler\n\nWappalyzer is a technology profiler that shows you what websites are built with.\n\nSVG Export\n\nDownload SVGs from websites as SVGs, PNGs or JPEGs\n\nColorblindly\n\nSimulates colorblindness in your web browser.\n\nVideo Speed Controller\n\nSpeed up, slow down, advance and rewind HTML5 audio/video with shortcuts\n\nNetflix 同時字幕で英語学習\n\nNetflix の日本語と英語字幕を同時に表示。3 秒巻き戻し機能。英単語の意味を表示。ひとつのセリフをリピート再生。再生速度の変更。フレーズをお気に入りに追加。\n",
     "heading": "Extensions"
   },
   {
