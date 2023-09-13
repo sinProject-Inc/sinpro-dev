@@ -1,27 +1,30 @@
 ---
 title: Events
-description: Here are some of the events organized by sinProject
+description: Here are some of the events organized by sinProject.
 ---
 
-Here are some of the events organized by sinProject
+Here are some of the events organized by sinProject.
 
-## Tsukutterumon Misetai
+## Show & Tell: Unveiling Innovations
 
-<img loading="lazy" src="/misetai.avif" alt="Tsukutterumon Misetai" style="width: 100%; aspect-ratio: 1590/863;" />
+<img loading="lazy" src="/misetai.avif" alt="Show & Tell: Unveiling Innovations" style="width: 100%; aspect-ratio: 1590/863;" />
 
-### About
+### About the Event
 
-Beginners OK / Observations OK / Any kind of technology is OK
-Any kind of production is OK!
+- Open to Beginners
+- Observers Welcome
+- All Types of Technology Accepted
+- Showcase Any Kind of Project
 
-- Web apps
-- Smartphone apps
-- Desktop apps
-- Home page
-- Designs
-- Work in progress
+Types of projects that can be showcased include:
 
-Let's motivate each other by showing each other what you have created!
-If you see what others are working on, please tell them what you liked about it!
+- Web Apps
+- Smartphone Apps
+- Desktop Apps
+- Websites
+- Design Projects
+- Works in Progress
+
+Engage in a supportive community by showcasing your creations. When viewing others' projects, feel free to share what you appreciate about their work.
 
 [Connpass Event Page >](https://misetai.connpass.com/)
