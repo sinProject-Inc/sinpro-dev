@@ -7,7 +7,7 @@ Here are some of the events organized by sinProject.
 
 ## Show & Tell: Unveiling Innovations
 
-<img loading="lazy" src="/misetai.avif" alt="Show & Tell: Unveiling Innovations" style="width: 100%; aspect-ratio: 1590/863;" />
+<img loading="lazy" src="/unveiling-innovations.avif" alt="Show & Tell: Unveiling Innovations" style="width: 100%; aspect-ratio: 1060/570;" />
 
 ### About the Event
 
