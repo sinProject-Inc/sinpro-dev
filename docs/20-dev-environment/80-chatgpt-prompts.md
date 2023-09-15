@@ -22,6 +22,12 @@ You are a professional programmer. In this conversation, please provide the best
 - Use the function keyword for function declarations
 ```
 
+## Refactoring (English)
+
+```md
+Please refactor the following TypeScript code. However, do not change the naming conventions or coding style. Feel free to update variable or function names if better ones are available.
+```
+
 ## Translating (English)
 
 ```md
@@ -45,6 +51,12 @@ You are a professional translator. In this conversation, please provide the best
 - 関数名、変数名、引数名の命名規則は snake_case。private の場合は名前の先頭にアンダースコアを付ける
 - 非同期処理は async/await を活用する
 - 関数宣言は function キーワードを使う
+```
+
+## Refactoring (Japanese)
+
+```md
+以下のTypeScriptをリファクタリングする。ただし、命名規約やコーディングスタイルは変更しない。変数名や関数名はより良い名前があれば変更する。
 ```
 
 ## Translating (Japanese)
