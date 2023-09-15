@@ -9,8 +9,8 @@ type Test<T> = {
 	test_value: T
 }
 
-function test_store<T>({ name, store, initial_value, test_value }: Test<T>): void {
-	test(`${name} should be set correctly`, () => {
+function create_test<T>({ name, store, initial_value, test_value }: Test<T>): void {
+	return test(`${name} should be set correctly`, () => {
 		expect(get(store)).toBe(initial_value)
 
 		store.set(test_value)
@@ -23,4 +23,4 @@ const tests: Test<string>[] = [
 	{ name: 'category', store: current_page_category, initial_value: '', test_value: 'dev' },
 ]
 
-tests.forEach(test_store)
+tests.forEach(create_test)
