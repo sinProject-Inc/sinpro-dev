@@ -11,7 +11,7 @@ export class App {
 	}
 
 	public static get_docs_title(title: string): string {
-		return this.get_page_title(title)
+		return App.get_page_title(title)
 		// return `${title} - ${App.company_and_app_name}`
 	}
 }
