@@ -1,30 +1,35 @@
 import { test, expect } from 'vitest'
 import { SentenceService } from './sentence_service'
 
-function run_test(input: string, expected_output: string[]): void {
-	const service = new SentenceService(input)
-	const result = service.split()
-
-	expect(result).toEqual(expected_output)
+type Spec = {
+	name: string
+	input: string
+	expected: string[]
 }
 
-const tests = [
+const specs: Spec[] = [
 	{
+		name: 'English',
 		input: 'Hello there! How are you? Have a nice day.',
-		expected_output: ['Hello there!', 'How are you?', 'Have a nice day.'],
+		expected: ['Hello there!', 'How are you?', 'Have a nice day.'],
 	},
 	{
+		name: 'Japanese',
 		input: 'こんにちは！お元気ですか？良い一日を。',
-		expected_output: ['こんにちは！', 'お元気ですか？', '良い一日を。'],
+		expected: ['こんにちは！', 'お元気ですか？', '良い一日を。'],
 	},
 	{
+		name: 'English multiple lines',
 		input: 'Hello there!  \nHow are you?    \n\nHave a nice day.',
-		expected_output: ['Hello there!', 'How are you?', 'Have a nice day.'],
+		expected: ['Hello there!', 'How are you?', 'Have a nice day.'],
 	},
 ]
 
-tests.forEach(({ input, expected_output }) => {
-	test(`splits sentence: ${input}`, () => {
-		run_test(input, expected_output)
-	})
+test.each(specs)('split($name) -> $expected', (spec) => {
+	const { input, expected } = spec
+
+	const service = new SentenceService(input)
+	const result = service.split()
+
+	expect(result).toEqual(expected)
 })
