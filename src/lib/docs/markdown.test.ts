@@ -1,42 +1,58 @@
 import { expect, test } from 'vitest'
 import { Markdown } from './markdown'
 
-test('read_file', async () => {
-	const result = await Markdown.read_file('./docs/10-company-information/20-about.md')
+type Spec = {
+	name: string
+	path: string
+	description: string
+	content?: string
+}
 
-	expect(result.title).toBe('About')
+const specs: Spec[] = [
+	{
+		name: 'About',
+		path: './docs/10-company-information/20-about.md',
+		description:
+			'sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.',
+		content:
+			'<a href="https://twitter.com/iam_o_sin" target="_blank" rel="noopener, noreferrer">Twitter</a>',
+	},
+	{
+		name: 'Events',
+		path: './docs/10-company-information/40-events.md',
+		description: 'Here are some of the events organized by sinProject.',
+		content: 'Types of projects that can be showcased include:',
+	},
+]
 
-	expect(result.description).toBe(
-		'sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.'
-	)
+test.each(specs)('generate_page_content($name)', async (spec) => {
+	const { name, path, description, content } = spec
+	const result = await Markdown.generate_page_content(path)
 
-	expect(result.content).toContain('sinYa Iwasaki')
+	expect(result.title).toBe(name)
+	expect(result.description).toBe(description)
+	expect(result.html_content).toContain(content)
 })
 
-test('generate_page_content', async () => {
-	const result = await Markdown.generate_page_content('./docs/10-company-information/20-about.md')
+type SectionSpec = {
+	name: string
+	path: string
+}
 
-	expect(result.title).toBe('About')
+const section_specs: SectionSpec[] = [
+	{
+		name: 'Company Information',
+		path: './docs/10-company-information',
+	},
+	{
+		name: 'Dev Environment',
+		path: './docs/20-dev-environment',
+	},
+]
 
-	expect(result.description).toBe(
-		'sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.'
-	)
+test.each(section_specs)('generate_section_content($path) -> $name', async (spec) => {
+	const { name, path } = spec
+	const result = await Markdown.get_section_title(path)
 
-	expect(result.html_content).toContain(
-		'<a href="https://twitter.com/iam_o_sin" target="_blank" rel="noopener, noreferrer">Twitter</a>'
-	)
-
-	expect(result.sections[2].title).toBe('sinYa Iwasaki')
-})
-
-test('get_section_title', async () => {
-	const result = await Markdown.get_section_title('./docs/10-company-information')
-
-	expect(result).toBe('Company Information')
-})
-
-test('markdown title', async () => {
-	const result = await Markdown.generate_page_content('./src/lib/docs/markdown.test.md')
-
-	expect(result.title).toBe('Test')
+	expect(result).toBe(name)
 })

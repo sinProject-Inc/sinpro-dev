@@ -1,39 +1,43 @@
 import { test, expect } from 'vitest'
 import { ClientAddress } from './client_address'
-import dotenv from 'dotenv'
 
-dotenv.config()
+type Spec = {
+	name: string
+	request: unknown
+	get_client_address: () => string
+	expected: string
+}
 
-test('ClientAddress should return x-forwarded-for header if it exists', () => {
-	if (process.env.CI) return
-
-	const mock_request = {
-		headers: {
-			get: (name: string) => {
-				if (name === 'x-forwarded-for') return '123.456.789.101'
-
-				return null
+const specs: Spec[] = [
+	{
+		name: 'x-forwarded-for header exists',
+		request: {
+			headers: {
+				get: (name: string): string | undefined =>
+					name === 'x-forwarded-for' ? '123.456.789.101' : undefined,
 			},
 		},
-	} as unknown as Request
-
-	const client_address = new ClientAddress(mock_request, () => process.env.TEST_IP_ADDRESS ?? '')
-	const result = client_address.value
-
-	expect(result).toEqual('123.456.789.101')
-})
-
-test('ClientAddress should call _get_client_address function if x-forwarded-for header does not exist', () => {
-	if (process.env.CI) return
-
-	const mock_request = {
-		headers: {
-			get: () => null,
+		get_client_address: () => '127.0.0.1',
+		expected: '123.456.789.101',
+	},
+	{
+		name: 'x-forwarded-for header does not exist',
+		request: {
+			headers: {
+				get: () => null,
+			},
 		},
-	} as unknown as Request
+		get_client_address: () => '127.0.0.1',
+		expected: '127.0.0.1',
+	},
+]
 
-	const client_address = new ClientAddress(mock_request, () => process.env.TEST_IP_ADDRESS ?? '')
-	const result = client_address.value
+test.each(specs)('ClientAddress() $name -> $expected', (spec) => {
+	if (!process.env.CI) {
+		const { request, get_client_address, expected } = spec
 
-	expect(result).toEqual(process.env.TEST_IP_ADDRESS)
+		const client_address = new ClientAddress(request as Request, get_client_address)
+
+		expect(client_address.value).toBe(expected)
+	}
 })

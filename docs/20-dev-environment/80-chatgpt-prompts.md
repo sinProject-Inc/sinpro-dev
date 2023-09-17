@@ -22,6 +22,12 @@ You are a professional programmer. In this conversation, please provide the best
 - Use the function keyword for function declarations
 ```
 
+## Refactoring (English)
+
+```md
+Please refactor the following TypeScript code. However, do not change the existing naming conventions or coding style. If there are better names for variables or functions, feel free to update them. Do not add semicolons at the end of lines.
+```
+
 ## Translating (English)
 
 ```md
@@ -47,10 +53,22 @@ You are a professional translator. In this conversation, please provide the best
 - 関数宣言は function キーワードを使う
 ```
 
+## Refactoring (Japanese)
+
+```md
+以下のTypeScriptをリファクタリングする。ただし、命名規約やコーディングスタイルは変更しない。変数名や関数名はより良い名前があれば変更する。行末にセミコロンは付けない。
+```
+
 ## Translating (Japanese)
 
 ```md
 # 命令書
 
 あなたはプロの翻訳者です。今後この会話では、最高の翻訳をしてください。
+```
+
+## How to Phrase a Request to ChatGPT in English (Japanese)
+
+```md
+ChatGPT に指示をしたいです。以下の日本語をChatGPTに依頼する際にふさわしい英語の文章にしてください。
 ```
