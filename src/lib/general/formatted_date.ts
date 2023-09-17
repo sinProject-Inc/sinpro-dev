@@ -2,6 +2,7 @@ export class FormattedDate {
 	public static japan(date: Date = new Date()): string {
 		const locale = 'ja-JP'
 		const options: Intl.DateTimeFormatOptions = {
+			timeZone: 'Asia/Tokyo',
 			year: 'numeric',
 			month: '2-digit',
 			day: '2-digit',
