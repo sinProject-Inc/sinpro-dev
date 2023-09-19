@@ -43,3 +43,11 @@ PR review and praise what was good about it.
 If it's related to an enhancement, add the 'enhancement' label.
 
 If it involves a significant change, add the 'breaking-change' label.
+
+## Merge pull request
+
+Select the method to create a merge commit.
+
+Do not select 'Squash and merge' or 'Rebase and merge'.
+
+If you want to use these, please inform me of their benefits before doing so. I will consider the policy.
