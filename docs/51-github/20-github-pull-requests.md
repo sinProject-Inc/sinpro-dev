@@ -16,7 +16,7 @@ In the template, write tasks for the following:
   - Checks
   - After Reviewing
 
-[View this file on GitHub >](https://github.com/sinProject-Inc/talk/blob/main/.github/pull_request_template.md)
+[View this file on GitHub >](https://github.com/sinProject-Inc/sinpro-dev/blob/main/.github/pull_request_template.md)
 
 ## Title
 

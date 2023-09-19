@@ -13,7 +13,7 @@ In the template, write tasks for the following:
 - Before Working on the issue
 - Pre-PR Checks
 
-[View this file on GitHub >](https://github.com/sinProject-Inc/talk/blob/main/.github/ISSUE_TEMPLATE/custom.md)
+[View this file on GitHub >](https://github.com/sinProject-Inc/sinpro-dev/blob/main/.github/ISSUE_TEMPLATE/custom.md)
 
 ## Title
 
