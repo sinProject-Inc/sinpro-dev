@@ -103,3 +103,39 @@ export default defineConfig({
 ```
 
 [Here is the official documentation >](https://vitest.dev/guide/in-source.html)
+
+## Use test.each when there are multiple test data
+
+- Define the type of your test specifications using the `type` keyword.
+- Prepare your test data in an array format.
+- Use `test.each` to execute tests on each item in your array of test data.
+
+```ts:src/lib/docs/markdown.test.ts
+type Spec = {
+	name: string
+	path: string
+	description: string
+}
+
+const specs: Spec[] = [
+	{
+		name: 'About',
+		path: './docs/10-company-information/20-about.md',
+		description:
+			'sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.',
+	},
+	{
+		name: 'Events',
+		path: './docs/10-company-information/40-events.md',
+		description: 'Here are some of the events organized by sinProject.',
+	},
+]
+
+test.each(specs)('generate_page_content($name)', async (spec) => {
+	const { name, path, description, content } = spec
+	const result = await Markdown.generate_page_content(path)
+
+	expect(result.title).toBe(name)
+	expect(result.description).toBe(description)
+})
+```
