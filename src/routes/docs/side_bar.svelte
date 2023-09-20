@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { afterNavigate } from '$app/navigation'
 	import { page } from '$app/stores'
 	import SearchIcon from '$lib/components/icons/search_icon.svelte'
 	import type { Section } from '$lib/docs/markdown'
@@ -13,6 +14,40 @@
 	function on_search_button_click(): void {
 		dispatch('show_search_modale')
 	}
+
+	function scroll(): void {
+		const container = document.querySelector('.left-container')
+
+		if (!container) {
+			// eslint-disable-next-line no-console
+			console.error('Container element not found')
+
+			return
+		}
+
+		const element = container.querySelector('.active')
+
+		if (!element) {
+			// eslint-disable-next-line no-console
+			console.error('Active element not found in container')
+
+			return
+		}
+
+		const rect = element.getBoundingClientRect()
+		const container_rect = container.getBoundingClientRect()
+		const relative_top = rect.top - container_rect.top
+		const new_scroll_top = container.scrollTop + relative_top - 128
+
+		container.scrollTo({
+			top: new_scroll_top,
+			behavior: 'smooth',
+		})
+
+		// element?.scrollIntoView({ behavior: 'smooth' })
+	}
+
+	afterNavigate(() => scroll())
 
 	/* eslint-disable @typescript-eslint/explicit-function-return-type */
 </script>
