@@ -39,6 +39,10 @@ Mobile sidebar button does not show when first navigating
 Display icons when first navigating on mobile devices
 ```
 
+## Estimated Time
+
+Specify the estimated time needed to resolve the issue.
+
 ## Assignees
 
 Assign the person in charge of the issue.
