@@ -25,8 +25,11 @@ Combine [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/), [Pret
 ```json:package.json
 {
 	"scripts": {
-		"lint": "prettier --plugin-search-dir . --check . && eslint ."
+		"lint": "eslint .",
 	},
+
+	// ...
+
 	"lint-staged": {
 		"*.{js,ts,svelte}": "eslint --cache --fix",
 		"*.css": "stylelint --fix",

@@ -16,7 +16,7 @@ In the template, write tasks for the following:
   - Checks
   - After Reviewing
 
-[View this file on GitHub >](https://github.com/sinProject-Inc/talk/blob/main/.github/pull_request_template.md)
+[View this file on GitHub >](https://github.com/sinProject-Inc/sinpro-dev/blob/main/.github/pull_request_template.md)
 
 ## Title
 
@@ -29,7 +29,7 @@ In the template, write tasks for the following:
 - Example
 
 ```md
-Docs: Show scrollbar like Mac #942
+Show scrollbar like Mac #942
 ```
 
 ## Reviewers

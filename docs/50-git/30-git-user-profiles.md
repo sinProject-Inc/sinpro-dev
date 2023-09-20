@@ -30,5 +30,3 @@ If there are discrepancies between the account information in the selected profi
 
 1. Click on the warning or,
 2. Repeat step [3] of the `Selecting a Git Config User Profile` section above to select the correct profile.
-
-[View this guide on GitHub >](https://github.com/VScord-Inc/talk/blob/main/GitHub_Account_Settings.md)

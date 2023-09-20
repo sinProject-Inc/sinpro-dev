@@ -13,31 +13,35 @@ In the template, write tasks for the following:
 - Before Working on the issue
 - Pre-PR Checks
 
-[View this file on GitHub >](https://github.com/sinProject-Inc/talk/blob/main/.github/ISSUE_TEMPLATE/custom.md)
+[View this file on GitHub >](https://github.com/sinProject-Inc/sinpro-dev/blob/main/.github/ISSUE_TEMPLATE/custom.md)
 
 ## Title
 
 - Format
 
 ```md
-<Category>: <Title>
+<Title>
 ```
 
 - Example
 
 ```md
-Docs: Show scrollbar like Mac
+Show scrollbar like Mac
 ```
 
 Write issue titles in affirmative form, following the following format.
 
-```ts::Bad
-Docs: Mobile sidebar button does not show when first navigating
+```md::Bad
+Mobile sidebar button does not show when first navigating
 ```
 
-```ts::Good
-Docs: Display icons when first navigating on mobile devices
+```md::Good
+Display icons when first navigating on mobile devices
 ```
+
+## Estimated Time
+
+Specify the estimated time needed to resolve the issue.
 
 ## Assignees
 

@@ -17,7 +17,7 @@ Write the issue number and issue title in kebab-case, connected with a hyphen.
 
 ## Script
 
-We have prepared [a script to create branches issue names](https://github.com/sinProject-Inc/talk/blob/main/src/lib/git/create_git_branch.ts).
+We have prepared [a script to create branches issue names](https://github.com/sinProject-Inc/sinpro-dev/blob/main/src/lib/git/create_git_branch.ts).
 
 ```bash
 npm run branch "<branch-name> #<branch-number>"
@@ -26,7 +26,7 @@ npm run branch "<branch-name> #<branch-number>"
 example:
 
 ```bash
-npm run branch "Docs: Correct English #990"
+npm run branch "Correct English #990"
 ```
 
 ## Commit message conventions
@@ -34,11 +34,11 @@ npm run branch "Docs: Correct English #990"
 Include the issue title and issue number.
 
 ```md
-Docs: Git Branches and Commits #743
+Git Branches and Commits #743
 ```
 
 If there are multiple commits in the same branch, provide additional details.
 
 ```md
-Docs: Git Branches and Commits #743 Update docs
+Git Branches and Commits #743 Update docs
 ```
