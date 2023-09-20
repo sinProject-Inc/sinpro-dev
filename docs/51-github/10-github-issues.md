@@ -20,23 +20,23 @@ In the template, write tasks for the following:
 - Format
 
 ```md
-<Category>: <Title>
+<Title>
 ```
 
 - Example
 
 ```md
-Docs: Show scrollbar like Mac
+Show scrollbar like Mac
 ```
 
 Write issue titles in affirmative form, following the following format.
 
-```ts::Bad
-Docs: Mobile sidebar button does not show when first navigating
+```md::Bad
+Mobile sidebar button does not show when first navigating
 ```
 
-```ts::Good
-Docs: Display icons when first navigating on mobile devices
+```md::Good
+Display icons when first navigating on mobile devices
 ```
 
 ## Assignees

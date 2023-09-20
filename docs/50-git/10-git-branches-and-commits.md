@@ -26,7 +26,7 @@ npm run branch "<branch-name> #<branch-number>"
 example:
 
 ```bash
-npm run branch "Docs: Correct English #990"
+npm run branch "Correct English #990"
 ```
 
 ## Commit message conventions
@@ -34,11 +34,11 @@ npm run branch "Docs: Correct English #990"
 Include the issue title and issue number.
 
 ```md
-Docs: Git Branches and Commits #743
+Git Branches and Commits #743
 ```
 
 If there are multiple commits in the same branch, provide additional details.
 
 ```md
-Docs: Git Branches and Commits #743 Update docs
+Git Branches and Commits #743 Update docs
 ```

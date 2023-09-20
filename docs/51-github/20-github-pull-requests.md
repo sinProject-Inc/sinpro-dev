@@ -29,7 +29,7 @@ In the template, write tasks for the following:
 - Example
 
 ```md
-Docs: Show scrollbar like Mac #942
+Show scrollbar like Mac #942
 ```
 
 ## Reviewers
