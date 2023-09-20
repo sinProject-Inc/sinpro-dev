@@ -27,6 +27,9 @@ Combine [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/), [Pret
 	"scripts": {
 		"lint": "eslint .",
 	},
+
+	// ...
+
 	"lint-staged": {
 		"*.{js,ts,svelte}": "eslint --cache --fix",
 		"*.css": "stylelint --fix",
