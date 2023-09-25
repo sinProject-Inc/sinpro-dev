@@ -126,13 +126,12 @@ const config: PlaywrightTestConfig = {
 
 ## Scripts
 
-We have prepared the following scripts to execute Vitest.
+We have prepared the following scripts to execute Playwright.
 
 ```json:package.json
 {
 	"scripts": {
-		"test:e2e": "playwright test",
-		"test:e2e:ci": "CI=true npm run test:e2e"
+		"test:integration": "playwright test",
 	}
 }
 ```

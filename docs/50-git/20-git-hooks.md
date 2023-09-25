@@ -54,9 +54,8 @@ Perform TypeScript type checking, run tests with [Vitest](https://vitest.dev/), 
 ```json:package.json
 {
 	"scripts": {
-		"test:run": "vitest run",
-		"test:e2e": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"test:unit:run": "vitest run",
 		"typecheck": "tsc --noEmit"
 	}
 }
@@ -69,10 +68,7 @@ Perform TypeScript type checking, run tests with [Vitest](https://vitest.dev/), 
 npm run typecheck
 npm run check
 
-npm run test:run
-# npm run test:e2e
-
-# npm run build
+npm run test:unit:run
 
 git fetch origin
 git merge --no-commit --no-ff origin/main

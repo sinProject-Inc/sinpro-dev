@@ -14,23 +14,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  check:
+  checks:
     name: Lint Check, Type Check, Svelte Check
     runs-on: ubuntu-latest
-    # runs-on: ${{ matrix.runner }}
-    # strategy:
-    #   matrix:
-    #     runner: [ubuntu-latest, self-hosted]
     steps:
-      # - run: echo 'This job is running on ${{ matrix.runner }} runner!!'
-
       - uses: actions/checkout@v3
-
       - uses: ./.github/actions/setup-and-cache
-
-      - name: Build
-        shell: bash
-        run: npm run build
 
       - name: Lint Check
         run: npm run lint
@@ -44,37 +33,23 @@ jobs:
   tests:
     name: Vitest Test, Playwright Test
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.37.1-jammy
 
     timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v3
-
       - uses: ./.github/actions/setup-and-cache
-        # run: npx playwright install --with-deps
 
       - name: Build
-        shell: bash
         run: npm run build
 
       - name: Vitest Test
-        run: npm run test:ci
-
-      # - name: Vitest Test and coverage
-      #   run: npm run coverage:ci
-
-      # - name: SonarCloud Scan
-      #   uses: SonarSource/sonarcloud-github-action@master
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
-
-      # https://playwright.dev/docs/ci-intro
-      - name: Install Playwright Browsers
-        run: npx playwright install chromium
+        run: npx vitest
 
       - name: Playwright Test
-        run: npm run test:e2e
+        run: npx playwright test
 
       - uses: actions/upload-artifact@v3
         if: always()
