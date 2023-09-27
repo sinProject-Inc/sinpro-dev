@@ -4,10 +4,7 @@
 npm run typecheck
 npm run check
 
-npm run test:run
-# npm run test:e2e
-
-# npm run build
+npm run test:unit:run
 
 git fetch origin
 git merge --no-commit --no-ff origin/main

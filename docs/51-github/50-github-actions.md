@@ -27,7 +27,7 @@ Run a lint check, a type check, and Svelte check.
 
 ```yaml:.github/workflows/ci.yml
 jobs:
-  check:
+  checks:
     name: Check
     runs-on: ubuntu-latest
     steps:
@@ -52,10 +52,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Vitest Test
-        run: npm run test:ci
+        run: npx vitest
 
       - name: Playwright Test
-        run: npm run test:e2e
+        run: npx playwright test
 ```
 
 ## Output
