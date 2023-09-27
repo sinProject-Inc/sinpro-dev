@@ -42,6 +42,13 @@ Combine [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/), [Pret
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+current_branch=$(git branch --show-current)
+
+if [ "$current_branch" = "main" ]; then
+  echo "Error: You cannot commit directly to main branch!"
+  exit 1
+fi
+
 npx lint-staged
 
 npm run lint
