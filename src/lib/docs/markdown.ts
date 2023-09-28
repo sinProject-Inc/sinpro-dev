@@ -81,7 +81,7 @@ export class Markdown {
 	}
 
 	private static _generate_section(heading: Element, title: string, slug: string): PageSection {
-		const level = parseInt(heading.tagName[1])
+		const level = parseInt(heading.tagName[1] ?? '7')
 
 		return { level, title, slug }
 	}
@@ -141,8 +141,16 @@ export class Markdown {
 
 		md.renderer.rules.fence = function (tokens, idx): string {
 			const token = tokens[idx]
-			const [lang, filename, title] = (token.info || '').split(':')
-			const content = token.content
+
+			if (!token) throw new Error('Invalid token')
+
+			const [lang, filename, title] = (token.info ?? '').split(':')
+
+			if (!lang) throw new Error('Invalid language')
+			if (!title) throw new Error('Invalid title')
+			if (!filename) throw new Error('Invalid filename')
+
+			const content = token?.content ?? ''
 
 			const highlighted_code = Markdown._highlighted_code(md, lang, content)
 
@@ -180,7 +188,11 @@ export class Markdown {
 
 	private static _github_link_plugin(md: MarkdownIt): void {
 		md.renderer.rules.text = function (tokens, idx): string {
-			const text = md.utils.escapeHtml(tokens[idx].content)
+			const token = tokens[idx]
+
+			if (!token) throw new Error('Invalid token')
+
+			const text = md.utils.escapeHtml(token.content)
 
 			let string_after_render = text
 
