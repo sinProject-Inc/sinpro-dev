@@ -35,7 +35,7 @@
 
 		ad_slot.className = 'adsbygoogle'
 		ad_slot.style.display = 'block'
-		ad_slot.dataset.adClient = 'ca-pub-4064604490139558'
+		ad_slot.dataset['adClient'] = 'ca-pub-4064604490139558'
 
 		return ad_slot
 	}
@@ -43,18 +43,18 @@
 	function create_ad(): HTMLModElement {
 		const ad_element = create_ad_template()
 
-		ad_element.dataset.adSlot = id
+		ad_element.dataset['adSlot'] = id
 
 		switch (id) {
 			case AdsId.display_1:
 			case AdsId.display_2:
 			case AdsId.display_3:
-				ad_element.dataset.adFormat = 'auto'
-				ad_element.dataset.fullWidthResponsive = 'true'
+				ad_element.dataset['adFormat'] = 'auto'
+				ad_element.dataset['fullWidthResponsive'] = 'true'
 				break
 
 			case AdsId.multiplex_1:
-				ad_element.dataset.adFormat = 'autorelaxed'
+				ad_element.dataset['adFormat'] = 'autorelaxed'
 				break
 		}
 

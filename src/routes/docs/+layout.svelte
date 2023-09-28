@@ -122,11 +122,15 @@
 				const observer = new IntersectionObserver(
 					(entries) => {
 						entries.forEach((entry) => {
+							const vivus_instance = vivus_instances[index]
+
+							if (!vivus_instance) throw new Error('Vivus instance not found.')
+
 							if (entry.isIntersecting) {
-								vivus_instances[index].play()
+								vivus_instance.play()
 							} else {
-								vivus_instances[index].stop()
-								vivus_instances[index].reset()
+								vivus_instance.stop()
+								vivus_instance.reset()
 							}
 						})
 					},

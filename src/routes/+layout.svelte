@@ -78,7 +78,7 @@
 		const html = document.documentElement
 
 		html.className = theme
-		html.dataset.theme = theme
+		html.dataset['theme'] = theme
 	}
 
 	$: {
@@ -90,7 +90,7 @@
 	function init_theme(): void {
 		const html = document.documentElement
 
-		dataset_theme = html.dataset.theme ?? ''
+		dataset_theme = html.dataset['theme'] ?? ''
 
 		if (dataset_theme) {
 			$theme = dataset_theme

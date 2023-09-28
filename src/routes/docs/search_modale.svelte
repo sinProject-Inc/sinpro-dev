@@ -59,8 +59,11 @@
 		if (!result.matches) return []
 
 		const context_max_length = 200
+		const match = result.matches[0]
 
-		const context = new SearchResultContext(result.matches[0], search_query)
+		if (!match) throw new Error('No match found')
+
+		const context = new SearchResultContext(match, search_query)
 		const split_context = context.get_split_context()
 
 		const shortened_split_context = context.shorten_split_context(split_context, context_max_length)
@@ -107,9 +110,14 @@
 
 		if (!children) return
 
-		let first_result_top = children[0].getBoundingClientRect().top
-		let active_result_top = children[active_result_index].getBoundingClientRect().top
-		let active_result_bottom = children[active_result_index].getBoundingClientRect().bottom
+		const first_result = children[0]
+		const active_result = children[active_result_index]
+
+		if (!first_result || !active_result) throw new Error('No children found')
+
+		let first_result_top = first_result.getBoundingClientRect().top
+		let active_result_top = active_result.getBoundingClientRect().top
+		let active_result_bottom = active_result.getBoundingClientRect().bottom
 
 		let scroll_top = parent.scrollTop + Math.floor(first_result_top)
 		let scroll_bottom = parent.scrollTop + parent.clientHeight + Math.floor(first_result_top)
