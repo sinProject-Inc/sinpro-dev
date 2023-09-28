@@ -31,7 +31,7 @@ export class Background {
 	private _background_url: string
 
 	public constructor(private readonly _background_index: BackgroundIndex) {
-		this._background_url = this._background_urls[_background_index.index]
+		this._background_url = this._background_urls[_background_index.index] ?? beach
 	}
 
 	public static from_local_storage(): Background {

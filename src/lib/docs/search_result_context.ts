@@ -189,7 +189,11 @@ export class SearchResultContext {
 		split_context: SplitContextPortion[],
 		start_index: number
 	): SplitContextPortion {
-		const portion = this._get_portion_from_index(split_context, start_index, split_context[0])
+		const fallback = split_context[0]
+
+		if (!fallback) throw new Error('Fallback portion is invalid')
+
+		const portion = this._get_portion_from_index(split_context, start_index, fallback)
 
 		return portion
 	}
@@ -198,11 +202,11 @@ export class SearchResultContext {
 		split_context: SplitContextPortion[],
 		end_index: number
 	): SplitContextPortion {
-		const portion = this._get_portion_from_index(
-			split_context,
-			end_index,
-			split_context[split_context.length - 1]
-		)
+		const fallback = split_context[split_context.length - 1]
+
+		if (!fallback) throw new Error('Fallback portion is invalid')
+
+		const portion = this._get_portion_from_index(split_context, end_index, fallback)
 
 		return portion
 	}
