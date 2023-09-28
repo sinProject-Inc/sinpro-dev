@@ -33,9 +33,7 @@ export class SearchIndex {
 
 			const contents = content.split(/\n## /)
 			const contents_with_headings = contents.map((content_part, index) => {
-				const heading = index !== 0 ? content_part.split('\n')[0] : ''
-
-				if (!heading) throw new Error('Heading is invalid')
+				const heading = index !== 0 ? content_part.split('\n')[0] ?? '' : ''
 
 				const content_without_heading =
 					index !== 0 ? content_part.slice(heading.length) : content_part
