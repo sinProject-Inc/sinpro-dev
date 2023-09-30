@@ -1,4 +1,5 @@
-import { test, expect, Page } from '@playwright/test'
+import type { Page } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 const docs_base = './docs'
 
