@@ -14,14 +14,14 @@ $ npm init playwright@latest
 
 Getting started with writing end-to-end tests with Playwright:
 Initializing project in '.'
-✔ Where to put your end-to-end tests? · e2e
+✔ Where to put your end-to-end tests? · tests
 ✔ Add a GitHub Actions workflow? (y/N) · N
 ✔ Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · Y
 ```
 
 ## File Name
 
-Create an e2e directory, and name the files as \*.spec.ts.
+Create a tests directory, and name the files as \*.spec.ts.
 
 ## Configuration
 
@@ -29,21 +29,13 @@ Create an e2e directory, and name the files as \*.spec.ts.
 
 Change the test directory, timeout duration, and other settings as needed.
 
-Configure the reporter not to open automatically, and output a video when an error occurs.
+Configure the reporter, and output videos when an error occurs.
 
 ```ts:playwright.config.ts
 const config: PlaywrightTestConfig = {
-	testDir: './e2e',
-	timeout: process.env.CI ? 20 * 1000 : 5 * 1000,
-	expect: {
-		timeout: process.env.CI ? 5000 : 2000,
-	},
-	reporter: [['html', { open: 'never' }]],
+	reporter: 'html',
 	use: {
 		video: 'retain-on-failure',
-		contextOptions: {
-			permissions: ['clipboard-read', 'clipboard-write', 'accessibility-events'],
-		},
 	},
 }
 ```
@@ -54,7 +46,7 @@ const config: PlaywrightTestConfig = {
 
 Ensure that tests are not run on browsers where testing is not necessary.
 
-```ts:playwright.config.ts
+```ts:[talk]playwright.config.ts
 const config: PlaywrightTestConfig = {
 	projects: [
 		{
@@ -78,27 +70,19 @@ const config: PlaywrightTestConfig = {
 
 ### Web Server
 
-To perform tests quickly, use a development server. Also, change the baseURL.
+To perform tests quickly, use a development server.
 
 ```ts:playwright.config.ts
-const base = ''
-// const base = '/sinpro-dev'
 const config: PlaywrightTestConfig = {
-	webServer: [
-		{
-			command: 'npm run dev',
-			url: `http://127.0.0.1:5173${base}/`,
-			reuseExistingServer: !process.env.CI,
-		},
-		// {
-		// 	command: 'npm run build && npm run preview',
-		// 	port: 4173,
-		// 	reuseExistingServer: !process.env.CI,
-		// },
-	],
-	use: {
-		baseURL: `http://127.0.0.1:5173${base}/`,
+	webServer: {
+		command: 'npm run dev',
+		port: 5173,
+		reuseExistingServer: !process.env.CI,
 	},
+	// webServer: {
+	// 	command: 'npm run build && npm run preview',
+	// 	port: 4173,
+	// },
 }
 ```
 
@@ -108,7 +92,7 @@ const config: PlaywrightTestConfig = {
 
 Specify processes to be executed beforehand, such as logging in. Add dependencies to the browser settings.
 
-```ts:playwright.config.ts
+```ts:[talk]playwright.config.ts
 const config: PlaywrightTestConfig = {
 	projects: [
 		{ name: 'setup', testMatch: /.*\.setup\.ts/ },
