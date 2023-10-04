@@ -32,7 +32,7 @@ Create a configuration file in the root directory of the project and name it `so
 sonar.projectKey=sinProject-Inc_sinpro-dev
 sonar.organization=sinproject-inc
 sonar.javascript.lcov.reportPaths=./coverage/lcov.info
-sonar.coverage.exclusions=**/tests/**,**/*.spec.ts,**/*.test.ts,**/*.config.js,**/*.config.ts
+sonar.coverage.exclusions=**/tests/**, **/*.test.*, **/*.config.*, **/+*, src/hooks.server.ts
 ```
 
 ### Create or update a ci.yml file
