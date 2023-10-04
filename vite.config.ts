@@ -14,6 +14,7 @@ export default defineConfig({
 		coverage: {
 			all: true,
 			include: ['src/**/*.{ts,js}'],
+			exclude: ['src/app.d.ts', 'src/**/*.server.{ts,js}', 'src/scripts/create_git_branch.ts'],
 			reporter: ['lcov', 'text'],
 		},
 		// coverage: {

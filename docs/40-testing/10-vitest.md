@@ -24,9 +24,13 @@ Change the files to be included in the test run.
 ```ts:vite.config.ts
 export default defineConfig({
 	test: {
-		include: ['src/**/*.test.ts'],
-		hookTimeout: 3000,
-		teardownTimeout: 0,
+		include: ['src/**/*.{test,spec}.{js,ts}'],
+		coverage: {
+			all: true,
+			include: ['src/**/*.{ts,js}'],
+			exclude: ['src/app.d.ts', 'src/**/*.server.{ts,js}'],
+			reporter: ['lcov', 'text'],
+		},
 	},
 })
 ```
@@ -40,10 +44,9 @@ We have prepared the following scripts to execute Vitest.
 ```json:package.json
 {
 	"scripts": {
-		"test": "vitest",
+		"test:unit": "vitest",
+		"test:unit:run": "vitest run",
 		"coverage": "vitest run --coverage",
-		"test:run": "vitest run",
-		"test:ci": "CI=true npm run test"
 	}
 }
 ```
