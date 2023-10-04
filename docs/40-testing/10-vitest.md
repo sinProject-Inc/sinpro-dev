@@ -27,8 +27,13 @@ export default defineConfig({
 		include: ['src/**/*.{test,spec}.{js,ts}'],
 		coverage: {
 			all: true,
-			include: ['src/**/*.{ts,js}'],
-			exclude: ['src/app.d.ts', 'src/**/*.server.{ts,js}'],
+			include: ['src/**/*.ts'],
+			exclude: [
+				'src/**/+*.ts',
+				'src/app.d.ts',
+				'src/hooks.server.ts',
+				'src/scripts/create_git_branch.ts',
+			],
 			reporter: ['lcov', 'text'],
 		},
 	},
