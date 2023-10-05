@@ -3,9 +3,12 @@
 	import type Fuse from 'fuse.js'
 	import search_index from '$lib/assets/search_index.json'
 	import SearchIcon from '$lib/components/icons/search_icon.svelte'
-	import { Search } from '$lib/docs/search'
-	import { SearchResultContext, type SplitContextPortion } from '$lib/docs/search_result_context'
-	import type { MarkdownData } from '$lib/docs/search_index'
+	import { Search } from '$lib/search-docs/search'
+	import {
+		SearchResultContext,
+		type SplitContextPortion,
+	} from '$lib/search-docs/search_result_context'
+	import type { MarkdownData } from '$lib/search-docs/search_index'
 	import { goto } from '$app/navigation'
 	import CloseIcon from '$lib/components/icons/close_icon.svelte'
 	import RightArrowIcon from '$lib/components/icons/right_arrow_icon.svelte'

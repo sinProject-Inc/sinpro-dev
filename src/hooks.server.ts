@@ -1,7 +1,6 @@
 // import { base } from '$app/paths'
 import { logger } from '$lib/app/logger'
 import { ClientAddress } from '$lib/network/client_address'
-// import { ClientHostName } from '$lib/network/client_hostname'
 import type { Handle, HandleServerError } from '@sveltejs/kit'
 
 // NOTE: https://kit.svelte.jp/docs/errors

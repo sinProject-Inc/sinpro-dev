@@ -114,11 +114,7 @@ export class Markdown {
 
 	private static _highlighted_code(md: MarkdownIt, lang: string, content: string): string {
 		if (lang && hljs.getLanguage(lang)) {
-			try {
-				return hljs.highlight(content, { language: lang }).value
-			} catch (__) {
-				// DO NOTHING
-			}
+			return hljs.highlight(content, { language: lang }).value
 		}
 
 		return md.utils.escapeHtml(content)

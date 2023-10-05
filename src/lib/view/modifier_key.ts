@@ -29,8 +29,8 @@ export class CommandOrControlShortcut {
 		return alphanumeric_regex.test(this._modifier_key_symbol)
 	}
 
-	public static generate(key: string): string {
-		if (!browser) return ''
+	public static generate(key: string, is_test = false): string {
+		if (!is_test && !browser) return ''
 
 		const control_or_command = new CommandOrControlShortcut()
 		const spacer = control_or_command.is_alphanumeric ? ' ' : ''

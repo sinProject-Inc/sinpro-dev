@@ -1,5 +1,7 @@
-import { expect, test } from 'vitest'
+import { expect, it, test } from 'vitest'
 import { Markdown } from './markdown'
+import MarkdownIt from 'markdown-it'
+import hljs from 'highlight.js'
 
 type Spec = {
 	name: string
@@ -55,4 +57,22 @@ test.each(section_specs)('generate_section_content($path) -> $name', async (spec
 	const result = await Markdown.get_section_title(path)
 
 	expect(result).toBe(name)
+})
+
+it('_highlighted_code', () => {
+	const md = new MarkdownIt()
+	const lang = 'ts'
+	const code = 'const a = 1'
+	const highlighted = Markdown['_highlighted_code'](md, lang, code)
+
+	expect(highlighted).toBe(hljs.highlight(code, { language: lang }).value)
+})
+
+it('_highlighted_code error', () => {
+	const md = new MarkdownIt()
+	const lang = 'tss'
+	const code = 'const a = 1'
+	const highlighted = Markdown['_highlighted_code'](md, lang, code)
+
+	expect(highlighted).toBe(code)
 })

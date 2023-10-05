@@ -1057,116 +1057,67 @@
     "content": "SSH"
   },
   {
-    "path": "git-for-windows",
-    "title": "Git for Windows",
-    "description": "We will use LF (Line Feed) for line breaks at the time of commit, but do not change the line break code when pulling.",
-    "content": "",
+    "path": "sonar-cloud-coverage",
+    "title": "SonarCloud Coverage",
+    "description": "SonarCloud is a cloud-based code quality and security service. It automatically analyzes and provides feedback on code changes in software projects through continuous inspection.",
+    "content": "\nSonarCloud is a cloud-based code quality and security service. It automatically analyzes and provides feedback on code changes in software projects through continuous inspection.\n\nIt integrates with popular development workflows, particularly within continuous integration/continuous delivery (CI/CD) pipelines.\n\nSonarCloud guide on Test Coverage &gt;\n",
     "heading": ""
   },
   {
-    "path": "git-for-windows#core-autocrlf",
-    "title": "Git for Windows",
-    "description": "We will use LF (Line Feed) for line breaks at the time of commit, but do not change the line break code when pulling.",
-    "content": "\n\nWe will use LF (Line Feed) for line breaks at the time of commit, but do not change the line break code when pulling.\n\ngit config --global core.autocrlf input\n",
-    "heading": "core.autocrlf"
+    "path": "sonar-cloud-coverage#use-ci-based-not-automatic-analysis",
+    "title": "SonarCloud Coverage",
+    "description": "SonarCloud is a cloud-based code quality and security service. It automatically analyzes and provides feedback on code changes in software projects through continuous inspection.",
+    "content": "\n\nSign in to SonarCloud\nOpen Your Organization > Your Project > Administration > Analysis Method\nDisable Automatic Analysis\n",
+    "heading": "Use CI-based, not automatic analysis"
   },
   {
-    "path": "git-for-windows",
-    "title": "Git for Windows",
+    "path": "sonar-cloud-coverage#analyze-a-project-with-a-github-action",
+    "title": "SonarCloud Coverage",
+    "description": "SonarCloud is a cloud-based code quality and security service. It automatically analyzes and provides feedback on code changes in software projects through continuous inspection.",
+    "content": "\n\nOpen Your Organization > Your Project > Administration > Analysis Method\nClick With GitHub Actions\nCreate a GitHub Secret\nCreate or update a build file\n",
+    "heading": "Analyze a project with a GitHub Action"
+  },
+  {
+    "path": "sonar-cloud-coverage#create-or-update-a-build-file-for-js-ts-go-python-php",
+    "title": "SonarCloud Coverage",
+    "description": "SonarCloud is a cloud-based code quality and security service. It automatically analyzes and provides feedback on code changes in software projects through continuous inspection.",
+    "content": "\nCreate a sonar-project.properties file\n\nCreate a configuration file in the root directory of the project and name it sonar-project.properties\n\nsonar.projectKey=sinProject-Inc_sinpro-dev\nsonar.organization=sinproject-inc\nsonar.javascript.lcov.reportPaths=./coverage/lcov.info\nsonar.coverage.exclusions=/tests/, */.test., */.config., */+, src/hooks.server.ts\n\nCreate or update a ci.yml file\n\nname: Build\n\non:\n  push:\n    branches:\n      main\n  pull_request:\n    types: [opened, synchronize, reopened]\n\njobs:\n  tests:\n    name: Vitest Test\n    runs-on: ubuntu-latest\n\n    steps:\n      uses: actions/checkout@v3\n        with:\n          fetch-depth: 0\n\n      name: Install dependencies\n        run: npm run install\n\n\t\t\tname: Vitest Test and coverage\n        run: npx vitest run --coverage\n\n      name: SonarCloud Scan\n        uses: SonarSource/sonarcloud-github-action@master\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}\n",
+    "heading": "Create or update a build file for JS, TS, Go, Python, PHP, ..."
+  },
+  {
+    "path": "sonar-cloud-coverage",
+    "title": "SonarCloud Coverage",
     "description": "",
     "heading": "",
     "content": ""
   },
   {
-    "path": "git-for-windows#core-autocrlf",
-    "title": "Git for Windows",
+    "path": "sonar-cloud-coverage#use-ci-based-not-automatic-analysis",
+    "title": "SonarCloud Coverage",
     "description": "",
-    "heading": "core.autocrlf",
-    "content": "core.autocrlf"
+    "heading": "Use CI-based, not automatic analysis",
+    "content": "Use CI-based, not automatic analysis"
   },
   {
-    "path": "git-for-windows",
-    "title": "Git for Windows",
+    "path": "sonar-cloud-coverage#analyze-a-project-with-a-github-action",
+    "title": "SonarCloud Coverage",
     "description": "",
-    "heading": "",
-    "content": "Git for Windows"
+    "heading": "Analyze a project with a GitHub Action",
+    "content": "Analyze a project with a GitHub Action"
   },
   {
-    "path": "git-user-profiles",
-    "title": "Git User Profiles",
-    "description": "This document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.",
-    "content": "\nThis document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.\n",
-    "heading": ""
+    "path": "sonar-cloud-coverage#create-or-update-a-build-file-for-js-ts-go-python-php",
+    "title": "SonarCloud Coverage",
+    "description": "",
+    "heading": "Create or update a build file for JS, TS, Go, Python, PHP, ...",
+    "content": "Create or update a build file for JS, TS, Go, Python, PHP, ..."
   },
   {
-    "path": "git-user-profiles#installing-the-extension",
-    "title": "Git User Profiles",
-    "description": "This document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.",
-    "content": "\n\nNavigate to the Extensions tab.\nSearch for Git Config User Profiles and install it.\n",
-    "heading": "Installing the Extension"
-  },
-  {
-    "path": "git-user-profiles#creating-a-git-config-user-profile",
-    "title": "Git User Profiles",
-    "description": "This document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.",
-    "content": "\n\nOpen the command palette with Shift + Command + P.\nSearch and execute git config user profiles: create a git config user profile.\nYou will then be prompted to enter your profile name, account name, and an email address to create your profile.\n",
-    "heading": "Creating a Git Config User Profile"
-  },
-  {
-    "path": "git-user-profiles#selecting-a-git-config-user-profile",
-    "title": "Git User Profiles",
-    "description": "This document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.",
-    "content": "\n\nOpen the command palette again.\nSearch and execute Git Config User Profiles: Select a git config user profile.\nA confirmation pop-up will appear in the bottom right corner. If there are no issues, proceed with the selection.\n\nNote: This operation will update the account information documented in the open project to the selected profile.\n",
-    "heading": "Selecting a Git Config User Profile"
-  },
-  {
-    "path": "git-user-profiles#resolving-account-information-discrepancies",
-    "title": "Git User Profiles",
-    "description": "This document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.",
-    "content": "\n\nIf there are discrepancies between the account information in the selected profile and the open file, a warning will be displayed in yellow on the blue bar at the bottom of the screen. To resolve this:\n\nClick on the warning or,\nRepeat step [3] of the Selecting a Git Config User Profile section above to select the correct profile.\n\nView this guide on GitHub >\n",
-    "heading": "Resolving Account Information Discrepancies"
-  },
-  {
-    "path": "git-user-profiles",
-    "title": "Git User Profiles",
+    "path": "sonar-cloud-coverage",
+    "title": "SonarCloud Coverage",
     "description": "",
     "heading": "",
-    "content": ""
-  },
-  {
-    "path": "git-user-profiles#installing-the-extension",
-    "title": "Git User Profiles",
-    "description": "",
-    "heading": "Installing the Extension",
-    "content": "Installing the Extension"
-  },
-  {
-    "path": "git-user-profiles#creating-a-git-config-user-profile",
-    "title": "Git User Profiles",
-    "description": "",
-    "heading": "Creating a Git Config User Profile",
-    "content": "Creating a Git Config User Profile"
-  },
-  {
-    "path": "git-user-profiles#selecting-a-git-config-user-profile",
-    "title": "Git User Profiles",
-    "description": "",
-    "heading": "Selecting a Git Config User Profile",
-    "content": "Selecting a Git Config User Profile"
-  },
-  {
-    "path": "git-user-profiles#resolving-account-information-discrepancies",
-    "title": "Git User Profiles",
-    "description": "",
-    "heading": "Resolving Account Information Discrepancies",
-    "content": "Resolving Account Information Discrepancies"
-  },
-  {
-    "path": "git-user-profiles",
-    "title": "Git User Profiles",
-    "description": "",
-    "heading": "",
-    "content": "Git User Profiles"
+    "content": "SonarCloud Coverage"
   },
   {
     "path": "github-actions",
@@ -1186,14 +1137,14 @@
     "path": "github-actions#checks",
     "title": "GitHub Actions",
     "description": "We use GitHub Actions to perform two types of CI Checks and tests.",
-    "content": "\n\nRun a lint check, a type check, and Svelte check.\n\njobs:\n  check:\n    name: Check\n    runs-on: ubuntu-latest\n    steps:\n      name: Lint Check\n        run: npm run lint\n\n      name: Type Check\n        run: npm run typecheck\n\n      name: Svelte Check\n        run: npm run check\n",
+    "content": "\n\nRun a lint check, a type check, and Svelte check.\n\njobs:\n  checks:\n    name: Check\n    runs-on: ubuntu-latest\n    steps:\n      name: Lint Check\n        run: npm run lint\n\n      name: Type Check\n        run: npm run typecheck\n\n      name: Svelte Check\n        run: npm run check\n",
     "heading": "Checks"
   },
   {
     "path": "github-actions#tests",
     "title": "GitHub Actions",
     "description": "We use GitHub Actions to perform two types of CI Checks and tests.",
-    "content": "\n\nExecute tests using Vitest and Playwright.\n\njobs:\n  tests:\n    name: Tests\n    runs-on: ubuntu-latest\n    steps:\n      name: Vitest Test\n        run: npm run test:ci\n\n      name: Playwright Test\n        run: npm run test:e2e\n",
+    "content": "\n\nExecute tests using Vitest and Playwright.\n\njobs:\n  tests:\n    name: Tests\n    runs-on: ubuntu-latest\n    steps:\n      name: Vitest Test\n        run: npx vitest\n\n      name: Playwright Test\n        run: npx playwright test\n",
     "heading": "Tests"
   },
   {
@@ -1333,8 +1284,22 @@
     "path": "github_repository_settings#general",
     "title": "GitHub Repository Settings",
     "description": "We are modifying the initial settings of the repository as follows.",
-    "content": "\n\nFeatures:\n\nWikis: Uncheck\nDiscussions: Check\n\nPull Requests:\n\nAutomatically delete head branches: Check\n",
+    "content": "\n\nTemplate repository: Check if it's a template.\n",
     "heading": "General"
+  },
+  {
+    "path": "github_repository_settings#features",
+    "title": "GitHub Repository Settings",
+    "description": "We are modifying the initial settings of the repository as follows.",
+    "content": "\n\nWikis: Uncheck\nDiscussions: Check\n",
+    "heading": "Features"
+  },
+  {
+    "path": "github_repository_settings#pull-requests",
+    "title": "GitHub Repository Settings",
+    "description": "We are modifying the initial settings of the repository as follows.",
+    "content": "\n\nAllow squash merging: Uncheck\nAllow rebase merging: Uncheck\nAutomatically delete head branches: Check\n",
+    "heading": "Pull Requests"
   },
   {
     "path": "github_repository_settings",
@@ -1349,6 +1314,20 @@
     "description": "",
     "heading": "General",
     "content": "General"
+  },
+  {
+    "path": "github_repository_settings#features",
+    "title": "GitHub Repository Settings",
+    "description": "",
+    "heading": "Features",
+    "content": "Features"
+  },
+  {
+    "path": "github_repository_settings#pull-requests",
+    "title": "GitHub Repository Settings",
+    "description": "",
+    "heading": "Pull Requests",
+    "content": "Pull Requests"
   },
   {
     "path": "github_repository_settings",
@@ -1375,7 +1354,7 @@
     "path": "github-pull-requests#title",
     "title": "GitHub Pull Requests",
     "description": "On completing an issues, we create a pull request (PR).",
-    "content": "\n\nFormat\n\n\nExample\n\nDocs: Show scrollbar like Mac #942\n",
+    "content": "\n\nFormat\n\n\nExample\n\nShow scrollbar like Mac #942\n",
     "heading": "Title"
   },
   {
@@ -1391,6 +1370,13 @@
     "description": "On completing an issues, we create a pull request (PR).",
     "content": "\n\nIf it's related to an enhancement, add the 'enhancement' label.\n\nIf it involves a significant change, add the 'breaking-change' label.\n",
     "heading": "Labels"
+  },
+  {
+    "path": "github-pull-requests#merge-pull-request",
+    "title": "GitHub Pull Requests",
+    "description": "On completing an issues, we create a pull request (PR).",
+    "content": "\n\nSelect the method to create a merge commit.\n\nDo not select 'Squash and merge' or 'Rebase and merge'.\n\nIf you want to use these, please inform me of their benefits before doing so. I will consider the policy.\n",
+    "heading": "Merge pull request"
   },
   {
     "path": "github-pull-requests",
@@ -1428,6 +1414,13 @@
     "content": "Labels"
   },
   {
+    "path": "github-pull-requests#merge-pull-request",
+    "title": "GitHub Pull Requests",
+    "description": "",
+    "heading": "Merge pull request",
+    "content": "Merge pull request"
+  },
+  {
     "path": "github-pull-requests",
     "title": "GitHub Pull Requests",
     "description": "",
@@ -1452,8 +1445,15 @@
     "path": "github-issues#title",
     "title": "GitHub Issues",
     "description": "We manage tasks using GitHub issues.",
-    "content": "\n\nFormat\n\n:\n\nExample\n\nDocs: Show scrollbar like Mac\n\nWrite issue titles in affirmative form, following the following format.\n\nDocs: Mobile sidebar button does not show when first navigating\n\nDocs: Display icons when first navigating on mobile devices\n",
+    "content": "\n\nFormat\n\n\n\nExample\n\nShow scrollbar like Mac\n\nWrite issue titles in affirmative form, following the following format.\n\nMobile sidebar button does not show when first navigating\n\nDisplay icons when first navigating on mobile devices\n",
     "heading": "Title"
+  },
+  {
+    "path": "github-issues#estimated-time",
+    "title": "GitHub Issues",
+    "description": "We manage tasks using GitHub issues.",
+    "content": "\n\nSpecify the estimated time needed to resolve the issue.\n",
+    "heading": "Estimated Time"
   },
   {
     "path": "github-issues#assignees",
@@ -1498,6 +1498,13 @@
     "content": "Title"
   },
   {
+    "path": "github-issues#estimated-time",
+    "title": "GitHub Issues",
+    "description": "",
+    "heading": "Estimated Time",
+    "content": "Estimated Time"
+  },
+  {
     "path": "github-issues#assignees",
     "title": "GitHub Issues",
     "description": "",
@@ -1526,6 +1533,118 @@
     "content": "GitHub Issues"
   },
   {
+    "path": "git-for-windows",
+    "title": "Git for Windows",
+    "description": "We will use LF (Line Feed) for line breaks at the time of commit, but do not change the line break code when pulling.",
+    "content": "",
+    "heading": ""
+  },
+  {
+    "path": "git-for-windows#core-autocrlf",
+    "title": "Git for Windows",
+    "description": "We will use LF (Line Feed) for line breaks at the time of commit, but do not change the line break code when pulling.",
+    "content": "\n\nWe will use LF (Line Feed) for line breaks at the time of commit, but do not change the line break code when pulling.\n\ngit config --global core.autocrlf input\n",
+    "heading": "core.autocrlf"
+  },
+  {
+    "path": "git-for-windows",
+    "title": "Git for Windows",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "git-for-windows#core-autocrlf",
+    "title": "Git for Windows",
+    "description": "",
+    "heading": "core.autocrlf",
+    "content": "core.autocrlf"
+  },
+  {
+    "path": "git-for-windows",
+    "title": "Git for Windows",
+    "description": "",
+    "heading": "",
+    "content": "Git for Windows"
+  },
+  {
+    "path": "git-user-profiles",
+    "title": "Git User Profiles",
+    "description": "This document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.",
+    "content": "\nThis document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.\n",
+    "heading": ""
+  },
+  {
+    "path": "git-user-profiles#installing-the-extension",
+    "title": "Git User Profiles",
+    "description": "This document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.",
+    "content": "\n\nNavigate to the Extensions tab.\nSearch for Git Config User Profiles and install it.\n",
+    "heading": "Installing the Extension"
+  },
+  {
+    "path": "git-user-profiles#creating-a-git-config-user-profile",
+    "title": "Git User Profiles",
+    "description": "This document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.",
+    "content": "\n\nOpen the command palette with Shift + Command + P.\nSearch and execute git config user profiles: create a git config user profile.\nYou will then be prompted to enter your profile name, account name, and an email address to create your profile.\n",
+    "heading": "Creating a Git Config User Profile"
+  },
+  {
+    "path": "git-user-profiles#selecting-a-git-config-user-profile",
+    "title": "Git User Profiles",
+    "description": "This document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.",
+    "content": "\n\nOpen the command palette again.\nSearch and execute Git Config User Profiles: Select a git config user profile.\nA confirmation pop-up will appear in the bottom right corner. If there are no issues, proceed with the selection.\n\nNote: This operation will update the account information documented in the open project to the selected profile.\n",
+    "heading": "Selecting a Git Config User Profile"
+  },
+  {
+    "path": "git-user-profiles#resolving-account-information-discrepancies",
+    "title": "Git User Profiles",
+    "description": "This document will guide you on setting up your git user profiles using the Git Config User Profiles extension in VSCode. This is especially helpful for people who share a development device.",
+    "content": "\n\nIf there are discrepancies between the account information in the selected profile and the open file, a warning will be displayed in yellow on the blue bar at the bottom of the screen. To resolve this:\n\nClick on the warning or,\nRepeat step [3] of the Selecting a Git Config User Profile section above to select the correct profile.\n",
+    "heading": "Resolving Account Information Discrepancies"
+  },
+  {
+    "path": "git-user-profiles",
+    "title": "Git User Profiles",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "git-user-profiles#installing-the-extension",
+    "title": "Git User Profiles",
+    "description": "",
+    "heading": "Installing the Extension",
+    "content": "Installing the Extension"
+  },
+  {
+    "path": "git-user-profiles#creating-a-git-config-user-profile",
+    "title": "Git User Profiles",
+    "description": "",
+    "heading": "Creating a Git Config User Profile",
+    "content": "Creating a Git Config User Profile"
+  },
+  {
+    "path": "git-user-profiles#selecting-a-git-config-user-profile",
+    "title": "Git User Profiles",
+    "description": "",
+    "heading": "Selecting a Git Config User Profile",
+    "content": "Selecting a Git Config User Profile"
+  },
+  {
+    "path": "git-user-profiles#resolving-account-information-discrepancies",
+    "title": "Git User Profiles",
+    "description": "",
+    "heading": "Resolving Account Information Discrepancies",
+    "content": "Resolving Account Information Discrepancies"
+  },
+  {
+    "path": "git-user-profiles",
+    "title": "Git User Profiles",
+    "description": "",
+    "heading": "",
+    "content": "Git User Profiles"
+  },
+  {
     "path": "git-hooks",
     "title": "Git Hooks",
     "description": "We use lint-staged and Husky for our Git Hooks.",
@@ -1543,14 +1662,14 @@
     "path": "git-hooks#pre-commit",
     "title": "Git Hooks",
     "description": "We use lint-staged and Husky for our Git Hooks.",
-    "content": "\n\nCombine ESLint, Stylelint, Prettier, and lint-staged to format code.\n\n{\n\t\"scripts\": {\n\t\t\"lint\": \"prettier --plugin-search-dir . --check . && eslint .\"\n\t},\n\t\"lint-staged\": {\n\t\t\"*.{js,ts,svelte}\": \"eslint --cache --fix\",\n\t\t\"*.css\": \"stylelint --fix\",\n\t\t\"*.{js,css,md,ts,svelte,css,scss,json}\": \"prettier --write\"\n\t}\n}\n\n#!/bin/sh\n. \"$(dirname \"$0\")/_/husky.sh\"\n\nnpx lint-staged\n\nnpm run lint\n",
+    "content": "\n\nCombine ESLint, Stylelint, Prettier, and lint-staged to format code.\n\n{\n\t\"scripts\": {\n\t\t\"lint\": \"eslint .\",\n\t},\n\n\t// ...\n\n\t\"lint-staged\": {\n\t\t\"*.{js,ts,svelte}\": \"eslint --cache --fix\",\n\t\t\"*.css\": \"stylelint --fix\",\n\t\t\"*.{js,css,md,ts,svelte,css,scss,json}\": \"prettier --write\"\n\t}\n}\n\n#!/bin/sh\n. \"$(dirname \"$0\")/_/husky.sh\"\n\ncurrent_branch=$(git branch --show-current)\n\nif [ \"$current_branch\" = \"main\" ]; then\n  echo \"Error: You cannot commit directly to main branch!\"\n  exit 1\nfi\n\nnpx lint-staged\n\nnpm run lint\n",
     "heading": "pre-commit"
   },
   {
     "path": "git-hooks#pre-push",
     "title": "Git Hooks",
     "description": "We use lint-staged and Husky for our Git Hooks.",
-    "content": "\n\nPerform TypeScript type checking, run tests with Vitest, and finally check for conflicts.\n\n{\n\t\"scripts\": {\n\t\t\"test:run\": \"vitest run\",\n\t\t\"test:e2e\": \"playwright test\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"typecheck\": \"tsc --noEmit\"\n\t}\n}\n\n#!/bin/sh\n. \"$(dirname \"$0\")/_/husky.sh\"\n\nnpm run typecheck\nnpm run check\n\nnpm run test:run\nnpm run test:e2e\n\nnpm run build\n\ngit fetch origin\ngit merge --no-commit --no-ff origin/main\ngit reset --hard HEAD\n",
+    "content": "\n\nPerform TypeScript type checking, run tests with Vitest, and finally check for conflicts.\n\n{\n\t\"scripts\": {\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"test:unit:run\": \"vitest run\",\n\t\t\"typecheck\": \"tsc --noEmit\"\n\t}\n}\n\n#!/bin/sh\n. \"$(dirname \"$0\")/_/husky.sh\"\n\nnpm run typecheck\nnpm run check\n\nnpm run test:unit:run\n\ngit fetch origin\ngit merge --no-commit --no-ff origin/main\ngit reset --hard HEAD\n",
     "heading": "pre-push"
   },
   {
@@ -1613,14 +1732,14 @@
     "path": "git-branches-and-commits#script",
     "title": "Git Branches and Commits",
     "description": "Write the issue number and issue title in kebab-case, connected with a hyphen.",
-    "content": "\n\nWe have prepared a script to create branches issue names.\n\nnpm run branch \" #\"\n\nexample:\n\nnpm run branch \"Docs: Correct English #990\"\n",
+    "content": "\n\nWe have prepared a script to create branches issue names.\n\nnpm run branch \" #\"\n\nexample:\n\nnpm run branch \"Correct English #990\"\n",
     "heading": "Script"
   },
   {
     "path": "git-branches-and-commits#commit-message-conventions",
     "title": "Git Branches and Commits",
     "description": "Write the issue number and issue title in kebab-case, connected with a hyphen.",
-    "content": "\n\nInclude the issue title and issue number.\n\nDocs: Git Branches and Commits #743\n\nIf there are multiple commits in the same branch, provide additional details.\n\nDocs: Git Branches and Commits #743 Update docs\n",
+    "content": "\n\nInclude the issue title and issue number.\n\nGit Branches and Commits #743\n\nIf there are multiple commits in the same branch, provide additional details.\n\nGit Branches and Commits #743 Update docs\n",
     "heading": "Commit message conventions"
   },
   {
@@ -1676,28 +1795,28 @@
     "path": "playwright#installation",
     "title": "Playwright",
     "description": "How we automate our tests using Playwright. Playwright is an E2E (end-to-end) testing framework.",
-    "content": "\n\n$ npm init playwright@latest\n\nGetting started with writing end-to-end tests with Playwright:\nInitializing project in '.'\n✔ Where to put your end-to-end tests? · e2e\n✔ Add a GitHub Actions workflow? (y/N) · N\n✔ Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · Y\n",
+    "content": "\n\n$ npm init playwright@latest\n\nGetting started with writing end-to-end tests with Playwright:\nInitializing project in '.'\n✔ Where to put your end-to-end tests? · tests\n✔ Add a GitHub Actions workflow? (y/N) · N\n✔ Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · Y\n",
     "heading": "Installation"
   },
   {
     "path": "playwright#file-name",
     "title": "Playwright",
     "description": "How we automate our tests using Playwright. Playwright is an E2E (end-to-end) testing framework.",
-    "content": "\n\nCreate an e2e directory, and name the files as \\*.spec.ts.\n",
+    "content": "\n\nCreate a tests directory, and name the files as \\*.spec.ts.\n",
     "heading": "File Name"
   },
   {
     "path": "playwright#configuration",
     "title": "Playwright",
     "description": "How we automate our tests using Playwright. Playwright is an E2E (end-to-end) testing framework.",
-    "content": "\nBasic changes\n\nChange the test directory, timeout duration, and other settings as needed.\n\nConfigure the reporter not to open automatically, and output a video when an error occurs.\n\nconst config: PlaywrightTestConfig = {\n\ttestDir: './e2e',\n\ttimeout: process.env.CI ? 20 * 1000 : 5 * 1000,\n\texpect: {\n\t\ttimeout: process.env.CI ? 5000 : 2000,\n\t},\n\treporter: [['html', { open: 'never' }]],\n\tuse: {\n\t\tvideo: 'retain-on-failure',\n\t\tcontextOptions: {\n\t\t\tpermissions: ['clipboard-read', 'clipboard-write', 'accessibility-events'],\n\t\t},\n\t},\n}\n\nPlaywright - TestConfig >\n\nTarget Browsers\n\nEnsure that tests are not run on browsers where testing is not necessary.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t},\n\n\t\t// {\n\t\t//   name: 'firefox',\n\t\t//   use: {\n\t\t//     ...devices['Desktop Firefox'],\n\t\t//   },\n\t\t// },\n\n\t\t// ...\n\t],\n}\n\nWeb Server\n\nTo perform tests quickly, use a development server. Also, change the baseURL.\n\nconst base = ''\n// const base = '/sinpro-dev'\nconst config: PlaywrightTestConfig = {\n\twebServer: [\n\t\t{\n\t\t\tcommand: 'npm run dev',\n\t\t\turl: http://127.0.0.1:5173${base}/,\n\t\t\treuseExistingServer: !process.env.CI,\n\t\t},\n\t\t// {\n\t\t// \tcommand: 'npm run build && npm run preview',\n\t\t// \tport: 4173,\n\t\t// \treuseExistingServer: !process.env.CI,\n\t\t// },\n\t],\n\tuse: {\n\t\tbaseURL: http://127.0.0.1:5173${base}/,\n\t},\n}\n\nMore information >\n\nSetup\n\nSpecify processes to be executed beforehand, such as logging in. Add dependencies to the browser settings.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{ name: 'setup', testMatch: /.*\\.setup\\.ts/ },\n\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t\tdependencies: ['setup'],\n\t\t},\n\t],\n}\n",
+    "content": "\nBasic changes\n\nChange the test directory, timeout duration, and other settings as needed.\n\nConfigure the reporter, and output videos when an error occurs.\n\nconst config: PlaywrightTestConfig = {\n\treporter: 'html',\n\tuse: {\n\t\tvideo: 'retain-on-failure',\n\t},\n}\n\nPlaywright - TestConfig >\n\nTarget Browsers\n\nEnsure that tests are not run on browsers where testing is not necessary.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t},\n\n\t\t// {\n\t\t//   name: 'firefox',\n\t\t//   use: {\n\t\t//     ...devices['Desktop Firefox'],\n\t\t//   },\n\t\t// },\n\n\t\t// ...\n\t],\n}\n\nWeb Server\n\nTo perform tests quickly, use a development server.\n\nconst config: PlaywrightTestConfig = {\n\twebServer: {\n\t\tcommand: 'npm run dev',\n\t\tport: 5173,\n\t\treuseExistingServer: !process.env.CI,\n\t},\n\t// webServer: {\n\t// \tcommand: 'npm run build && npm run preview',\n\t// \tport: 4173,\n\t// },\n}\n\nMore information >\n\nSetup\n\nSpecify processes to be executed beforehand, such as logging in. Add dependencies to the browser settings.\n\nconst config: PlaywrightTestConfig = {\n\tprojects: [\n\t\t{ name: 'setup', testMatch: /.*\\.setup\\.ts/ },\n\n\t\t{\n\t\t\tname: 'chromium',\n\t\t\tuse: {\n\t\t\t\t...devices['Desktop Chrome'],\n\t\t\t},\n\t\t\tdependencies: ['setup'],\n\t\t},\n\t],\n}\n",
     "heading": "Configuration"
   },
   {
     "path": "playwright#scripts",
     "title": "Playwright",
     "description": "How we automate our tests using Playwright. Playwright is an E2E (end-to-end) testing framework.",
-    "content": "\n\nWe have prepared the following scripts to execute Vitest.\n\n{\n\t\"scripts\": {\n\t\t\"test:e2e\": \"playwright test\",\n\t\t\"test:e2e:ci\": \"CI=true npm run test:e2e\"\n\t}\n}\n",
+    "content": "\n\nWe have prepared the following scripts to execute Playwright.\n\n{\n\t\"scripts\": {\n\t\t\"test:integration\": \"playwright test\",\n\t}\n}\n",
     "heading": "Scripts"
   },
   {
@@ -1851,14 +1970,14 @@
     "path": "vitest#options",
     "title": "Vitest",
     "description": "How we automate our tests using Vitest. Vitest is a testing framework designed for unit testing.",
-    "content": "\n\nChange the files to be included in the test run.\n\nexport default defineConfig({\n\ttest: {\n\t\tinclude: ['src/*/.test.ts'],\n\t\thookTimeout: 3000,\n\t\tteardownTimeout: 0,\n\t},\n})\n\nConfiguring Vitest >\n",
+    "content": "\n\nChange the files to be included in the test run.\n\nexport default defineConfig({\n\ttest: {\n\t\tinclude: ['src/*/.{test,spec}.{js,ts}'],\n\t\tcoverage: {\n\t\t\tall: true,\n\t\t\tinclude: ['src/*/.ts'],\n\t\t\texclude: [\n\t\t\t\t'src/*/+.ts',\n\t\t\t\t'src/app.d.ts',\n\t\t\t\t'src/hooks.server.ts',\n\t\t\t\t'src/scripts/create_git_branch.ts',\n\t\t\t],\n\t\t\treporter: ['lcov', 'text'],\n\t\t},\n\t},\n})\n\nConfiguring Vitest >\n",
     "heading": "Options"
   },
   {
     "path": "vitest#scripts",
     "title": "Vitest",
     "description": "How we automate our tests using Vitest. Vitest is a testing framework designed for unit testing.",
-    "content": "\n\nWe have prepared the following scripts to execute Vitest.\n\n{\n\t\"scripts\": {\n\t\t\"test\": \"vitest\",\n\t\t\"coverage\": \"vitest run --coverage\",\n\t\t\"test:run\": \"vitest run\",\n\t\t\"test:ci\": \"CI=true npm run test\"\n\t}\n}\n",
+    "content": "\n\nWe have prepared the following scripts to execute Vitest.\n\n{\n\t\"scripts\": {\n\t\t\"test:unit\": \"vitest\",\n\t\t\"test:unit:run\": \"vitest run\",\n\t\t\"coverage\": \"vitest run --coverage\",\n\t}\n}\n",
     "heading": "Scripts"
   },
   {
@@ -1872,7 +1991,7 @@
     "path": "vitest#sample-code",
     "title": "Vitest",
     "description": "How we automate our tests using Vitest. Vitest is a testing framework designed for unit testing.",
-    "content": "\n\nimport { expect, test } from 'vitest'\nimport { ValidId } from './valid_id'\n\ntest('1', () => {\n\texpect(new ValidId(1).id).toEqual(1)\n})\n\nWhen checking thrown errors:\n\nimport { expect, test } from 'vitest'\nimport { ValidId } from './valid_id'\n\ntest('NaN', () => {\n\texpect(() => new ValidId(NaN)).toThrow('id is not number')\n})\n",
+    "content": "\n\nimport { expect, test } from 'vitest'\nimport { ValidId } from './valid_id'\n\ntest('1', () => {\n\texpect(new ValidId(1).id).toEqual(1)\n})\n\nWhen checking thrown errors:\n\nimport { expect, test } from 'vitest'\nimport { ValidId } from './valid_id'\n\ntest('NaN', () => {\n\texpect(() => new ValidId(NaN)).toThrow('id is not a number')\n})\n",
     "heading": "Sample Code"
   },
   {
@@ -1881,6 +2000,13 @@
     "description": "How we automate our tests using Vitest. Vitest is a testing framework designed for unit testing.",
     "content": "\n\nif (import.meta.vitest) {\n\tconst { test, expect } = import.meta.vitest\n\n\ttest('get_initial_app_locale_code', () => {\n\t\texpect(get_initial_locale_code()).toBe('en-US')\n\t})\n}\n\nexport default defineConfig({\n\tdefine: {\n\t\t'import.meta.vitest': 'undefined',\n\t},\n})\n\n{\n\t\"compilerOptions\": {\n\t\t\"types\": [\"vitest/importMeta\"]\n\t}\n}\n\nHere is the official documentation >\n",
     "heading": "In-source testing"
+  },
+  {
+    "path": "vitest#use-test-each-when-there-are-multiple-test-data",
+    "title": "Vitest",
+    "description": "How we automate our tests using Vitest. Vitest is a testing framework designed for unit testing.",
+    "content": "\n\nDefine the type of your test specifications using the type keyword.\nPrepare your test data in an array format.\nUse test.each to execute tests on each item in your array of test data.\n\ntype Spec = {\n\tname: string\n\tpath: string\n\tdescription: string\n}\n\nconst specs: Spec[] = [\n\t{\n\t\tname: 'About',\n\t\tpath: './docs/10-company-information/20-about.md',\n\t\tdescription:\n\t\t\t'sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.',\n\t},\n\t{\n\t\tname: 'Events',\n\t\tpath: './docs/10-company-information/40-events.md',\n\t\tdescription: 'Here are some of the events organized by sinProject.',\n\t},\n]\n\ntest.each(specs)('generate_page_content($name)', async (spec) => {\n\tconst { name, path, description, content } = spec\n\tconst result = await Markdown.generate_page_content(path)\n\n\texpect(result.title).toBe(name)\n\texpect(result.description).toBe(description)\n})\n",
+    "heading": "Use test.each when there are multiple test data"
   },
   {
     "path": "vitest",
@@ -1937,6 +2063,13 @@
     "description": "",
     "heading": "In-source testing",
     "content": "In-source testing"
+  },
+  {
+    "path": "vitest#use-test-each-when-there-are-multiple-test-data",
+    "title": "Vitest",
+    "description": "",
+    "heading": "Use test.each when there are multiple test data",
+    "content": "Use test.each when there are multiple test data"
   },
   {
     "path": "vitest",
@@ -3360,6 +3493,13 @@
     "heading": "Coding (English)"
   },
   {
+    "path": "chatgpt-prompts#refactoring-english",
+    "title": "ChatGPT Prompts",
+    "description": "We are using the following ChatGPT prompts.",
+    "content": "\n\nPlease refactor the following TypeScript code. However, do not change the existing naming conventions or coding style. If there are better names for variables or functions, feel free to update them. Do not add semicolons at the end of lines.\n",
+    "heading": "Refactoring (English)"
+  },
+  {
     "path": "chatgpt-prompts#translating-english",
     "title": "ChatGPT Prompts",
     "description": "We are using the following ChatGPT prompts.",
@@ -3374,11 +3514,25 @@
     "heading": "Coding (Japanese)"
   },
   {
+    "path": "chatgpt-prompts#refactoring-japanese",
+    "title": "ChatGPT Prompts",
+    "description": "We are using the following ChatGPT prompts.",
+    "content": "\n\n以下のTypeScriptをリファクタリングする。ただし、命名規約やコーディングスタイルは変更しない。変数名や関数名はより良い名前があれば変更する。行末にセミコロンは付けない。\n",
+    "heading": "Refactoring (Japanese)"
+  },
+  {
     "path": "chatgpt-prompts#translating-japanese",
     "title": "ChatGPT Prompts",
     "description": "We are using the following ChatGPT prompts.",
     "content": "\n命令書\n\nあなたはプロの翻訳者です。今後この会話では、最高の翻訳をしてください。\n",
     "heading": "Translating (Japanese)"
+  },
+  {
+    "path": "chatgpt-prompts#how-to-phrase-a-request-to-chatgpt-in-english-japanese",
+    "title": "ChatGPT Prompts",
+    "description": "We are using the following ChatGPT prompts.",
+    "content": "\n\nChatGPT に指示をしたいです。以下の日本語をChatGPTに依頼する際にふさわしい英語の文章にしてください。\n",
+    "heading": "How to Phrase a Request to ChatGPT in English (Japanese)"
   },
   {
     "path": "chatgpt-prompts",
@@ -3395,6 +3549,13 @@
     "content": "Coding (English)"
   },
   {
+    "path": "chatgpt-prompts#refactoring-english",
+    "title": "ChatGPT Prompts",
+    "description": "",
+    "heading": "Refactoring (English)",
+    "content": "Refactoring (English)"
+  },
+  {
     "path": "chatgpt-prompts#translating-english",
     "title": "ChatGPT Prompts",
     "description": "",
@@ -3409,11 +3570,25 @@
     "content": "Coding (Japanese)"
   },
   {
+    "path": "chatgpt-prompts#refactoring-japanese",
+    "title": "ChatGPT Prompts",
+    "description": "",
+    "heading": "Refactoring (Japanese)",
+    "content": "Refactoring (Japanese)"
+  },
+  {
     "path": "chatgpt-prompts#translating-japanese",
     "title": "ChatGPT Prompts",
     "description": "",
     "heading": "Translating (Japanese)",
     "content": "Translating (Japanese)"
+  },
+  {
+    "path": "chatgpt-prompts#how-to-phrase-a-request-to-chatgpt-in-english-japanese",
+    "title": "ChatGPT Prompts",
+    "description": "",
+    "heading": "How to Phrase a Request to ChatGPT in English (Japanese)",
+    "content": "How to Phrase a Request to ChatGPT in English (Japanese)"
   },
   {
     "path": "chatgpt-prompts",
@@ -4149,6 +4324,41 @@
     "description": "",
     "heading": "",
     "content": "macOS Settings"
+  },
+  {
+    "path": "events",
+    "title": "Events",
+    "description": "Here are some of the events organized by sinProject.",
+    "content": "\nHere are some of the events organized by sinProject.\n",
+    "heading": ""
+  },
+  {
+    "path": "events#show-tell-unveiling-innovations",
+    "title": "Events",
+    "description": "Here are some of the events organized by sinProject.",
+    "content": "\nAbout the Event\n\nOpen to Beginners\nObservers Welcome\nAll Types of Technology Accepted\nShowcase Any Kind of Project\n\nTypes of projects that can be showcased include:\n\nWeb Apps\nSmartphone Apps\nDesktop Apps\nWebsites\nDesign Projects\nWorks in Progress\n\nEngage in a supportive community by showcasing your creations. When viewing others' projects, feel free to share what you appreciate about their work.\n\nConnpass Event Page >\n",
+    "heading": "Show & Tell: Unveiling Innovations"
+  },
+  {
+    "path": "events",
+    "title": "Events",
+    "description": "",
+    "heading": "",
+    "content": ""
+  },
+  {
+    "path": "events#show-tell-unveiling-innovations",
+    "title": "Events",
+    "description": "",
+    "heading": "Show & Tell: Unveiling Innovations",
+    "content": "Show & Tell: Unveiling Innovations"
+  },
+  {
+    "path": "events",
+    "title": "Events",
+    "description": "",
+    "heading": "",
+    "content": "Events"
   },
   {
     "path": "services",

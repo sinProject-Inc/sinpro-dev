@@ -21,7 +21,7 @@
 		"prepare": "husky install",
 		"typecheck": "tsc --noEmit",
 		"typecheck:why": "tsc --noEmit --explainFiles > explainTypes.txt",
-		"search-index": "tsx ./src/lib/docs/search_index.ts",
+		"search-index": "tsx ./src/lib/search-docs/search_index.ts",
 		"branch": "git checkout main && git pull && tsx ./src/scripts/create_git_branch.ts",
 		"prebuild": "npm run search-index"
 	},
@@ -50,6 +50,7 @@
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-prettier": "^5.0.0",
 		"eslint-plugin-svelte": "^2.33.2",
+		"happy-dom": "^12.8.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^14.0.1",
 		"postcss": "^8.4.31",

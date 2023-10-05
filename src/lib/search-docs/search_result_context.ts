@@ -63,7 +63,7 @@ export class SearchResultContext {
 		let last_index = 0
 
 		for (const match of text.matchAll(regex)) {
-			const match_index = match.index || 0
+			const match_index = match.index ?? 0
 
 			this._add_non_matching_portion(split_context, text, last_index, match_index)
 			this._add_matching_portion(split_context, match[0], match_index)

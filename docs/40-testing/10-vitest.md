@@ -78,7 +78,7 @@ import { expect, test } from 'vitest'
 import { ValidId } from './valid_id'
 
 test('NaN', () => {
-	expect(() => new ValidId(NaN)).toThrow('id is not number')
+	expect(() => new ValidId(NaN)).toThrow('id is not a number')
 })
 ```
 

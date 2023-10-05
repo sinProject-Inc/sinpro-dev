@@ -2,7 +2,7 @@ export class Urlify {
 	public constructor(private readonly _text: string) {}
 
 	private _escape_html(): string {
-		const escaped_text = this._text.replace(/[&<>"']/g, (char) => {
+		const escaped_text = this._text.replace(/[&<>" ']/g, (char) => {
 			switch (char) {
 				case '&':
 					return '&amp;'
@@ -32,8 +32,8 @@ export class Urlify {
 			if (!url.startsWith('http') && !url.startsWith('https')) {
 				if (url.includes('www.')) {
 					new_url = `https://${url}`
-				} else {
-					new_url = `https://www.${url}`
+					// } else {
+					// 	new_url = `https://www.${url}`
 				}
 			}
 
