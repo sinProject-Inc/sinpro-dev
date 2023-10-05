@@ -50,3 +50,9 @@ it.each(generate_specs)('CommandOrControlShortcut.generate() $name -> $expected'
 
 	expect(value).toBe(expected)
 })
+
+it(`shouldn't generate if not browser`, () => {
+	const value = CommandOrControlShortcut.generate('a')
+
+	expect(value).toBe('')
+})
