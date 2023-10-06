@@ -52,7 +52,7 @@
 			code: 'KeyK',
 		}
 
-		new KeyboardShortcutHandler(search_shortcut_params, handle_search_shortcut)
+		KeyboardShortcutHandler.create(search_shortcut_params, handle_search_shortcut)
 	}
 
 	let search_modale: SearchModale

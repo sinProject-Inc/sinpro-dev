@@ -10,7 +10,7 @@ it('KeyboardShortcutHandler', async () => {
 	const keyboard_event_shift = new KeyboardEvent('keydown', { code: 'KeyK', shiftKey: true })
 	const keyboard_event_key_a = new KeyboardEvent('keydown', { code: 'KeyA', ctrlKey: true })
 
-	new KeyboardShortcutHandler({ code: 'KeyK', control: true }, mock_callback)
+	KeyboardShortcutHandler.create({ code: 'KeyK', control: true }, mock_callback)
 
 	window.dispatchEvent(keyboard_event)
 	window.dispatchEvent(keyboard_event_alt)
