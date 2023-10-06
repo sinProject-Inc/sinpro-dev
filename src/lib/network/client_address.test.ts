@@ -33,11 +33,8 @@ const specs: Spec[] = [
 ]
 
 test.each(specs)('ClientAddress() $name -> $expected', (spec) => {
-	if (!process.env['CI']) {
-		const { request, get_client_address, expected } = spec
+	const { request, get_client_address, expected } = spec
+	const client_address = new ClientAddress(request as Request, get_client_address)
 
-		const client_address = new ClientAddress(request as Request, get_client_address)
-
-		expect(client_address.value).toBe(expected)
-	}
+	expect(client_address.value).toBe(expected)
 })
