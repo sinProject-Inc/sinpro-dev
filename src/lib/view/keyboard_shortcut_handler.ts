@@ -37,12 +37,12 @@ export class KeyboardShortcutHandler {
 		const { alt = false, shift = false, control = false, code = null } = this._params
 		const is_control_pressed = event.ctrlKey || event.metaKey
 
-		if (alt !== event.altKey) return false
-		if (shift !== event.shiftKey) return false
-		if (control !== is_control_pressed) return false
-		if (code !== event.code) return false
-
-		return true
+		return (
+			alt === event.altKey &&
+			shift === event.shiftKey &&
+			control === is_control_pressed &&
+			code === event.code
+		)
 	}
 
 	private _set_event_handler(): void {
