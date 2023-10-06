@@ -114,11 +114,7 @@ export class Markdown {
 
 	private static _highlighted_code(md: MarkdownIt, lang: string, content: string): string {
 		if (lang && hljs.getLanguage(lang)) {
-			try {
-				return hljs.highlight(content, { language: lang }).value
-			} catch (__) {
-				// DO NOTHING
-			}
+			return hljs.highlight(content, { language: lang }).value
 		}
 
 		return md.utils.escapeHtml(content)
@@ -144,13 +140,8 @@ export class Markdown {
 
 			if (!token) throw new Error('Invalid token')
 
-			const [lang_temp, filename_temp, title_temp] = (token.info ?? '').split(':')
-
-			const lang = lang_temp ?? ''
-			const filename = filename_temp ?? ''
-			const title = title_temp ?? ''
-			const content = token?.content ?? ''
-
+			const [lang = '', filename = '', title = ''] = (token.info ?? '').split(':')
+			const content = token.content
 			const highlighted_code = Markdown._highlighted_code(md, lang, content)
 
 			return new MarkdownCodeElement(lang, filename, title, highlighted_code).generate()

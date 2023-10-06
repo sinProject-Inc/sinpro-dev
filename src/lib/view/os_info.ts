@@ -12,10 +12,10 @@ export class OSInfo {
 	private static _os_list: { name: OS; pattern: RegExp }[] = [
 		{ name: OS.android, pattern: /android/i },
 		{ name: OS.ios, pattern: /iPad|iPhone|iPod/ },
+		{ name: OS.windows_phone, pattern: /windows phone/i },
 		{ name: OS.windows, pattern: /Windows/ },
 		{ name: OS.mac_os, pattern: /Macintosh|Mac OS X/ },
 		{ name: OS.linux, pattern: /Linux/ },
-		{ name: OS.windows_phone, pattern: /windows phone/i },
 	]
 
 	public static get_os(): OS {

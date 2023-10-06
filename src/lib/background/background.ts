@@ -13,7 +13,7 @@ import purple2 from '../assets/purple2-30.avif'
 import { BackgroundIndex } from '../background/background_index'
 
 export class Background {
-	private readonly _background_urls: string[] = [
+	private static readonly _background_urls: string[] = [
 		beach,
 		chair,
 		cloudy,
@@ -31,7 +31,7 @@ export class Background {
 	private _background_url: string
 
 	public constructor(private readonly _background_index: BackgroundIndex) {
-		this._background_url = this._background_urls[_background_index.index] ?? beach
+		this._background_url = Background._background_urls[_background_index.index] ?? beach
 	}
 
 	public static from_local_storage(): Background {
@@ -56,7 +56,7 @@ export class Background {
 	}
 
 	public get_next_background(): Background {
-		const next_index = (this._background_index.index + 1) % this._background_urls.length
+		const next_index = (this._background_index.index + 1) % Background._background_urls.length
 		const next_background_index = new BackgroundIndex(next_index)
 		const next_background = new Background(next_background_index)
 

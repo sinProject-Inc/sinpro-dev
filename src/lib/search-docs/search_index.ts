@@ -4,7 +4,7 @@ import * as glob from 'glob'
 import matter from 'gray-matter'
 import prettier from 'prettier'
 import removeMd from 'remove-markdown'
-import { Markdown } from './markdown'
+import { Markdown } from '../docs/markdown'
 
 export type MarkdownData = {
 	path: string

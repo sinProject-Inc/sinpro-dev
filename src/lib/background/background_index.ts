@@ -2,7 +2,7 @@ export class BackgroundIndex {
 	private readonly _index: number
 
 	public constructor(index: number) {
-		if (index < 0) throw new Error('id is not positive number')
+		if (index < 0) throw new Error('id is not a positive number')
 
 		this._index = index
 	}
@@ -14,7 +14,7 @@ export class BackgroundIndex {
 
 		const index = parseInt(index_string)
 
-		if (isNaN(index)) throw new Error('index is not number')
+		if (isNaN(index)) throw new Error('index is not a number')
 
 		return new BackgroundIndex(index)
 	}

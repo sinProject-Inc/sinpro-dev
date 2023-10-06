@@ -8,6 +8,7 @@ export default defineConfig({
 		'import.meta.vitest': 'undefined',
 	},
 	test: {
+		environment: 'happy-dom',
 		include: ['src/**/*.test.ts'],
 		hookTimeout: 3000,
 		teardownTimeout: 0,
@@ -19,6 +20,7 @@ export default defineConfig({
 				'src/app.d.ts',
 				'src/hooks.server.ts',
 				'src/scripts/create_git_branch.ts',
+				'src/lib/search-docs/*.ts',
 			],
 			reporter: ['lcov', 'text'],
 		},
