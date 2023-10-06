@@ -3,6 +3,8 @@ title: SonarCloud Coverage
 description: SonarCloud is a cloud-based code quality and security service. It automatically analyzes and provides feedback on code changes in software projects through continuous inspection.
 ---
 
+<img loading="lazy" src="/images/coverage.avif" alt="Coverage" style="width: 100%; aspect-ratio: 994/498;" />
+
 [SonarCloud](https://www.sonarsource.com/products/sonarcloud/) is a cloud-based code quality and security service. It automatically analyzes and provides feedback on code changes in software projects through continuous inspection.
 
 It integrates with popular development workflows, particularly within continuous integration/continuous delivery (CI/CD) pipelines.
