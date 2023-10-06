@@ -5,7 +5,7 @@ description: Here are the services we offer at sinProject Inc.
 
 Here are the services we offer at sinProject Inc.
 
-<img loading="lazy" src="/office.avif" alt="Office" style="width: 100%; aspect-ratio: 154/102;" />
+<img loading="lazy" src="/images/office.avif" alt="Office" style="width: 100%; aspect-ratio: 154/102;" />
 
 ## Office Space
 
