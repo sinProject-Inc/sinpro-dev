@@ -1,4 +1,4 @@
-import { test, expect } from 'vitest'
+import { expect, it } from 'vitest'
 import { ClientAddress } from './client_address'
 
 type Spec = {
@@ -32,7 +32,7 @@ const specs: Spec[] = [
 	},
 ]
 
-test.each(specs)('ClientAddress() $name -> $expected', (spec) => {
+it.each(specs)('ClientAddress() $name -> $expected', (spec) => {
 	const { request, get_client_address, expected } = spec
 	const client_address = new ClientAddress(request as Request, get_client_address)
 

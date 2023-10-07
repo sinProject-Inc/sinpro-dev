@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest'
+import { expect, it } from 'vitest'
 import { sleep } from './system'
 
 type Spec = {
@@ -7,7 +7,7 @@ type Spec = {
 
 const specs: Spec[] = [{ milliseconds: 10 }, { milliseconds: 100 }, { milliseconds: 500 }]
 
-test.each(specs)('sleep($milliseconds)', async (spec) => {
+it.each(specs)('sleep($milliseconds)', async (spec) => {
 	const { milliseconds } = spec
 
 	const start_time = Date.now()

@@ -1,4 +1,4 @@
-import { test, expect } from 'vitest'
+import { expect, it } from 'vitest'
 import { SentenceService } from './sentence_service'
 
 type Spec = {
@@ -25,7 +25,7 @@ const specs: Spec[] = [
 	},
 ]
 
-test.each(specs)('split($name) -> $expected', (spec) => {
+it.each(specs)('split($name) -> $expected', (spec) => {
 	const { input, expected } = spec
 
 	const service = new SentenceService(input)

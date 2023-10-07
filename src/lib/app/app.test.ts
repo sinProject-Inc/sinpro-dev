@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest'
+import { expect, it } from 'vitest'
 import { App } from './app'
 
 type Spec = {
@@ -13,7 +13,7 @@ const specs: Spec[] = [
 	{ name: 'docs', func: App.get_docs_title, input: 'Home', expected: 'Home - sinpro.dev' },
 ]
 
-test.each(specs)('App.get_{$name}_title($input) -> $expected', (spec) => {
+it.each(specs)('App.get_{$name}_title($input) -> $expected', (spec) => {
 	const { func, input, expected } = spec
 
 	expect(func(input)).toBe(expected)
