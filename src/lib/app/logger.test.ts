@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest'
+import { expect, it } from 'vitest'
 import { logger } from './logger'
 
-test('logger', () => expect(logger).toBeTruthy())
+it('logger', () => expect(logger).toBeTruthy())

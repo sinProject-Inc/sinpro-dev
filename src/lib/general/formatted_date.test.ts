@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest'
+import { expect, it } from 'vitest'
 import { FormattedDate } from './formatted_date'
 
 type Spec = {
@@ -40,7 +40,7 @@ const specs: Spec[] = [
 	{ input: '2023-08-07T09:36:02.Z', expected: 'Invalid Date' },
 ]
 
-test.each(specs)('FormattedDate.japan($input) -> $expected', (spec) => {
+it.each(specs)('FormattedDate.japan($input) -> $expected', (spec) => {
 	const { input, expected } = spec
 
 	expect(FormattedDate.japan(new Date(input))).toBe(expected)

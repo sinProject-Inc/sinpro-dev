@@ -63,10 +63,10 @@ Use the [VSCode Extension](./vscode-workspace-extensions#testing) for testing.
 ## Sample Code
 
 ```ts:[talk]src/lib/general/valid_id.test.ts
-import { expect, test } from 'vitest'
+import { expect, it } from 'vitest'
 import { ValidId } from './valid_id'
 
-test('1', () => {
+it('1', () => {
 	expect(new ValidId(1).id).toEqual(1)
 })
 ```
@@ -74,10 +74,10 @@ test('1', () => {
 When checking thrown errors:
 
 ```ts:[talk]src/lib/general/valid_id.test.ts
-import { expect, test } from 'vitest'
+import { expect, it } from 'vitest'
 import { ValidId } from './valid_id'
 
-test('NaN', () => {
+it('NaN', () => {
 	expect(() => new ValidId(NaN)).toThrow('id is not a number')
 })
 ```
@@ -86,9 +86,9 @@ test('NaN', () => {
 
 ```ts:[talk]src/lib/locale/i18n.ts
 if (import.meta.vitest) {
-	const { test, expect } = import.meta.vitest
+	const { expect, it } = import.meta.vitest
 
-	test('get_initial_app_locale_code', () => {
+	it('get_initial_app_locale_code', () => {
 		expect(get_initial_locale_code()).toBe('en-US')
 	})
 }
@@ -139,7 +139,7 @@ const specs: Spec[] = [
 	},
 ]
 
-test.each(specs)('generate_page_content($name)', async (spec) => {
+it.each(specs)('generate_page_content($name)', async (spec) => {
 	const { name, path, description, content } = spec
 	const result = await Markdown.generate_page_content(path)
 

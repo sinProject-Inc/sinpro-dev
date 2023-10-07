@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest'
+import { expect, it } from 'vitest'
 import { MarkdownCodeElement } from './markdown_code_element'
 
 type Spec = {
@@ -56,7 +56,7 @@ const specs: Spec[] = [
 	},
 ]
 
-test.each(specs)(
+it.each(specs)(
 	'name: $name, language: $language, path: $path, title: $title, content: $content -> $expected',
 	(spec) => {
 		const { language, path, title, content, expected } = spec
