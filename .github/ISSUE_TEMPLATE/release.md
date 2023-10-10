@@ -18,10 +18,10 @@ assignees: ''
 
 ## Tasks
 
-- [ ] `npm version minor` or `npm version patch` で package のバージョンを 3 箇所書き換える。
+- [ ] マイナーバージョンを上げる場合 `npm version minor` を実行する。パッチバージョンを上げる場合 `npm version patch` を実行する。
 - [ ] push する。
-- [ ] PR を作成する。その際、Issue は Close しないので書き換えなくていい。
-- [ ] PR は、何もチェックせずにマージする。
+- [ ] PR を作成する。PR title は `<Issue Title> <Issue Number>` とする。その他 PR の記載やチェックボックスは変更しないこと。
+- [ ] PDMに連絡し、PRをマージしてもらう。
 - [ ] 作成された タグを origin に push する。
 
 ## GitHub
@@ -37,11 +37,11 @@ assignees: ''
 ## Server
 
 - [ ] `ssh dev@sinpro-dev` で接続する。
-- [ ] cd ~/dev/sinpro-dev
-- [ ] git checkout main && git pull
-- [ ] npm i --legacy-peer-deps
-- [ ] npm run build
-- [ ] pm2 restart sinpro-dev
+- [ ] `cd ~/dev/sinpro-dev`
+- [ ] `git checkout main && git pull`
+- [ ] `npm i --legacy-peer-deps`
+- [ ] `npm run build`
+- [ ] `pm2 restart sinpro-dev`
 
 ## Check
 
@@ -49,27 +49,19 @@ assignees: ''
 
 ## 告知
 
-- [ ] [ドキュメントの追加や更新](https://github.com/sinProject-Inc/sinpro-dev/commits/main/docs)があれば、 #give-and-take でアナウンスする。
-- [ ] SNS で告知するよう、プロダクトマネージャーに依頼する。
+- [ ] ドキュメントの追加や更新があれば、 以下のテンプレートを使用しアナウンスをする。
+- [ ] Docs更新アナウンスのテンプレートの「202x 年 x 月 x 日」は、前回リリース日の翌日の日付を入れる。
 
 ```markdown
 @channel
 
-Docs ガイドラインを更新しましたのでご案内いたします。
-興味があるところ、業務に関係するところを確認しておいてくださいませ。
+sinpro-dev Docs を更新しましたのでご案内いたします。
 
-New
-
-- Books
-
-Update
-
-- GitHub Actions - Secrets
-- Git Branches and Commits - Script
+[docs 更新履歴](https://github.com/sinProject-Inc/sinpro-dev/commits/main/docs) を確認し、202x 年 x 月 x 日のコミット以降で、興味があるところ、業務に関係するところを確認しておいてくださいませ。
 
 確認が完了しましたらリアクションをお願い致します。
 また、気になることがありましたらお気軽にご連絡くださいませ。
 よろしくお願いいたします。
 
-@岩崎 さん、SNS 告知お願い致します。
+@岩崎 真也 さん、SNS 告知お願い致します。
 ```
