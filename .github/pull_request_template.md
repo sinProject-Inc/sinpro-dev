@@ -16,8 +16,6 @@ closes #ISSUE_NUMBER
 
 # For the Reviewer
 
-## Before Reviewing
-
 ## Checks
 
 - [ ] Each task for the related issue are written and in checkboxes
