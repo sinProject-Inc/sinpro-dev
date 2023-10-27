@@ -21,12 +21,18 @@ Set strict to true, and further increase strictness by modifying the following o
 	"compilerOptions": {
 		"strict": true,
 
+		"allowUnusedLabels": false,
 		"allowUnreachableCode": false,
 		"exactOptionalPropertyTypes": true,
+		"noFallthroughCasesInSwitch": true,
 		"noImplicitOverride": true,
 		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true
-		// "noUncheckedIndexedAccess": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+
+		"isolatedModules": true,
 	}
 }
 ```
