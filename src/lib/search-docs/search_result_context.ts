@@ -1,4 +1,4 @@
-import type Fuse from 'fuse.js'
+import type { FuseResultMatch } from 'fuse.js'
 
 export type SplitContextPortion = {
 	text: string
@@ -12,10 +12,10 @@ type IndexRange = {
 }
 
 export class SearchResultContext {
-	private readonly _match: Fuse.FuseResultMatch
+	private readonly _match: FuseResultMatch
 	private readonly _query: string
 
-	public constructor(match: Fuse.FuseResultMatch, query: string) {
+	public constructor(match: FuseResultMatch, query: string) {
 		this._match = match
 		this._query = query
 	}
