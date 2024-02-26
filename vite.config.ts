@@ -1,8 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite'
 import { defineConfig } from 'vitest/config'
+import { SvelteKitPWA } from '@vite-pwa/sveltekit'
 
 export default defineConfig({
-	plugins: [sveltekit()],
+	plugins: [sveltekit(), SvelteKitPWA()],
 	define: {
 		// eslint-disable-next-line @typescript-eslint/naming-convention
 		'import.meta.vitest': 'undefined',

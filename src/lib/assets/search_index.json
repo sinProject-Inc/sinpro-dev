@@ -402,7 +402,7 @@
     "path": "equipment-and-supplies#mac-devices-and-accessories",
     "title": "Equipment and Supplies",
     "description": "We will introduce the equipment and supplies we use and recommend.",
-    "content": "\n\nApple 2023 MacBook Pro M2 Pro チップ搭載ノートパソコン 14.2 インチ Liquid Retina XDR ディスプレイ、10 コアと 16 コア GPU、16GB ユニファイドメモリ, 512GB SSD ストレージ、バックライトキーボード、1080p FaceTime HD カメラ、iPhone や iPad との連係機能 -スペースグレイ\n",
+    "content": "\n\nApple 2023 MacBook Pro 11 コアCPU、14 コアGPU のM3 Proチップ搭載ノートパ ソコン:14.2 インチ Liquid Retina XDR ディスプレイ、18GB ユニファイドメモリ、 512GBの SSD ストレージ、iPhone や iPad との連係機能 - シルバー\n",
     "heading": "Mac Devices and Accessories"
   },
   {
@@ -1060,7 +1060,7 @@
     "path": "sonar-cloud-coverage",
     "title": "SonarCloud Coverage",
     "description": "SonarCloud is a cloud-based code quality and security service. It automatically analyzes and provides feedback on code changes in software projects through continuous inspection.",
-    "content": "\nSonarCloud is a cloud-based code quality and security service. It automatically analyzes and provides feedback on code changes in software projects through continuous inspection.\n\nIt integrates with popular development workflows, particularly within continuous integration/continuous delivery (CI/CD) pipelines.\n\nSonarCloud guide on Test Coverage &gt;\n",
+    "content": "\n\n\nSonarCloud is a cloud-based code quality and security service. It automatically analyzes and provides feedback on code changes in software projects through continuous inspection.\n\nIt integrates with popular development workflows, particularly within continuous integration/continuous delivery (CI/CD) pipelines.\n\nSonarCloud guide on Test Coverage &gt;\n",
     "heading": ""
   },
   {
@@ -1991,21 +1991,21 @@
     "path": "vitest#sample-code",
     "title": "Vitest",
     "description": "How we automate our tests using Vitest. Vitest is a testing framework designed for unit testing.",
-    "content": "\n\nimport { expect, test } from 'vitest'\nimport { ValidId } from './valid_id'\n\ntest('1', () => {\n\texpect(new ValidId(1).id).toEqual(1)\n})\n\nWhen checking thrown errors:\n\nimport { expect, test } from 'vitest'\nimport { ValidId } from './valid_id'\n\ntest('NaN', () => {\n\texpect(() => new ValidId(NaN)).toThrow('id is not a number')\n})\n",
+    "content": "\n\nimport { expect, it } from 'vitest'\nimport { ValidId } from './valid_id'\n\nit('1', () => {\n\texpect(new ValidId(1).id).toEqual(1)\n})\n\nWhen checking thrown errors:\n\nimport { expect, it } from 'vitest'\nimport { ValidId } from './valid_id'\n\nit('NaN', () => {\n\texpect(() => new ValidId(NaN)).toThrow('id is not a number')\n})\n",
     "heading": "Sample Code"
   },
   {
     "path": "vitest#in-source-testing",
     "title": "Vitest",
     "description": "How we automate our tests using Vitest. Vitest is a testing framework designed for unit testing.",
-    "content": "\n\nif (import.meta.vitest) {\n\tconst { test, expect } = import.meta.vitest\n\n\ttest('get_initial_app_locale_code', () => {\n\t\texpect(get_initial_locale_code()).toBe('en-US')\n\t})\n}\n\nexport default defineConfig({\n\tdefine: {\n\t\t'import.meta.vitest': 'undefined',\n\t},\n})\n\n{\n\t\"compilerOptions\": {\n\t\t\"types\": [\"vitest/importMeta\"]\n\t}\n}\n\nHere is the official documentation >\n",
+    "content": "\n\nif (import.meta.vitest) {\n\tconst { expect, it } = import.meta.vitest\n\n\tit('get_initial_app_locale_code', () => {\n\t\texpect(get_initial_locale_code()).toBe('en-US')\n\t})\n}\n\nexport default defineConfig({\n\tdefine: {\n\t\t'import.meta.vitest': 'undefined',\n\t},\n})\n\n{\n\t\"compilerOptions\": {\n\t\t\"types\": [\"vitest/importMeta\"]\n\t}\n}\n\nHere is the official documentation >\n",
     "heading": "In-source testing"
   },
   {
     "path": "vitest#use-test-each-when-there-are-multiple-test-data",
     "title": "Vitest",
     "description": "How we automate our tests using Vitest. Vitest is a testing framework designed for unit testing.",
-    "content": "\n\nDefine the type of your test specifications using the type keyword.\nPrepare your test data in an array format.\nUse test.each to execute tests on each item in your array of test data.\n\ntype Spec = {\n\tname: string\n\tpath: string\n\tdescription: string\n}\n\nconst specs: Spec[] = [\n\t{\n\t\tname: 'About',\n\t\tpath: './docs/10-company-information/20-about.md',\n\t\tdescription:\n\t\t\t'sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.',\n\t},\n\t{\n\t\tname: 'Events',\n\t\tpath: './docs/10-company-information/40-events.md',\n\t\tdescription: 'Here are some of the events organized by sinProject.',\n\t},\n]\n\ntest.each(specs)('generate_page_content($name)', async (spec) => {\n\tconst { name, path, description, content } = spec\n\tconst result = await Markdown.generate_page_content(path)\n\n\texpect(result.title).toBe(name)\n\texpect(result.description).toBe(description)\n})\n",
+    "content": "\n\nDefine the type of your test specifications using the type keyword.\nPrepare your test data in an array format.\nUse test.each to execute tests on each item in your array of test data.\n\ntype Spec = {\n\tname: string\n\tpath: string\n\tdescription: string\n}\n\nconst specs: Spec[] = [\n\t{\n\t\tname: 'About',\n\t\tpath: './docs/10-company-information/20-about.md',\n\t\tdescription:\n\t\t\t'sinProject Inc. is an software development company in Osaka, Japan. We primarily use SvelteKit and TypeScript, but also work with other programming languages and frameworks.',\n\t},\n\t{\n\t\tname: 'Events',\n\t\tpath: './docs/10-company-information/40-events.md',\n\t\tdescription: 'Here are some of the events organized by sinProject.',\n\t},\n]\n\nit.each(specs)('generate_page_content($name)', async (spec) => {\n\tconst { name, path, description, content } = spec\n\tconst result = await Markdown.generate_page_content(path)\n\n\texpect(result.title).toBe(name)\n\texpect(result.description).toBe(description)\n})\n",
     "heading": "Use test.each when there are multiple test data"
   },
   {
@@ -2334,7 +2334,7 @@
     "path": "tsconfig#tsconfig",
     "title": "TypeScript Config",
     "description": "How we modify our TypeScript code style with tsconfig.json.",
-    "content": "\n\nSet strict to true, and further increase strictness by modifying the following options:\n\nallowUnreachableCode\nexactOptionalPropertyTypes\nnoImplicitOverride\nnoImplicitReturns\nnoFallthroughCasesInSwitch\n\n{\n\t\"extends\": \"./.svelte-kit/tsconfig.json\",\n\t\"compilerOptions\": {\n\t\t\"strict\": true,\n\n\t\t\"allowUnreachableCode\": false,\n\t\t\"exactOptionalPropertyTypes\": true,\n\t\t\"noImplicitOverride\": true,\n\t\t\"noImplicitReturns\": true,\n\t\t\"noFallthroughCasesInSwitch\": true\n\t\t// \"noUncheckedIndexedAccess\": true,\n\t}\n}\n",
+    "content": "\n\nSet strict to true, and further increase strictness by modifying the following options:\n\nallowUnreachableCode\nexactOptionalPropertyTypes\nnoImplicitOverride\nnoImplicitReturns\nnoFallthroughCasesInSwitch\n\n{\n\t\"extends\": \"./.svelte-kit/tsconfig.json\",\n\t\"compilerOptions\": {\n\t\t\"strict\": true,\n\n\t\t\"allowUnusedLabels\": false,\n\t\t\"allowUnreachableCode\": false,\n\t\t\"exactOptionalPropertyTypes\": true,\n\t\t\"noFallthroughCasesInSwitch\": true,\n\t\t\"noImplicitOverride\": true,\n\t\t\"noImplicitReturns\": true,\n\t\t\"noPropertyAccessFromIndexSignature\": true,\n\t\t\"noUncheckedIndexedAccess\": true,\n\t\t\"noUnusedLocals\": true,\n\t\t\"noUnusedParameters\": true,\n\n\t\t\"isolatedModules\": true,\n\t}\n}\n",
     "heading": "TSConfig"
   },
   {
@@ -4280,7 +4280,7 @@
     "path": "macos-settings#apps",
     "title": "macOS Settings",
     "description": "Here are the macOS settings that we commonly use at sinProject.",
-    "content": "\n\nHomebrew\nGoogle Japanese Input\n  Preferences: General - Space input style: Halfwidth\n  Open Keyboard Settings: Remove everything except ABC, Alphanumeric (Google), Hiragana (Google).\nAlfred\n  Appearance: Alfred Modern Dark\n  Advanced - Force Keyboard: Alphanumeric (Google)\nGoogle Chrome\nVSCode\nSlack\nLINE\n",
+    "content": "\n\nHomebrew\nGoogle Japanese Input\n  Preferences: General - Space input style: Halfwidth\n  Open Keyboard Settings: Remove everything except ABC, Alphanumeric (Google), Hiragana (Google).\nAlfred\n  Appearance: Alfred Modern Dark\n  Advanced - Force Keyboard: Alphanumeric (Google)\nGoogle Chrome\nCursor\n  The AI-first Code Editor: Build software faster in an editor designed for pair-programming with AI\nVSCode\nSlack\nLINE\n",
     "heading": "Apps"
   },
   {

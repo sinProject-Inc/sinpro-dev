@@ -1,6 +1,7 @@
 {
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
+		"types": ["vitest/importMeta", "vite-plugin-pwa/info"],
 		"allowJs": true,
 		"checkJs": true,
 		"esModuleInterop": true,
@@ -23,9 +24,7 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 
-		"isolatedModules": true,
-
-		"types": ["vitest/importMeta"]
+		"isolatedModules": true
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

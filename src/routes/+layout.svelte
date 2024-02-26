@@ -12,6 +12,7 @@
 	import type { LayoutServerData } from './$types'
 	import Audio from './docs/audio.svelte'
 	import MobileMenuBar from './mobile_menu_bar.svelte'
+	import { pwaInfo } from 'virtual:pwa-info'
 
 	export let data: LayoutServerData
 
@@ -118,6 +119,8 @@
 		init_theme()
 	})
 
+	$: manifest_href = pwaInfo ? pwaInfo.webManifest.href : ''
+
 	afterNavigate(() => {
 		force_transition()
 	})
@@ -126,6 +129,10 @@
 		$mobile_menu_open = false
 	})
 </script>
+
+<svelte:head>
+	<svelte:element this="link" rel="manifest" href={manifest_href} />
+</svelte:head>
 
 <Audio />
 

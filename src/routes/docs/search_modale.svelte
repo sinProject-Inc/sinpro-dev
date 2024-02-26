@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { createEventDispatcher, onMount } from 'svelte'
-	import type Fuse from 'fuse.js'
 	import search_index from '$lib/assets/search_index.json'
 	import SearchIcon from '$lib/components/icons/search_icon.svelte'
 	import { Search } from '$lib/search-docs/search'
@@ -13,12 +12,13 @@
 	import CloseIcon from '$lib/components/icons/close_icon.svelte'
 	import RightArrowIcon from '$lib/components/icons/right_arrow_icon.svelte'
 	import { blur } from 'svelte/transition'
+	import type { FuseResult } from 'fuse.js'
 
 	export let search_query = ''
 
 	let input: HTMLInputElement
 
-	let results: Fuse.FuseResult<MarkdownData>[] = []
+	let results: FuseResult<MarkdownData>[] = []
 	let active_result_index = 0
 	let results_element: HTMLElement
 
@@ -58,7 +58,7 @@
 		input = input
 	}
 
-	function get_context(result: Fuse.FuseResult<MarkdownData>): SplitContextPortion[] {
+	function get_context(result: FuseResult<MarkdownData>): SplitContextPortion[] {
 		if (!result.matches) return []
 
 		const context_max_length = 200
