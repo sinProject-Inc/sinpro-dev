@@ -71,6 +71,8 @@ Show hidden files in Finder with `Command + Shift + .`
   - Appearance: Alfred Modern Dark
   - Advanced - Force Keyboard: Alphanumeric (Google)
 - [Google Chrome](https://www.google.com/intl/ja_jp/chrome/)
+- [Cursor](https://cursor.sh/)
+  - The AI-first Code Editor: Build software faster in an editor designed for pair-programming with AI
 - [VSCode](https://code.visualstudio.com/)
 - [Slack](https://slack.com/intl/ja-jp/downloads/)
 - [LINE](https://line.me/)
